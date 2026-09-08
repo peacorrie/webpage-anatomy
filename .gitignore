@@ -1,0 +1,7 @@
+node_modules/
+_site/
+.DS_Store
+
+# Planning / working notes, not part of the published site
+AUDIT.md
+NOTES.md

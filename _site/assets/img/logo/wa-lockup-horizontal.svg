@@ -1,8 +1,0 @@
-<!-- Placeholder wordmark — swap for the real wa-lockup-horizontal.svg when ready -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 32" width="260" height="32" role="img" aria-label="Webpage Anatomy">
-  <rect x="0" y="8" width="16" height="16" rx="4" fill="#FF3D9A" stroke="#22182B" stroke-width="2" transform="rotate(-6 8 16)" />
-  <rect x="5" y="13" width="6" height="6" fill="#22182B" transform="rotate(-6 8 16)" />
-  <text x="24" y="23" font-family="'Fredoka', Georgia, sans-serif" font-weight="700" font-size="19" fill="#22182B">
-    Webpage <tspan fill="#FF3D9A">Anatomy</tspan>
-  </text>
-</svg>

@@ -373,6 +373,19 @@
   visibility: visible;
 }
 
+/* Every marker sits near the left edge of its row (left: 0.6rem, above),
+   so a tooltip centered on the dot overflows off the left of the viewport
+   on narrow screens. Anchor it to the dot's left edge instead once there's
+   no room to center it, and cap the width to what's actually available. */
+@media (max-width: 30rem) {
+  .anatomy-marker__tooltip {
+    left: 0;
+    transform: none;
+    width: max-content;
+    max-width: min(15rem, calc(100vw - 4.5rem));
+  }
+}
+
 .anatomy-marker__tooltip strong {
   display: block;
   font-family: var(--font-mono);
@@ -1101,10 +1114,39 @@ dialog.modal::backdrop {
 }
 
 /* ===== Wireframe blueprint — realistic, varied proportions ===== */
+/* This wireframe represents a real page design, not the app's own UI — it
+   should always read like its light-mode self so it never blends into the
+   modal's dark chrome. Pinning the themed tokens it uses to their
+   light-mode-safe values (already verified for contrast elsewhere in
+   tokens.css) does that for every .wf-* rule below at once, since they all
+   read these custom properties. --surface is the one exception: per
+   request it goes a visibly-distinct light gray in dark mode rather than
+   staying plain white, so it still reads as separate from the dark modal
+   behind it. */
 .wireframe {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  padding: var(--space-2);
+  border: 2px solid var(--fixed-ink);
+  border-radius: var(--radius-lg);
+  --surface: #FFFFFF;
+  --rule: #E8DFE9;
+  --ink: #22182B;
+  --accent-teal: #067A68;
+  --accent-coral: #C23D2E;
+  --accent-pink: #B8175E;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .wireframe {
+    --surface: #DAD3DE;
+  }
+}
+:root[data-theme="dark"] .wireframe {
+  --surface: #DAD3DE;
 }
 
 .wf-block {

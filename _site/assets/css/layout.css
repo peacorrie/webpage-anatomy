@@ -1,0 +1,349 @@
+/*
+  Simple, well-tested container pattern — deliberately NOT the breakout
+  grid from the earlier editorial attempt, which had a real bug (the CSS
+  reset's `* { margin: 0 }` broke <dialog> centering, and a nested-grid
+  mistake left one demo confined to the wrong width). A single max-width
+  container with inline padding is easy to verify has no escape hatches:
+  every section's content lives inside one `.container` div, full stop.
+*/
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1.25rem;
+  z-index: var(--z-modal);
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Nav */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: var(--border-w) solid var(--ink);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: 0.9rem;
+}
+
+.site-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-nav__logo img {
+  height: 1.9rem;
+  width: 1.9rem;
+}
+
+.site-nav__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.site-nav__wordmark em {
+  font-style: normal;
+  color: var(--accent-pink);
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.site-nav__links a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.site-nav__links a:hover {
+  color: var(--accent-pink);
+}
+
+.site-nav__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 45rem) {
+  .site-nav__links { display: none; }
+}
+
+/* Section rhythm */
+.panel {
+  padding-block: var(--space-8);
+  border-top: var(--border-w) dashed var(--rule);
+}
+
+/* Not `.panel:first-of-type`: that selector is scoped per tag name, so a
+   <header class="panel hero"> and the very next <section class="panel">
+   each count as their own "first of type" and BOTH lose their border,
+   silently swallowing the divider on every page's first real section.
+   The hero is always first, so it's the one opted out directly. */
+.hero {
+  border-top: none;
+}
+
+.panel__lede {
+  margin-top: 0.6rem;
+  max-width: 42rem;
+  opacity: 0.85;
+}
+
+.panel__body {
+  margin-top: var(--space-4);
+}
+
+/* Hero */
+.hero {
+  padding-block: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 0.9rem;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent-pink);
+}
+
+/* Not `.hero p`: that bare descendant selector matched every <p> inside
+   any element with class "hero", including .eyebrow and .panel__lede on
+   the smaller, left-aligned page headers (privacy policy, resources) that
+   reuse the .hero class, silently center-shifting them via margin-inline:
+   auto despite text-align:left being set on those headers. Scoped to its
+   own class so it only ever touches the homepage's actual hero copy. */
+.hero__body {
+  max-width: 38rem;
+  margin-inline: auto;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* Secondary-page heroes (resources, privacy policy) are left-aligned and
+   their copy is capped at a readable max-width, which leaves a wide empty
+   gap next to it in a full container — the homepage hero doesn't have this
+   problem because it's centered. .hero-split fills that gap with something
+   useful (in-page jump links) instead of decoration. */
+.hero-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.hero-split__jump {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.hero-split__jump a {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border: var(--border-w) solid var(--rule);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.hero-split__jump a:hover,
+.hero-split__jump a:focus-visible {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+@media (max-width: 45rem) {
+  .hero-split__jump {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.hero__fold {
+  margin-top: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--step-caption);
+  opacity: 0.6;
+}
+
+/* Card grids */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-3);
+}
+
+.card-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 55rem) {
+  .card-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 32rem) {
+  .card-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* A section intro (eyebrow + h2 + lede) is capped narrow for readable line
+   length, which leaves the rest of the wide container empty next to it.
+   Only worth filling when there's real, non-duplicate info to put there —
+   see .color-legend on #anatomy, the one section where that's true. */
+.section-intro-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* Footer */
+/* Fixed dark regardless of site theme, on purpose: a footer that reads as
+   a confident, distinct closing band is literally what the page's own
+   "Footer" entry teaches ("where skeptical visitors look for legitimacy"),
+   so this one practices it instead of just fading into whatever theme
+   the rest of the page happens to be in. */
+.page-footer {
+  background: var(--fixed-ink);
+  color: var(--fixed-paper);
+  border-top: 5px solid transparent;
+  border-image: linear-gradient(90deg, var(--coral), var(--pink), var(--teal), var(--sun)) 1;
+  padding-block: var(--space-6) var(--space-4);
+}
+
+.page-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.page-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.page-footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.page-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.page-footer__links a {
+  color: var(--fixed-paper);
+  text-decoration: none;
+}
+
+.page-footer__links a:hover,
+.page-footer__links a:focus-visible {
+  color: var(--sun);
+  text-decoration: underline;
+}
+
+.page-footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 45rem) {
+  .page-footer__meta {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid color-mix(in srgb, var(--fixed-paper) 18%, transparent);
+    flex-basis: 100%;
+  }
+}
+
+.page-footer__meta p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.page-footer__meta a {
+  color: var(--fixed-paper);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-footer__hint {
+  opacity: 0.55;
+}
+
+.page-footer kbd {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  border: 1px solid color-mix(in srgb, var(--fixed-paper) 35%, transparent);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+}

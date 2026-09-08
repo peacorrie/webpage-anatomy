@@ -1,0 +1,23 @@
+[
+  { "term": "Above the fold", "definition": "Content visible without scrolling." },
+  { "term": "CTA", "definition": "Call to Action: the button you want people to click." },
+  { "term": "Hero", "definition": "The large banner section at the top of a page." },
+  { "term": "Viewport", "definition": "The visible area of a web page in the browser." },
+  { "term": "Responsive", "definition": "Design that adapts to different screen sizes." },
+  { "term": "Breakpoint", "definition": "Screen width where a layout changes (e.g., 768px)." },
+  { "term": "Grid system", "definition": "12-column layout framework for alignment." },
+  { "term": "Z-index", "definition": "Stacking order of overlapping elements." },
+  { "term": "Semantic HTML", "definition": "Using meaningful tags like nav, main, article, instead of generic divs for everything." },
+  { "term": "Accessibility", "definition": "Making content usable for people with disabilities." },
+  { "term": "Mobile-first", "definition": "Designing for small screens first, then scaling up." },
+  { "term": "White space", "definition": "Empty space that gives content room to breathe." },
+  { "term": "Landmark", "definition": "A region of a page, like nav, main, or footer, that a screen reader can jump straight to." },
+  { "term": "Cookie", "definition": "A small piece of data a site stores in your browser to remember you between visits." },
+  { "term": "Third-party cookie", "definition": "A cookie set by a domain other than the one you're visiting, usually for ad tracking." },
+  { "term": "GDPR", "definition": "The EU's data privacy law. Requires sites to disclose what personal data they collect and get consent." },
+  { "term": "Core Web Vitals", "definition": "Google's three real-world performance metrics: LCP, INP, and CLS." },
+  { "term": "Lighthouse", "definition": "A free tool built into Chrome DevTools that audits performance, accessibility, best practices, and SEO at once." },
+  { "term": "Container query", "definition": "A CSS rule that responds to the size of its own container, not the size of the browser window." },
+  { "term": "Neo-brutalism", "definition": "A design trend using thick borders, hard offset shadows, and bold color instead of subtlety." },
+  { "term": "Modal", "definition": "A dialog window that sits on top of the page and blocks interaction with everything behind it until closed." }
+]

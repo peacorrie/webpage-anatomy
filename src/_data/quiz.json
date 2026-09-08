@@ -1,0 +1,74 @@
+[
+  {
+    "question": "What's the minimum WCAG AA contrast ratio for normal body text?",
+    "options": ["2:1", "3:1", "4.5:1", "7:1"],
+    "correct": 2,
+    "explanation": "4.5:1 for normal text. 3:1 only covers large text (18px+) and UI component borders."
+  },
+  {
+    "question": "In this page's z-index system, what layer does a modal sit at?",
+    "options": ["1", "10", "100", "1000"],
+    "correct": 3,
+    "explanation": "1000. Modals sit above sticky nav (100) and dropdowns (10), on top of base content (1)."
+  },
+  {
+    "question": "What's the max recommended number of items in primary navigation?",
+    "options": ["3", "5", "7", "12"],
+    "correct": 2,
+    "explanation": "7. Beyond that, navigation stops being scannable at a glance."
+  },
+  {
+    "question": "What does CTA stand for?",
+    "options": ["Click To Access", "Call To Action", "Create The App", "Content Type Attribute"],
+    "correct": 1,
+    "explanation": "Call to Action, the button you actually want someone to click."
+  },
+  {
+    "question": "All the spacing on this page is a multiple of what number?",
+    "options": ["4", "8", "10", "16"],
+    "correct": 1,
+    "explanation": "8. It's the 8pt grid system, the same convention behind Material Design's spacing scale."
+  },
+  {
+    "question": "Which native HTML element traps focus and closes on Escape without any custom JS?",
+    "options": ["<div>", "<modal>", "<dialog>", "<section>"],
+    "correct": 2,
+    "explanation": "<dialog>, opened with .showModal(). Both behaviors ship free with the element."
+  },
+  {
+    "question": "Which HTML element creates the 'banner' landmark a screen reader can jump straight to?",
+    "options": ["<div>", "<header>", "<top>", "<banner>"],
+    "correct": 1,
+    "explanation": "<header>. A wall of <div>s gives a screen reader no landmarks to build an outline from at all."
+  },
+  {
+    "question": "A cookie set by a domain other than the one you're visiting, usually for ad tracking, is called what?",
+    "options": ["A session cookie", "A first-party cookie", "A third-party cookie", "A service cookie"],
+    "correct": 2,
+    "explanation": "A third-party cookie. First-party cookies come from the site itself, for things like logins and carts."
+  },
+  {
+    "question": "Which Core Web Vital measures how fast a page responds to a click or tap?",
+    "options": ["LCP", "INP", "CLS", "TTFB"],
+    "correct": 1,
+    "explanation": "INP, Interaction to Next Paint. Good is under 200 milliseconds."
+  },
+  {
+    "question": "Which free tool, built right into Chrome DevTools, audits performance, accessibility, best practices, and SEO all at once?",
+    "options": ["WAVE", "Search Console", "Lighthouse", "WebPageTest"],
+    "correct": 2,
+    "explanation": "Lighthouse. The others are real and free too, but each only covers one of those categories."
+  },
+  {
+    "question": "Which button style trend uses thick borders and hard offset shadows instead of soft ones?",
+    "options": ["Neumorphism", "Material Design", "Neo-brutalism", "Skeuomorphism"],
+    "correct": 2,
+    "explanation": "Neo-brutalism. Neumorphism is the opposite: soft, low-contrast shadows on a monochrome surface."
+  },
+  {
+    "question": "A CSS container query responds to the size of what?",
+    "options": ["The browser window", "The user's screen", "The element's own container", "The device type"],
+    "correct": 2,
+    "explanation": "Its own container. That's what let the Breakpoint Simulator's mock layout reflow without any JavaScript deciding it."
+  }
+]

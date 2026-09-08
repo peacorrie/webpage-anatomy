@@ -1,0 +1,62 @@
+[
+  {
+    "number": "01",
+    "title": "The Hero",
+    "description": "The first thing visitors see. Makes or breaks the first impression.",
+    "tips": [
+      "Keep copy concise: aim for 6–8 words in the headline",
+      "Use one clear call-to-action, not five",
+      "Hero images should support, not distract from, the message"
+    ]
+  },
+  {
+    "number": "02",
+    "title": "Navigation",
+    "description": "The roadmap to your content. Should be invisible until needed.",
+    "tips": [
+      "Maximum 7 items in primary navigation",
+      "Logo always links home",
+      "Current page should be visually distinct"
+    ]
+  },
+  {
+    "number": "03",
+    "title": "The Fold",
+    "description": "The visible area before scrolling. People do scroll, but this space still gets disproportionately more attention.",
+    "tips": [
+      "Core value proposition must be above the fold",
+      "Include a scroll indicator if content continues",
+      "Don't cram everything in. Tease what's below"
+    ]
+  },
+  {
+    "number": "04",
+    "title": "Typography Hierarchy",
+    "description": "Visual hierarchy through type creates scannable content.",
+    "tips": [
+      "Limit to 2–3 font families maximum",
+      "Use consistent heading sizes (H1 > H2 > H3)",
+      "Body text: 16–18px for screens"
+    ]
+  },
+  {
+    "number": "05",
+    "title": "Whitespace",
+    "description": "The breathing room that makes content digestible.",
+    "tips": [
+      "More whitespace often reads as more premium",
+      "Use consistent spacing units (8px base)",
+      "Let important elements breathe"
+    ]
+  },
+  {
+    "number": "06",
+    "title": "Footer",
+    "description": "The last impression. Where skeptical visitors look for legitimacy.",
+    "tips": [
+      "Include contact info and social links",
+      "Secondary navigation for SEO",
+      "Copyright and legal links belong here"
+    ]
+  }
+]

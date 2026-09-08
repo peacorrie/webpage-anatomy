@@ -1,0 +1,8 @@
+<!-- Placeholder reversed wordmark for dark mode — swap when the real lockup exists -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 32" width="260" height="32" role="img" aria-label="Webpage Anatomy">
+  <rect x="0" y="8" width="16" height="16" rx="4" fill="#FF6FB5" stroke="#F5EEFA" stroke-width="2" transform="rotate(-6 8 16)" />
+  <rect x="5" y="13" width="6" height="6" fill="#1B1420" transform="rotate(-6 8 16)" />
+  <text x="24" y="23" font-family="'Fredoka', Georgia, sans-serif" font-weight="700" font-size="19" fill="#F5EEFA">
+    Webpage <tspan fill="#FF6FB5">Anatomy</tspan>
+  </text>
+</svg>

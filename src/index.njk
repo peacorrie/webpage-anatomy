@@ -1,0 +1,646 @@
+---
+layout: layouts/base.njk
+title: Anatomy of a Webpage
+description: A bright, hands-on guide to the anatomy of a webpage, covering structure, type, spacing, states, layers, and accessibility, with live demonstrations you can inspect.
+kofiOnFooter: true
+---
+
+<header class="panel hero">
+  <div class="container">
+    <span class="badge">Interactive Guide</span>
+    <h1>Anatomy of a <em>Webpage</em></h1>
+    <p class="hero__body">Every great website follows the same fundamental structure. Poke at it, hover it, tab through it. This page teaches by letting you take it apart.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary" href="#anatomy">See the blueprint</a>
+      <a class="btn btn--secondary" href="#sections">Learn the sections</a>
+    </div>
+    <p class="hero__fold" aria-hidden="true">The fold. Scroll down to explore ↓</p>
+  </div>
+</header>
+
+<section class="panel" id="anatomy" aria-labelledby="anatomy-heading">
+  <div class="container section-intro-split">
+    <div>
+      <p class="eyebrow">Visual blueprint</p>
+      <h2 id="anatomy-heading">The Anatomy Revealed</h2>
+      <p class="panel__lede">Five markers, five roles. Hover or tab to each one. Every marker here is a real, focusable button, not just a mouse-only hover trick.</p>
+    </div>
+    <ul class="color-legend">
+      <li><span class="color-legend__swatch" style="background:var(--teal);"></span>Navigation</li>
+      <li><span class="color-legend__swatch" style="background:var(--coral);"></span>Hero</li>
+      <li><span class="color-legend__swatch" style="background:var(--sun);"></span>The Fold</li>
+      <li><span class="color-legend__swatch" style="background:var(--pink);"></span>Content</li>
+      <li><span class="color-legend__swatch" style="background:var(--fixed-ink);"></span>Footer</li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="panel__body anatomy-demo">
+      <div class="anatomy-demo__chrome">
+        <span class="anatomy-demo__dot"></span><span class="anatomy-demo__dot"></span><span class="anatomy-demo__dot"></span>
+        <span class="anatomy-demo__url">https://creativepea.com</span>
+      </div>
+      <div class="anatomy-demo__body">
+        <div class="anatomy-mock-nav">
+          <span class="anatomy-marker">
+            <button type="button" class="anatomy-marker__dot" aria-describedby="tip-nav">1</button>
+            <span class="anatomy-marker__tooltip" id="tip-nav" role="tooltip"><strong>&lt;nav&gt; Navigation</strong>The wayfinding system. Logo left, links right. Keep it under 7 items.</span>
+          </span>
+          Brand &nbsp; Home &nbsp; About &nbsp; Services &nbsp; Contact
+          <button type="button" class="anatomy-examples-btn" id="openNavTypesModal">See nav types →</button>
+        </div>
+        <div class="anatomy-mock-hero">
+          <span class="anatomy-marker">
+            <button type="button" class="anatomy-marker__dot" aria-describedby="tip-hero">2</button>
+            <span class="anatomy-marker__tooltip" id="tip-hero" role="tooltip"><strong>&lt;header&gt; Hero</strong>Your value proposition in 6–8 words. One CTA. Make it count.</span>
+          </span>
+          Your Main Headline Here. Supporting text that explains your value proposition. <strong>Get Started</strong>
+          <button type="button" class="anatomy-examples-btn" id="openHeroTypesModal">See hero types →</button>
+        </div>
+        <div class="anatomy-mock-fold">
+          <span class="anatomy-marker">
+            <button type="button" class="anatomy-marker__dot" aria-describedby="tip-fold">3</button>
+            <span class="anatomy-marker__tooltip" id="tip-fold" role="tooltip"><strong>100vh The Fold</strong>Everything above here is seen without scrolling. Put your best content here.</span>
+          </span>
+          The Fold
+          <button type="button" class="anatomy-examples-btn" id="openFoldTypesModal">See fold strategies →</button>
+        </div>
+        <div class="anatomy-mock-content">
+          <span class="anatomy-marker">
+            <button type="button" class="anatomy-marker__dot" aria-describedby="tip-content">4</button>
+            <span class="anatomy-marker__tooltip" id="tip-content" role="tooltip"><strong>&lt;section&gt; Content</strong>Features, benefits, social proof. Use clear headings and whitespace.</span>
+          </span>
+          Features section: three cards go here
+          <button type="button" class="anatomy-examples-btn" id="openContentTypesModal">See content types →</button>
+        </div>
+        <div class="anatomy-mock-footer">
+          <span class="anatomy-marker">
+            <button type="button" class="anatomy-marker__dot" aria-describedby="tip-footer">5</button>
+            <span class="anatomy-marker__tooltip" id="tip-footer" role="tooltip"><strong>&lt;footer&gt; Footer</strong>Contact info, social links, legal pages. Where skeptics look for trust.</span>
+          </span>
+          About &nbsp; Privacy &nbsp; Terms &nbsp; Contact
+          <button type="button" class="anatomy-examples-btn" id="openFooterTypesModal">See footer types →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="anatomy-cta">
+      <p>Five pieces, seen in isolation. Want to see them assembled into a real homepage, start to finish?</p>
+      <button type="button" class="btn btn--primary" id="openHomepageModalFromAnatomy">See the full 10-section homepage example</button>
+    </div>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="patterns-heading">
+  <div class="container">
+    <p class="eyebrow">Reading patterns</p>
+    <h2 id="patterns-heading">How Eyes Move</h2>
+    <div class="panel__body card-grid">
+      <div class="sticker coral">
+        <span class="sticker__tag tag-chip">pattern</span>
+        <h3>F-Pattern Reading</h3>
+        <p>Users scan text-heavy pages in an F-shape: top-left to right, then down the left side. One of the more rigorously studied patterns in web UX, from Nielsen Norman Group's eye-tracking research.</p>
+        <button type="button" class="btn btn--secondary pattern-example-btn" id="openFPatternModal">See example</button>
+      </div>
+      <div class="sticker teal">
+        <span class="sticker__tag tag-chip">pattern</span>
+        <h3>Z-Pattern for Landing</h3>
+        <p>On image-heavy, low-text pages, eyes tend to move in a Z: top-left, top-right, diagonal down, bottom-left to right. It's a looser heuristic than the F-pattern, more of a starting hypothesis than a law.</p>
+        <button type="button" class="btn btn--secondary pattern-example-btn" id="openZPatternModal">See example</button>
+      </div>
+      <div class="sticker pink">
+        <span class="sticker__tag tag-chip">grid</span>
+        <h3>The 8pt Grid System</h3>
+        <p>All spacing uses multiples of 8px. It creates visual rhythm and makes responsive design predictable. It's the same convention behind Google's Material Design spacing scale.</p>
+        <button type="button" class="btn btn--secondary pattern-example-btn" id="openGridPatternModal">See example</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="sections" aria-labelledby="sections-heading">
+  <div class="container">
+    <p class="eyebrow">Building blocks</p>
+    <h2 id="sections-heading">The Essential Sections</h2>
+    <p class="panel__lede">Master these six elements and you'll understand most of web design.</p>
+    <div class="panel__body card-grid card-grid--3">
+      {% set colors = ["coral", "teal", "pink", "sun", "coral", "teal"] %}
+      {% set realTags = ["<header>", "<nav>", "100vh", "<h1>–<h6>", "margin", "<footer>"] %}
+      {% for s in sections %}
+      <div class="sticker {{ colors[loop.index0] }}">
+        <span class="sticker__num">{{ s.number }}</span>
+        <span class="sticker__tag tag-chip">{{ realTags[loop.index0] }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.description }}</p>
+        <ul class="tips">
+          {% for t in s.tips %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="typography" aria-labelledby="type-heading">
+  <div class="container">
+    <p class="eyebrow">Type system</p>
+    <h2 id="type-heading">Typography Scale</h2>
+    <p class="panel__lede">Consistent type sizes create hierarchy and make content scannable. This scale is live. It's the same Fredoka/Nunito pairing driving every heading on this page.</p>
+    <div class="panel__body sticker plain">
+      <div class="type-scale-row"><span class="type-scale-row__label">H1 · 48–80px</span><span style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:600;">Main Headlines</span></div>
+      <div class="type-scale-row"><span class="type-scale-row__label">H2 · 32–48px</span><span style="font-family:var(--font-display); font-size:clamp(1.5rem,4vw,2.25rem); font-weight:600;">Section Headers</span></div>
+      <div class="type-scale-row"><span class="type-scale-row__label">H3 · 24px</span><span style="font-family:var(--font-display); font-size:1.5rem; font-weight:600;">Subsection Headers</span></div>
+      <div class="type-scale-row"><span class="type-scale-row__label">Body · 16–18px</span><span>Regular paragraph text for reading. Line height should be 1.5–1.7 for comfortable reading.</span></div>
+      <div class="type-scale-row"><span class="type-scale-row__label">Caption · 12–14px</span><span class="mono">LABELS, METADATA, AND SMALL PRINT</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="spacing" aria-labelledby="spacing-heading">
+  <div class="container">
+    <p class="eyebrow">8pt grid</p>
+    <h2 id="spacing-heading">Spacing System</h2>
+    <p class="panel__lede">Consistent spacing creates visual rhythm. Every value below is a real multiple of 8, rendered at true size.</p>
+    <div class="panel__body sticker plain">
+      <div class="spacing-row">
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:8px;"></div><span class="spacing-swatch__label">8<br>Tight</span></div>
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:16px;"></div><span class="spacing-swatch__label">16<br>Default</span></div>
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:24px;"></div><span class="spacing-swatch__label">24<br>Relaxed</span></div>
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:32px;"></div><span class="spacing-swatch__label">32<br>Loose</span></div>
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:48px;"></div><span class="spacing-swatch__label">48<br>Section</span></div>
+        <div class="spacing-swatch"><div class="spacing-swatch__box" style="--box-size:64px;"></div><span class="spacing-swatch__label">64<br>Major</span></div>
+      </div>
+    </div>
+
+    <p class="panel__lede" style="margin-top:1.5rem;">Boxes are one thing. Here's the same 8pt system applied to an actual card, next to a card that ignores it.</p>
+    <div class="panel__body spacing-example">
+      <div>
+        <p class="spacing-example__label bad">✗ Ignores the grid</p>
+        <div class="mini-card mini-card--bad">
+          <div class="mini-card__icon"></div>
+          <h4>Weekly Digest</h4>
+          <p>Your top stories, curated every Monday morning.</p>
+          <span class="btn btn--primary">Subscribe</span>
+        </div>
+      </div>
+      <div>
+        <p class="spacing-example__label good">✓ Follows the 8pt grid</p>
+        <div class="mini-card mini-card--good">
+          <div class="mini-card__icon"></div>
+          <h4>Weekly Digest</h4>
+          <p>Your top stories, curated every Monday morning.</p>
+          <span class="btn btn--primary">Subscribe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1rem;">
+      <p><strong>Pro tip:</strong> use 8px for inline elements, 16px for related items, 24–32px between groups, and 48–96px between major sections.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="buttons" aria-labelledby="buttons-heading">
+  <div class="container">
+    <p class="eyebrow">Interaction design</p>
+    <h2 id="buttons-heading">Button States</h2>
+    <p class="panel__lede">Every button has at least four states, plus two more people tend to forget: focus, and whatever happens while it's working. These aren't illustrations. Hover, click, and tab to the buttons below to trigger each state for real.</p>
+    <div class="panel__body button-section-grid">
+      <div class="sticker plain">
+        <div class="state-demo">
+          <div class="state-demo__item">
+            <span class="state-demo__label">Default / Hover / Active</span>
+            <div class="state-demo__row">
+              <button type="button" class="btn btn--primary">Try Me</button>
+              <span class="state-demo__hint">Rest, hover, and click. Each one triggers a real CSS state, not a label.</span>
+            </div>
+          </div>
+          <div class="state-demo__item">
+            <span class="state-demo__label">Focus</span>
+            <div class="state-demo__row">
+              <button type="button" class="btn btn--primary">Tab to Me</button>
+              <span class="state-demo__hint">Tab to this button with your keyboard to see the focus ring. It's required for anyone not using a mouse.</span>
+            </div>
+          </div>
+          <div class="state-demo__item">
+            <span class="state-demo__label">Disabled</span>
+            <div class="state-demo__row">
+              <button type="button" class="btn btn--primary" disabled>Disabled</button>
+              <span class="state-demo__hint">Genuinely inert, using the native <code>disabled</code> attribute, not a style trick.</span>
+            </div>
+          </div>
+          <div class="state-demo__item">
+            <span class="state-demo__label">Loading</span>
+            <div class="state-demo__row">
+              <button type="button" class="btn btn--primary state-demo__async" id="loadingDemoBtn" data-default-label="Submit">
+                <span class="state-demo__async-label">Submit</span>
+              </button>
+              <span class="state-demo__hint">Click it. A real async action takes time, and a button that just sits there makes people click it twice.</span>
+            </div>
+          </div>
+          <div class="state-demo__item">
+            <span class="state-demo__label">Success</span>
+            <div class="state-demo__row">
+              <button type="button" class="btn btn--primary state-demo__async" id="successDemoBtn" data-default-label="Save">
+                <span class="state-demo__async-label">Save</span>
+              </button>
+              <span class="state-demo__hint">Confirming a completed action closes the loop. Without it, people re-click just to be sure it worked.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sticker plain">
+        <h3>Button Styles Through Time</h3>
+        <p style="margin-top:0.4rem;">States are one axis. Style trend is another. The same "click me" rectangle has gone through a lot of looks.</p>
+        <div class="button-era-grid">
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--skeuomorphic">Submit</span></span>
+            <strong>Skeuomorphic</strong>
+            <span class="mono">~2000s–2012</span>
+            <p>Gradients, bevels, and drop shadows made buttons look like real, physical, pressable objects.</p>
+          </div>
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--flat">Submit</span></span>
+            <strong>Flat Design</strong>
+            <span class="mono">~2013–2016</span>
+            <p>iOS 7 killed the gloss overnight. Solid color, no shadow, no gradient. Just shape and label.</p>
+          </div>
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--material">SUBMIT</span></span>
+            <strong>Material Design</strong>
+            <span class="mono">~2014–2019</span>
+            <p>Google's answer to flat: keep it simple, but add a soft "elevation" shadow so it still reads as liftable.</p>
+          </div>
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--neumorphic">Submit</span></span>
+            <strong>Neumorphism</strong>
+            <span class="mono">~2020</span>
+            <p>Soft UI: a button carved from the same surface as its background, using only light and shadow.</p>
+          </div>
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--brutalist">Submit</span></span>
+            <strong>Neo-Brutalist</strong>
+            <span class="mono">Now</span>
+            <p>Thick borders, hard offset shadows, zero subtlety. This page's own buttons are a softer cousin of this style.</p>
+          </div>
+          <div class="button-era">
+            <span class="button-era-stage"><span class="button-sample button-sample--pill">Submit</span></span>
+            <strong>Pill / Rounded-Full</strong>
+            <span class="mono">Now</span>
+            <p>Fully rounded ends, minimal chrome. The default look of most modern SaaS and mobile apps today.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="zindex" aria-labelledby="zindex-heading">
+  <div class="container">
+    <p class="eyebrow">Stacking context</p>
+    <h2 id="zindex-heading">Z-Index: The Layer Cake</h2>
+    <p class="panel__lede">Z-index controls stacking order. It's not random. It's an org chart: modal at 1000, sticky nav at 100, dropdowns at 10, content at 1.</p>
+    <div class="panel__body sticker plain">
+      <div class="zindex-demo">
+        <div class="zindex-layer zindex-layer--1">z-index: 1 · Base content layer</div>
+        <div class="zindex-layer zindex-layer--2">z-index: 10 · Dropdowns &amp; tooltips</div>
+        <div class="zindex-layer zindex-layer--3">z-index: 100 · Sticky navigation</div>
+        <div class="zindex-layer zindex-layer--4">z-index: 1000 · Modals &amp; overlays</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="semantic" aria-labelledby="semantic-heading">
+  <div class="container">
+    <p class="eyebrow">Structure</p>
+    <h2 id="semantic-heading">Semantic HTML: The Layer Underneath</h2>
+    <p class="panel__lede">These two mockups render identically. Same boxes, same text, same position on screen. One of them is invisible to a screen reader. Toggle the outline to see which.</p>
+    <div class="panel__body">
+      <button type="button" class="btn btn--secondary" id="toggleSemanticOutline" aria-pressed="false">Show the outline</button>
+      <div class="semantic-compare">
+        <div class="semantic-mock">
+          <p class="semantic-mock__code mono">div › div › div › div › div</p>
+          <div class="semantic-block semantic-block--header">
+            <span class="semantic-outline-tag tag-chip" hidden>div</span>
+            Logo &nbsp; Home &nbsp; About &nbsp; Contact
+          </div>
+          <div class="semantic-block semantic-block--main">
+            <span class="semantic-outline-tag tag-chip" hidden>div</span>
+            <div class="semantic-block semantic-block--article">
+              <span class="semantic-outline-tag tag-chip" hidden>div</span>
+              Article title and a paragraph of body text sit here.
+            </div>
+            <div class="semantic-block semantic-block--aside">
+              <span class="semantic-outline-tag tag-chip" hidden>div</span>
+              Related links
+            </div>
+          </div>
+          <div class="semantic-block semantic-block--footer">
+            <span class="semantic-outline-tag tag-chip" hidden>div</span>
+            &copy; Copyright
+          </div>
+          <div class="semantic-mock__outline" hidden>
+            <strong>What a screen reader hears:</strong>
+            <p>"div. div. div. div. div." No landmarks to jump between. No way to skip straight to the content.</p>
+          </div>
+        </div>
+        <div class="semantic-mock">
+          <p class="semantic-mock__code mono">header › nav › main › article + aside › footer</p>
+          <div class="semantic-block semantic-block--header">
+            <span class="semantic-outline-tag tag-chip semantic-outline-tag--header" hidden>header</span>
+            Logo
+          </div>
+          <div class="semantic-block semantic-block--nav">
+            <span class="semantic-outline-tag tag-chip semantic-outline-tag--nav" hidden>nav</span>
+            Home &nbsp; About &nbsp; Contact
+          </div>
+          <div class="semantic-block semantic-block--main">
+            <span class="semantic-outline-tag tag-chip semantic-outline-tag--main" hidden>main</span>
+            <div class="semantic-block semantic-block--article">
+              <span class="semantic-outline-tag tag-chip semantic-outline-tag--article" hidden>article</span>
+              Article title and a paragraph of body text sit here.
+            </div>
+            <div class="semantic-block semantic-block--aside">
+              <span class="semantic-outline-tag tag-chip semantic-outline-tag--aside" hidden>aside</span>
+              Related links
+            </div>
+          </div>
+          <div class="semantic-block semantic-block--footer">
+            <span class="semantic-outline-tag tag-chip semantic-outline-tag--footer" hidden>footer</span>
+            &copy; Copyright
+          </div>
+          <div class="semantic-mock__outline" hidden>
+            <strong>What a screen reader hears:</strong>
+            <p>"Banner landmark. Navigation landmark. Main landmark. Complementary landmark. Content info landmark." Five jump points, for free.</p>
+          </div>
+        </div>
+      </div>
+      <div class="a11y-list" style="margin-top:1.5rem;">
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">SEE</span>
+          <p>Sighted users never notice the difference. Both mockups look pixel-identical. The gap is entirely in the layer underneath what you can see.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">HEAR</span>
+          <p>Screen readers build a navigable outline from real landmark elements. A wall of <code>div</code>s gives them nothing to build it from.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">CRAWL</span>
+          <p>Search engines and browser reader-modes lean on <code>&lt;main&gt;</code> and <code>&lt;article&gt;</code> to figure out what the actual content is, separate from nav and chrome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="a11y" aria-labelledby="a11y-heading">
+  <div class="container">
+    <p class="eyebrow">Inclusive design</p>
+    <h2 id="a11y-heading">Accessibility: Design for Humans</h2>
+    <p class="panel__lede">Build for everyone. Not everyone uses a mouse. Not everyone can see your colors.</p>
+    <div class="panel__body">
+      <div class="a11y-list">
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">ALT</span>
+          <p>Describe images for screen readers by their function, not just their contents. "Team celebrating a product launch" beats "IMG_4829.jpg."</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">3:1 / 4.5:1</span>
+          <p>WCAG AA needs <strong>4.5:1</strong> contrast for normal text, but only <strong>3:1</strong> for large text (18px+, or 14px+ bold) and UI component borders.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">TAB</span>
+          <p>Tab through your site. If you can't reach something without a mouse, it's broken. Every marker and demo on this page is a real, focusable element.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">ARIA</span>
+          <p>Use ARIA to help screen readers understand interactive elements that native HTML can't describe alone, but reach for semantic HTML first and ARIA second.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">FOCUS</span>
+          <p>Every focusable element needs a visible focus indicator. It's easy to forget because a mouse never triggers it. See the Button States demo above.</p>
+        </div>
+      </div>
+      <pre style="margin-top:1.25rem;"><code>&lt;button aria-label="Close modal"&gt;✕&lt;/button&gt;
+&lt;img src="hero.jpg" alt="Team celebrating a product launch"&gt;</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="privacy" aria-labelledby="privacy-heading">
+  <div class="container">
+    <p class="eyebrow">Behind the scenes</p>
+    <h2 id="privacy-heading">What the Eye Can't See</h2>
+    <p class="panel__lede">Every page quietly collects more than what's on screen. Here's what that is, why it needs disclosing, and where the paperwork actually comes from.</p>
+    <div class="panel__body">
+      <div class="a11y-list">
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">TRACK</span>
+          <p><strong>Cookies &amp; tracking.</strong> Small files or scripts that remember who a visitor is between visits: login sessions, shopping carts, analytics like Google Analytics, ad pixels like Meta's. First-party cookies come from the site itself; third-party ones come from someone else's script running on it, usually for advertising.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">PRIVACY</span>
+          <p><strong>Privacy Policy.</strong> A page disclosing what data gets collected, why, and what a visitor can do about it. Legally required in most places (GDPR in the EU, CCPA in California) for almost any site running analytics or a contact form, not just stores.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">TERMS</span>
+          <p><strong>Terms of Service.</strong> The rules for using the site: acceptable use, liability limits, who owns what. Not always legally required, but it's what protects the business if something goes wrong.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1.5rem;">
+        <p><strong>Where to actually get one:</strong> free generators like Termly, GetTerms, and PrivacyPolicies.com produce a reasonable starting template for a small site. If the site handles payments, health data, or anything sensitive, a template stops being enough, and it's worth paying an actual lawyer. This is general orientation, not legal advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="performance" aria-labelledby="performance-heading">
+  <div class="container">
+    <p class="eyebrow">Under the hood</p>
+    <h2 id="performance-heading">Performance (And How to Prove It)</h2>
+    <p class="panel__lede">A beautiful page that takes eight seconds to load loses people before they see it. Here's what actually gets measured, in three numbers.</p>
+    <div class="panel__body">
+      <div class="card-grid" style="margin-bottom:1.5rem;">
+        <div class="sticker teal">
+          <h3>LCP</h3>
+          <p>Largest Contentful Paint: how fast the main content appears. Good is under 2.5 seconds.</p>
+        </div>
+        <div class="sticker coral">
+          <h3>INP</h3>
+          <p>Interaction to Next Paint: how fast the page responds to a click or tap. Good is under 200 milliseconds.</p>
+        </div>
+        <div class="sticker pink">
+          <h3>CLS</h3>
+          <p>Cumulative Layout Shift: how much content jumps around while loading. Good is under 0.1.</p>
+        </div>
+      </div>
+      <p class="panel__lede">These are Google's Core Web Vitals, and every tool below checks them for free.</p>
+      <div class="a11y-list" style="margin-top:1rem;">
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">PERF</span>
+          <p><strong>Google PageSpeed Insights</strong> and <strong>WebPageTest.</strong> Paste in a URL, get real Core Web Vitals scores and a specific list of what's slow.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">A11Y</span>
+          <p><strong>WAVE</strong> (by WebAIM) and <strong>axe DevTools.</strong> Browser extensions that scan a live page for contrast failures, missing alt text, and other accessibility issues.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">SEO</span>
+          <p><strong>Google Search Console.</strong> Free, and it's how Google itself tells a site owner what it can and can't find or index.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">ALL 4</span>
+          <p><strong>Lighthouse,</strong> built into Chrome DevTools (open DevTools, click the Lighthouse tab). One free report covering performance, accessibility, best practices, and SEO at once. Start here before reaching for anything else.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="parallax" aria-labelledby="parallax-heading">
+  <div class="container">
+    <p class="eyebrow">Scroll effects</p>
+    <div class="panel__body parallax" data-parallax="true">
+      <div class="parallax__inner">
+        <p class="eyebrow">The depth illusion</p>
+        <h2 id="parallax-heading">Parallax</h2>
+        <p>Notice how this text sits still while the field behind it holds its position as you scroll? Disabled automatically if you've asked your system to reduce motion.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1rem;">
+      <p><strong>The Hot Sauce Rule:</strong> a little parallax goes a long way. Use it for one hero-scale moment, not every scroll.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="dictionary" aria-labelledby="dictionary-heading">
+  <div class="container">
+    <p class="eyebrow">Reference</p>
+    <h2 id="dictionary-heading">Dev Dictionary</h2>
+    <p class="panel__lede">Essential terminology for speaking the language of web design.</p>
+    <div class="panel__body dict-panel">
+      <dl>
+        {% for entry in glossary %}
+        <div><dt>{{ entry.term }}</dt><dd>{{ entry.definition }}</dd></div>
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="learn-more" aria-labelledby="learn-more-heading" style="text-align:center;">
+  <div class="container">
+    <p class="eyebrow">Keep going</p>
+    <h2 id="learn-more-heading">Where to Actually Learn This</h2>
+    <p class="panel__lede" style="margin-inline:auto;">This page is a tour, not a course. The full list of free courses, paid courses, professional support, and sources this page draws on lives on its own page, since it's the kind of thing worth adding to over time.</p>
+    <div style="margin-top:1.5rem;">
+      <a class="btn btn--primary" href="/resources/">See the full resources list</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="lab" aria-labelledby="lab-heading">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h2 id="lab-heading">Learn by Exploring</h2>
+    <p class="panel__lede">Click to open interactive demos and a couple of downloadable resources.</p>
+    <div class="panel__body card-grid">
+      <button type="button" class="lab-trigger" id="openGlassModal">
+        <span class="sticker teal">
+          <span class="lab-trigger__text">
+            <h3>Glassmorphism</h3>
+            <p>The frosted-glass effect explained with live CSS you can copy.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openHomepageModal">
+        <span class="sticker pink">
+          <span class="lab-trigger__text">
+            <h3>Homepage Blueprint</h3>
+            <p>A complete 10-section homepage wireframe with tips. Downloadable as PNG.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openContrastCheckerModal">
+        <span class="sticker sun">
+          <span class="lab-trigger__text">
+            <h3>Contrast Checker</h3>
+            <p>Type in any two colors and get a real, live WCAG contrast ratio.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openStyleGuideModal">
+        <span class="sticker coral">
+          <span class="lab-trigger__text">
+            <h3>This Page's Style Guide</h3>
+            <p>Colors, type, spacing, and z-index, condensed into one downloadable sheet.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openBoxModelModal">
+        <span class="sticker teal">
+          <span class="lab-trigger__text">
+            <h3>Box Model Playground</h3>
+            <p>Drag margin, border, and padding and watch a real box respond.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openBreakpointModal">
+        <span class="sticker pink">
+          <span class="lab-trigger__text">
+            <h3>Breakpoint Simulator</h3>
+            <p>Drag a frame from phone to desktop width and watch a layout reflow.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openContrastGameModal">
+        <span class="sticker sun">
+          <span class="lab-trigger__text">
+            <h3>Guess the Contrast</h3>
+            <p>See a color pair, guess pass or fail, then check your eye against the math.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+      <button type="button" class="lab-trigger" id="openQuizModal">
+        <span class="sticker coral">
+          <span class="lab-trigger__text">
+            <h3>Take the Quiz</h3>
+            <p>{{ quiz.length }} questions pulled straight from this page. Pick an answer to see it graded instantly.</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="grid-explainer" aria-labelledby="grid-explainer-heading" style="text-align:center;">
+  <div class="container">
+    <p class="eyebrow">One more thing</p>
+    <h2 id="grid-explainer-heading">What's With the Grid?</h2>
+    <div class="panel__body" style="max-width: 34rem; margin-inline: auto; display:flex; flex-direction:column; gap:1rem;">
+      <p>Every section on this page secretly lines up to an invisible 12-column grid, the same system behind frameworks like Bootstrap and Tailwind. Press <kbd>G</kbd>, or use the button below, to see it.</p>
+      <div>
+        <button type="button" class="icon-btn" id="gridToggleInline" aria-pressed="false" style="width:auto; padding: 0.6em 1.2em; display:inline-flex; gap:0.5rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+          Toggle the grid overlay
+        </button>
+      </div>
+      <p class="mono" style="font-size: 0.8rem; opacity: 0.7;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">Learn how CSS Grid actually works →</a></p>
+    </div>
+  </div>
+</section>
+

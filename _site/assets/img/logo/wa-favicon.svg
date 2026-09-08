@@ -1,0 +1,6 @@
+<!-- Placeholder favicon — swap for the real wa-favicon.svg when ready -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#22182B" />
+  <rect x="8" y="8" width="16" height="16" rx="4" fill="#FF3D9A" transform="rotate(-6 16 16)" />
+  <rect x="12.5" y="12.5" width="7" height="7" fill="#22182B" transform="rotate(-6 16 16)" />
+</svg>

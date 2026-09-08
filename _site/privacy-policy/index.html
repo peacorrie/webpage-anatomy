@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZSNQFEW7Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7ZSNQFEW7Q');
+  </script>
+  <title>Privacy Policy | Webpage Anatomy</title>
+  <meta name="description" content="What this site collects, what it doesn&#39;t, and why." />
+  <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Temporary CDN fonts per your request — swap to self-hosted once fonts are final -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/typography.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("wa-theme");
+        if (saved) document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grid-overlay" id="gridOverlay" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <nav class="site-nav" aria-label="Primary">
+  <div class="container site-nav__inner">
+    <a class="site-nav__logo" href="/">
+      <img src="/assets/img/logo/wa-brandmark.svg" alt="" width="32" height="32" />
+      <span class="site-nav__wordmark">Webpage <em>Anatomy</em></span>
+    </a>
+    <ul class="site-nav__links">
+      
+      <li><a href="/#anatomy">Anatomy</a></li>
+      
+      <li><a href="/#sections">Sections</a></li>
+      
+      <li><a href="/#buttons">Buttons</a></li>
+      
+      <li><a href="/#semantic">Semantic</a></li>
+      
+      <li><a href="/#a11y">A11y</a></li>
+      
+      <li><a href="/#lab">Explore</a></li>
+      
+      <li><a href="/#dictionary">Dictionary</a></li>
+      
+    </ul>
+    <div class="site-nav__tools">
+      <button type="button" class="icon-btn" id="themeToggle" aria-pressed="false" title="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path>
+        </svg>
+        <span class="sr-only">Toggle dark mode</span>
+      </button>
+      <button type="button" class="icon-btn" id="gridToggle" aria-pressed="false" title="Toggle grid (G)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+        </svg>
+        <span class="sr-only">Toggle grid overlay</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+  <main id="main">
+    
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1 style="font-size: var(--step-h2);">What This Site Collects (And What It Doesn't)</h1>
+    <p class="panel__lede">Last updated 2026. Written in plain language on purpose, the same way this whole page argues a privacy policy should be.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <div class="a11y-list">
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">USES</span>
+        <p>This site uses basic, aggregate web analytics: which pages get visited, roughly how people found them (referrer), and general device or browser type. It's used only to understand what's useful on this page and what isn't.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">NOT</span>
+        <p>No accounts, no logins, no personal profiles are built. Nothing is sold to anyone. No third-party advertising trackers are embedded on this page.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">STORAGE</span>
+        <p>Your dark mode preference and quiz progress live in your browser's local storage. They're never sent to a server; they just stay on your device so the setting sticks the next time you visit.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">CONTACT</span>
+        <p>Questions about this page or its data practices can go through <a href="https://www.creativepea.com">creativepea.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top: 1.5rem;">
+      <p>This site is a free educational project, not a business collecting data for profit. This policy will stay this short because there genuinely isn't more to disclose. If that ever changes, this page changes with it.</p>
+    </div>
+
+    <p style="margin-top: 2rem;"><a href="/">← Back to Webpage Anatomy</a></p>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="page-footer">
+  <div class="container page-footer__inner">
+    <div class="page-footer__brand">
+      <img src="/assets/img/logo/wa-brandmark.svg" alt="" width="28" height="28" />
+      <span class="page-footer__wordmark">Webpage Anatomy</span>
+    </div>
+
+    <nav class="page-footer__links" aria-label="Footer">
+      <a href="/#anatomy">Anatomy</a>
+      <a href="/#lab">Explore</a>
+      <a href="/#dictionary">Dictionary</a>
+      <a href="/resources/">Resources</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+    </nav>
+
+    <div class="page-footer__meta">
+      <p>&copy; 2026 Built for fun for web designers, by <a href="https://www.creativepea.com">creativepea</a>.</p>
+    </div>
+  </div>
+</footer>
+
+  <dialog class="modal" id="fPatternModal" aria-labelledby="fPatternModalTitle">
+  <div class="modal__header">
+    <h2 id="fPatternModalTitle" style="font-size: 1.25rem;">F-Pattern Reading</h2>
+    <button type="button" class="icon-btn" id="closeFPatternModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="pattern-diagram">
+      <div class="fpattern-lines">
+        <div class="fpattern-line" style="width:95%;"></div>
+        <div class="fpattern-line" style="width:88%;"></div>
+        <div class="fpattern-line" style="width:70%;"></div>
+        <div class="fpattern-line" style="width:92%;"></div>
+        <div class="fpattern-line" style="width:50%;"></div>
+        <div class="fpattern-line" style="width:65%;"></div>
+        <div class="fpattern-line" style="width:40%;"></div>
+        <div class="fpattern-line" style="width:58%;"></div>
+        <div class="fpattern-line" style="width:35%;"></div>
+      </div>
+      <div class="fpattern-overlay" aria-hidden="true"></div>
+    </div>
+    <p>The coral shape is a heatmap, not a decoration. Eyes hit the full top line first, then a shorter second pass, then trail down the left edge scanning for anything worth stopping for. Everything outside that shape gets skimmed or skipped.</p>
+    <p><strong>What to do with this:</strong> put your strongest words at the start of the first two lines and down the left edge. Don't bury your point in the middle of a paragraph.</p>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissFPatternModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="zPatternModal" aria-labelledby="zPatternModalTitle">
+  <div class="modal__header">
+    <h2 id="zPatternModalTitle" style="font-size: 1.25rem;">Z-Pattern for Landing Pages</h2>
+    <button type="button" class="icon-btn" id="closeZPatternModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="pattern-diagram zpattern-diagram">
+      <div class="zpattern-corner tl">① Logo</div>
+      <div class="zpattern-corner tr">② Sign Up</div>
+      <div class="zpattern-corner bl">④ Learn More</div>
+      <div class="zpattern-corner br">③ Get Started</div>
+      <svg class="zpattern-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <marker id="zArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" style="fill: var(--fixed-ink);" />
+          </marker>
+        </defs>
+        <path d="M8,8 L92,8 L8,92 L88,92" style="stroke: var(--fixed-ink); fill: none;" stroke-width="2" stroke-dasharray="5 4" vector-effect="non-scaling-stroke" marker-end="url(#zArrow)" />
+      </svg>
+    </div>
+    <p>On pages with more visuals than text, like most landing pages, eyes don't scan line by line. They jump corner to corner: top-left, across to top-right, diagonally down to bottom-left, then across to bottom-right, tracing a Z.</p>
+    <p><strong>What to do with this:</strong> put your logo top-left, your account/sign-up link top-right, and your main call-to-action bottom-right, right where the Z ends.</p>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissZPatternModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="gridPatternModal" aria-labelledby="gridPatternModalTitle">
+  <div class="modal__header">
+    <h2 id="gridPatternModalTitle" style="font-size: 1.25rem;">The 8pt Grid System</h2>
+    <button type="button" class="icon-btn" id="closeGridPatternModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="pattern-diagram grid-diagram">
+      <div class="grid-demo-card">
+        <div class="grid-demo-icon"></div>
+        <h4>Card Title</h4>
+        <p>16px below the icon, 16px below this line, 16px of padding all around.</p>
+        <span class="btn btn--primary" style="font-size:0.85rem; padding:.5em 1em;">Action</span>
+      </div>
+    </div>
+    <p>Every dot in the grid above is 8px apart. The card's padding, the gap under the icon, and the gap under this paragraph are all exactly 16px, which is 2 dots. Nothing here was placed by eye.</p>
+    <p><strong>What to do with this:</strong> before you type a random padding value, ask whether 8, 16, 24, or 32 already does the job. It almost always does.</p>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissGridPatternModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="glassModal" aria-labelledby="glassModalTitle">
+  <div class="modal__header">
+    <h2 id="glassModalTitle" style="font-size: 1.25rem;">Glassmorphism Explained</h2>
+    <button type="button" class="icon-btn" id="closeGlassModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="glass-demo-bg">
+      <div class="glass-demo">This card uses glassmorphism</div>
+    </div>
+    <p><strong>Glassmorphism</strong> is that frosted-glass effect you see everywhere now (thanks, Apple). It uses <code>backdrop-filter: blur()</code> to blur whatever is behind an element.</p>
+    <h3 style="font-size: 1rem;">The CSS magic</h3>
+    <pre><code>.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}</code></pre>
+    <button type="button" class="copy-btn" id="copyGlassCode">Copy</button>
+    <p><strong>Why it works:</strong> transparency + blur creates visual hierarchy without blocking content.</p>
+    <p><strong>When to use:</strong> modals, navigation overlays, tooltips.</p>
+    <p><strong>Browser support:</strong> works in all modern browsers. Safari needs <code>-webkit-backdrop-filter</code>.</p>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissGlassModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="homepageModal" aria-labelledby="homepageModalTitle">
+  <div class="modal__header">
+    <h2 id="homepageModalTitle" style="font-size: 1.25rem;">Homepage Anatomy Blueprint</h2>
+    <button type="button" class="icon-btn" id="closeHomepageModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="wireframe" id="homepageWireframe">
+
+      <div class="wf-block wf-hero">
+        <div class="wf-label">01 · The Hero</div>
+        <strong>Transform Your Business in 30 Days</strong>
+        <p style="font-size: 0.85rem; margin:0; opacity:.75;">We help ambitious founders scale without burning out.</p>
+        <span class="btn btn--primary" style="font-size: 0.75rem; padding: .5em 1em;">Primary CTA</span>
+      </div>
+      <p class="wf-note">Hook visitors in 3 seconds. Answer "what's in it for me?" Your H1 should make them say "yes, that's exactly what I need."</p>
+
+      <div class="wf-block">
+        <div class="wf-label">02 · The Problem</div>
+        <strong style="font-size:0.9rem;">Tired of Working 60-Hour Weeks?</strong>
+        <div class="wf-row3">
+          <div>No time for family</div>
+          <div>Burning out fast</div>
+          <div>Stuck at $10K/mo</div>
+        </div>
+      </div>
+      <p class="wf-note">Show empathy first. List 3–4 problems your audience faces before pitching solutions.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">03 · Your Solution</div>
+        <strong style="font-size:0.9rem;">Our Simple 3-Step Process</strong>
+        <p style="font-size: 0.85rem; margin:.4rem 0 0;">① Discovery &nbsp;→&nbsp; ② Execution &nbsp;→&nbsp; ③ Results</p>
+      </div>
+      <p class="wf-note">Make it simple. Break your process into 3 steps.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">04 · Social Proof</div>
+        <strong style="font-size:0.9rem;">Trusted By 500+ Companies</strong>
+        <div class="wf-testimonials">
+          <div class="wf-testimonial">
+            <div class="wf-avatar"></div>
+            <div style="flex:1;"><div style="font-size:.7rem;">★★★★★</div><div class="wf-bar"></div><div class="wf-bar" style="width:70%;"></div></div>
+          </div>
+          <div class="wf-testimonial">
+            <div class="wf-avatar" style="background:var(--teal);"></div>
+            <div style="flex:1;"><div style="font-size:.7rem;">★★★★★</div><div class="wf-bar"></div><div class="wf-bar" style="width:60%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="wf-note">Trust drives conversion. 2–3 testimonials with real names and photos.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">05 · Features</div>
+        <strong style="font-size:0.9rem;">Why 10,000+ Businesses Choose Us</strong>
+        <div class="wf-row3">
+          <div>⚡ Fast setup</div>
+          <div>🔒 Secure</div>
+          <div>📈 Scalable</div>
+        </div>
+      </div>
+      <p class="wf-note">Outcomes over features. Focus on results, not specs.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">06 · Pricing</div>
+        <strong style="font-size:0.9rem;">Flexible Plans for Every Stage</strong>
+        <div class="wf-pricing">
+          <div>STARTER<br><strong>$XX</strong></div>
+          <div class="featured"><span class="featured-badge">POPULAR</span>PRO<br><strong>$XX</strong></div>
+          <div>ENTERPRISE<br><strong>Custom</strong></div>
+        </div>
+      </div>
+      <p class="wf-note">Good / better / best. Highlight the middle tier.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">07 · Results</div>
+        <strong style="font-size:0.9rem;">Real Results, Real Numbers</strong>
+        <div class="wf-stats">
+          <div class="wf-stat"><b>+250%</b><span>Revenue Increase</span></div>
+          <div class="wf-stat"><b>10x</b><span>ROI</span></div>
+        </div>
+      </div>
+      <p class="wf-note">Show, don't tell. Concrete numbers beat vague claims.</p>
+
+      <div class="wf-block" style="background: var(--sun); border-color: var(--fixed-ink); text-align:center;">
+        <div class="wf-label" style="color: var(--fixed-ink); opacity:.7;">08 · Lead Magnet</div>
+        <strong style="font-size:0.9rem;">Download Our Free Growth Guide</strong>
+        <div><span class="btn btn--secondary" style="font-size: 0.75rem; padding: .5em 1em; margin-top:.5rem;">Get It Free</span></div>
+      </div>
+      <p class="wf-note">Capture emails. Offer value in exchange.</p>
+
+      <div class="wf-block">
+        <div class="wf-label">09 · FAQ</div>
+        <strong style="font-size:0.9rem;">Frequently Asked Questions</strong>
+        <div class="wf-faq-row"><span>Do you offer refunds?</span><span>+</span></div>
+        <div class="wf-faq-row"><span>How long is onboarding?</span><span>+</span></div>
+        <div class="wf-faq-row"><span>Can I cancel anytime?</span><span>+</span></div>
+      </div>
+      <p class="wf-note">Kill objections early. Answer the top 5–7 questions.</p>
+
+      <div class="wf-block" style="background: var(--coral); border-color: var(--fixed-ink); text-align:center; color: var(--fixed-ink);">
+        <div class="wf-label" style="color: var(--fixed-ink); opacity:.7;">10 · Final CTA</div>
+        <strong style="font-size:0.95rem;">Ready to Scale Your Business?</strong>
+        <div><span class="btn btn--primary" style="font-size: 0.75rem; padding: .5em 1em; margin-top:.5rem;">Start Now</span></div>
+      </div>
+      <p class="wf-note">Last chance to convert. Make it about them.</p>
+
+      <div class="wf-credit">Homepage Anatomy, by creativepea</div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size: 0.75rem; opacity: 0.6;">Save this blueprint for reference</span>
+    <button type="button" class="btn btn--primary" id="downloadWireframe">Download as PNG</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="navTypesModal" aria-labelledby="navTypesTitle">
+  <div class="modal__header">
+    <h2 id="navTypesTitle" style="font-size: 1.25rem;">Navigation, Six Ways</h2>
+    <button type="button" class="icon-btn" id="closeNavTypesModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="type-gallery">
+      <div class="type-example">
+        <div class="type-mock type-mock--row">
+          <div class="type-box" style="width:1.5rem;height:1.5rem;flex-shrink:0;"></div>
+          <div style="flex:1;"></div>
+          <div class="type-bar" style="width:1.5rem;"></div>
+          <div class="type-bar" style="width:1.5rem;"></div>
+          <div class="type-bar" style="width:1.5rem;"></div>
+        </div>
+        <h4>Top Nav</h4>
+        <p>Logo left, links right. The default for a reason: predictable, always visible.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row">
+          <div class="type-box" style="width:1.5rem;height:1.5rem;flex-shrink:0;"></div>
+          <div style="flex:1;"></div>
+          <div class="type-mock--col" style="gap:3px;">
+            <div class="type-bar" style="width:1.1rem;"></div>
+            <div class="type-bar" style="width:1.1rem;"></div>
+            <div class="type-bar" style="width:1.1rem;"></div>
+          </div>
+        </div>
+        <h4>Hamburger Menu</h4>
+        <p>Collapses everything behind one icon. Saves space, costs a tap. Mostly a mobile pattern now.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row" style="align-items:stretch;">
+          <div class="type-mock--col" style="width:2rem; flex-shrink:0;">
+            <div class="type-bar"></div>
+            <div class="type-bar"></div>
+            <div class="type-bar"></div>
+            <div class="type-bar"></div>
+          </div>
+          <div class="type-box" style="flex:1;"></div>
+        </div>
+        <h4>Sidebar Nav</h4>
+        <p>Vertical, persistent. Common for dashboards and docs where there are too many sections for a top bar.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col">
+          <div class="type-mock--row"><div class="type-bar" style="width:2rem;"></div><div class="type-bar" style="width:2rem; background: var(--pink);"></div><div class="type-bar" style="width:2rem;"></div></div>
+          <div class="type-box" style="height:1.8rem;"></div>
+        </div>
+        <h4>Mega Menu</h4>
+        <p>A dropdown that opens into a full grid of links. For sites with deep catalogs: retailers, big docs sites.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row" style="justify-content:space-around;">
+          <div class="type-mock--col" style="align-items:center; gap:3px;"><div class="type-box" style="width:1rem;height:1rem;border-radius:50%;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+          <div class="type-mock--col" style="align-items:center; gap:3px;"><div class="type-box" style="width:1rem;height:1rem;border-radius:50%; background:var(--pink);"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+          <div class="type-mock--col" style="align-items:center; gap:3px;"><div class="type-box" style="width:1rem;height:1rem;border-radius:50%;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+        </div>
+        <h4>Bottom Tab Bar</h4>
+        <p>Icons and short labels, pinned to the bottom. The standard for mobile apps, thumb-reachable.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row">
+          <div class="type-bar" style="width:1.6rem;"></div><span class="mono" style="opacity:.5;">›</span>
+          <div class="type-bar" style="width:1.6rem;"></div><span class="mono" style="opacity:.5;">›</span>
+          <div class="type-bar" style="width:1.6rem; background:var(--pink);"></div>
+        </div>
+        <h4>Breadcrumbs</h4>
+        <p>A trail, not a menu. Shows where you are in a hierarchy. Pairs with, doesn't replace, primary nav.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">Same job, six different shapes.</span>
+    <button type="button" class="btn btn--primary" id="dismissNavTypesModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="heroTypesModal" aria-labelledby="heroTypesTitle">
+  <div class="modal__header">
+    <h2 id="heroTypesTitle" style="font-size: 1.25rem;">Hero Sections, Five Ways</h2>
+    <button type="button" class="icon-btn" id="closeHeroTypesModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="type-gallery">
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center;">
+          <div class="type-bar" style="width:70%; height:0.6rem;"></div>
+          <div class="type-bar" style="width:50%;"></div>
+          <div class="type-box" style="width:2.4rem; height:1rem; margin-top:0.2rem;"></div>
+        </div>
+        <h4>Text-Only, Centered</h4>
+        <p>Just a headline, a line of support copy, and a button. Fast to build, fast to load, hard to get wrong.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row" style="align-items:stretch;">
+          <div class="type-mock--col" style="flex:1; justify-content:center;">
+            <div class="type-bar"></div><div class="type-bar" style="width:70%;"></div>
+            <div class="type-box" style="width:2rem;height:1rem;"></div>
+          </div>
+          <div class="type-box" style="flex:1;"></div>
+        </div>
+        <h4>Split Hero</h4>
+        <p>Copy on one side, a product shot or illustration on the other. Shows and tells at the same time.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock" style="background:var(--fixed-ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.35rem;">
+          <div class="type-bar" style="width:60%; background: var(--fixed-paper);"></div>
+          <div class="type-bar" style="width:40%; background: var(--fixed-paper); opacity:.6;"></div>
+        </div>
+        <h4>Full-Bleed Background</h4>
+        <p>A photo or video fills the whole section, text sits on top with an overlay for contrast. High impact, needs a real image.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center;">
+          <div class="type-bar" style="width:60%;"></div>
+          <div class="type-box" style="width:100%; height:1.6rem; margin-top:0.2rem;"></div>
+        </div>
+        <h4>Product Screenshot</h4>
+        <p>A short pitch above an actual screenshot of the product. Common for SaaS: it proves the thing is real.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock" style="background:var(--fixed-ink); position:relative; display:flex; align-items:center; justify-content:center;">
+          <div style="width:0; height:0; border-top:0.5rem solid transparent; border-bottom:0.5rem solid transparent; border-left:0.8rem solid var(--fixed-paper);"></div>
+        </div>
+        <h4>Video Background</h4>
+        <p>Looping, muted, autoplaying footage behind the headline. Heavy to load, needs a reduced-motion fallback.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">Pick the one your content can actually support.</span>
+    <button type="button" class="btn btn--primary" id="dismissHeroTypesModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="foldTypesModal" aria-labelledby="foldTypesTitle">
+  <div class="modal__header">
+    <h2 id="foldTypesTitle" style="font-size: 1.25rem;">Three Ways to Handle the Fold</h2>
+    <button type="button" class="icon-btn" id="closeFoldTypesModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="type-gallery" style="grid-template-columns: 1fr;">
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center; border-bottom:2px dashed var(--pink); border-radius:var(--radius) var(--radius) 0 0;">
+          <div class="type-bar" style="width:60%; height:0.55rem;"></div>
+          <div class="type-bar" style="width:40%;"></div>
+          <div class="type-box" style="width:2rem;height:0.9rem;"></div>
+        </div>
+        <h4>The One-Screen Pitch</h4>
+        <p>Everything essential (what it is, why it matters, what to click) fits before the dashed line. Nothing below is required reading.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col">
+          <div class="type-bar" style="width:60%;"></div>
+          <div class="type-bar" style="width:40%;"></div>
+          <div style="border-bottom:2px dashed var(--pink); padding-bottom:0.3rem;"></div>
+          <div class="type-box" style="height:0.6rem; opacity:.4;"></div>
+        </div>
+        <h4>The Teaser Peek</h4>
+        <p>A sliver of the next section is deliberately visible past the fold. It signals "there's more" without a scroll indicator.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center;">
+          <div class="type-bar" style="width:60%;"></div>
+          <div class="type-bar" style="width:40%;"></div>
+          <div class="mono" style="opacity:.5; margin-top:0.2rem;">↓</div>
+        </div>
+        <h4>The Explicit Scroll Cue</h4>
+        <p>An arrow, chevron, or "scroll to explore" label removes any doubt that there's more content below.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">All three work. Silence about it is the only wrong answer.</span>
+    <button type="button" class="btn btn--primary" id="dismissFoldTypesModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="contentTypesModal" aria-labelledby="contentTypesTitle">
+  <div class="modal__header">
+    <h2 id="contentTypesTitle" style="font-size: 1.25rem;">Content Sections, Five Ways</h2>
+    <button type="button" class="icon-btn" id="closeContentTypesModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="type-gallery">
+      <div class="type-example">
+        <div class="type-mock type-mock--row">
+          <div class="type-box" style="flex:1; height:2.2rem;"></div>
+          <div class="type-box" style="flex:1; height:2.2rem;"></div>
+          <div class="type-box" style="flex:1; height:2.2rem;"></div>
+        </div>
+        <h4>Card Grid</h4>
+        <p>Equal-weight items in a repeating grid. Features, team members, blog posts: anything that's a list of peers.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col">
+          <div class="type-mock--row"><div class="type-box" style="width:2rem;height:1.3rem;"></div><div class="type-mock--col" style="flex:1;"><div class="type-bar"></div><div class="type-bar" style="width:60%;"></div></div></div>
+          <div class="type-mock--row"><div class="type-mock--col" style="flex:1;"><div class="type-bar"></div><div class="type-bar" style="width:60%;"></div></div><div class="type-box" style="width:2rem;height:1.3rem;"></div></div>
+        </div>
+        <h4>Zig-Zag Rows</h4>
+        <p>Image and text alternate sides row to row. Slower to scan than a grid, better for telling a sequence of points.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col">
+          <div class="type-mock--row"><div class="type-bar" style="width:1.4rem; background:var(--pink);"></div><div class="type-bar" style="width:1.4rem;"></div><div class="type-bar" style="width:1.4rem;"></div></div>
+          <div class="type-box" style="height:1.8rem;"></div>
+        </div>
+        <h4>Tabs</h4>
+        <p>One panel visible at a time behind a row of switches. Keeps a busy page short at the cost of hiding content.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="gap:3px;">
+          <div class="type-mock--row"><div class="type-bar" style="flex:1;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+          <div class="type-mock--row"><div class="type-bar" style="flex:1;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+          <div class="type-mock--row"><div class="type-bar" style="flex:1;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+        </div>
+        <h4>List / Table</h4>
+        <p>Rows of structured data. Pricing comparisons, changelogs, specs: anything better scanned than read.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row" style="justify-content:center;">
+          <div class="type-box" style="width:1.4rem;height:1.8rem; opacity:.5;"></div>
+          <div class="type-box" style="width:1.8rem;height:2.2rem;"></div>
+          <div class="type-box" style="width:1.4rem;height:1.8rem; opacity:.5;"></div>
+        </div>
+        <h4>Carousel</h4>
+        <p>One item centered and emphasized, neighbors peeking at the edges. Good for testimonials, risky for anything important.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">The shape should fit the content, not the other way around.</span>
+    <button type="button" class="btn btn--primary" id="dismissContentTypesModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="footerTypesModal" aria-labelledby="footerTypesTitle">
+  <div class="modal__header">
+    <h2 id="footerTypesTitle" style="font-size: 1.25rem;">Footers, Four Ways</h2>
+    <button type="button" class="icon-btn" id="closeFooterTypesModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div class="type-gallery">
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center;">
+          <div class="type-mock--row"><div class="type-bar" style="width:1.2rem;"></div><div class="type-bar" style="width:1.2rem;"></div><div class="type-bar" style="width:1.2rem;"></div></div>
+          <div class="type-bar" style="width:2.5rem;"></div>
+        </div>
+        <h4>Minimal</h4>
+        <p>A few links and a copyright line. Right for small sites with nothing else that needs saying.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--row">
+          <div class="type-mock--col" style="flex:1;"><div class="type-bar" style="background:var(--pink);"></div><div class="type-bar"></div><div class="type-bar"></div></div>
+          <div class="type-mock--col" style="flex:1;"><div class="type-bar" style="background:var(--pink);"></div><div class="type-bar"></div><div class="type-bar"></div></div>
+          <div class="type-mock--col" style="flex:1;"><div class="type-bar" style="background:var(--pink);"></div><div class="type-bar"></div><div class="type-bar"></div></div>
+        </div>
+        <h4>Mega Footer</h4>
+        <p>A full sitemap in columns. Common on large sites where the footer doubles as secondary navigation and SEO.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center;">
+          <div class="type-bar" style="width:2.2rem;"></div>
+          <div class="type-mock--row"><div class="type-box" style="flex:1; height:0.9rem;"></div><div class="type-box" style="width:1.2rem;height:0.9rem; background:var(--pink);"></div></div>
+        </div>
+        <h4>Newsletter Footer</h4>
+        <p>An email field and a button, front and center. The footer as one last chance to capture the visitor.</p>
+      </div>
+      <div class="type-example">
+        <div class="type-mock type-mock--col" style="align-items:center; text-align:center;">
+          <div class="type-bar" style="width:2rem;"></div>
+          <div class="type-mock--row"><div class="type-box" style="width:1.6rem;height:1rem;"></div><div class="type-box" style="width:1.6rem;height:1rem;"></div></div>
+        </div>
+        <h4>App-Download Footer</h4>
+        <p>Store badges instead of links. For products where the real destination is a mobile app, not more web pages.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">Same last impression, different jobs.</span>
+    <button type="button" class="btn btn--primary" id="dismissFooterTypesModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="contrastCheckerModal" aria-labelledby="contrastCheckerTitle">
+  <div class="modal__header">
+    <h2 id="contrastCheckerTitle" style="font-size: 1.25rem;">Contrast Checker</h2>
+    <button type="button" class="icon-btn" id="closeContrastCheckerModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <p>Real WCAG math, calculated in your browser as you type. No values are sent anywhere.</p>
+    <div class="contrast-inputs">
+      <label class="contrast-field">
+        <span>Text color</span>
+        <span class="contrast-field__row">
+          <input type="color" id="ccFgPicker" value="#22182B" aria-label="Text color picker" />
+          <input type="text" id="ccFgHex" value="#22182B" class="contrast-field__hex mono" maxlength="7" aria-label="Text color hex value" />
+        </span>
+      </label>
+      <label class="contrast-field">
+        <span>Background color</span>
+        <span class="contrast-field__row">
+          <input type="color" id="ccBgPicker" value="#FFF9F2" aria-label="Background color picker" />
+          <input type="text" id="ccBgHex" value="#FFF9F2" class="contrast-field__hex mono" maxlength="7" aria-label="Background color hex value" />
+        </span>
+      </label>
+    </div>
+
+    <div class="contrast-preview" id="ccPreview">
+      <p style="font-size:1.4rem; font-weight:700; margin:0;">The quick fox jumps.</p>
+      <p style="margin:0.3rem 0 0;">Body text at a normal reading size.</p>
+    </div>
+
+    <div class="contrast-result">
+      <div class="contrast-result__ratio" id="ccRatio">21.00 : 1</div>
+      <div class="contrast-badges" id="ccBadges">
+        <span class="contrast-badge" data-key="aaNormal">AA Normal Text</span>
+        <span class="contrast-badge" data-key="aaLarge">AA Large Text</span>
+        <span class="contrast-badge" data-key="aaaNormal">AAA Normal Text</span>
+        <span class="contrast-badge" data-key="aaaLarge">AAA Large Text</span>
+      </div>
+    </div>
+    <p class="mono" style="font-size:0.72rem; opacity:.6; margin-top:0.75rem;">Normal text needs 4.5:1 (AA) or 7:1 (AAA). Large text (18px+, or 14px+ bold) and UI borders need 3:1 (AA) or 4.5:1 (AAA).</p>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissContrastCheckerModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal" id="contrastGameModal" aria-labelledby="contrastGameTitle">
+  <div class="modal__header">
+    <h2 id="contrastGameTitle" style="font-size: 1.25rem;">Guess the Contrast</h2>
+    <button type="button" class="icon-btn" id="closeContrastGameModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <p>Would this pass WCAG AA for normal text (4.5:1)? Guess before you check the math.</p>
+    <span class="quiz-score" id="cgScore" aria-live="polite">Score: 0 / 0</span>
+    <div class="contrast-preview" id="cgPreview" style="margin-top:1rem;">
+      <p style="font-size:1.2rem; font-weight:700; margin:0;">Sample Text</p>
+      <p style="margin:0.3rem 0 0;">This is what body copy looks like in this pairing.</p>
+    </div>
+    <div class="cg-guess-row" id="cgGuessRow">
+      <button type="button" class="btn btn--primary" id="cgGuessPass">Passes AA</button>
+      <button type="button" class="btn btn--secondary" id="cgGuessFail">Fails AA</button>
+    </div>
+    <div class="cg-result" id="cgResult" hidden>
+      <p id="cgResultText" style="margin:0;"></p>
+      <button type="button" class="btn btn--secondary" id="cgNext" style="margin-top:0.75rem;">Next pair</button>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissContrastGameModal">Done</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="styleGuideModal" aria-labelledby="styleGuideTitle">
+  <div class="modal__header">
+    <h2 id="styleGuideTitle" style="font-size: 1.25rem;">This Page's Style Guide</h2>
+    <button type="button" class="icon-btn" id="closeStyleGuideModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <div id="styleGuideSheet" class="style-sheet">
+      <div class="style-sheet__title">
+        <strong>Webpage Anatomy</strong>
+        <span class="mono">Style Guide</span>
+      </div>
+
+      <div class="style-sheet__block">
+        <h4>Color</h4>
+        <div class="style-sheet__swatches">
+          <div class="style-sheet__swatch" style="background:#FF6B5B;">coral<br>#FF6B5B</div>
+          <div class="style-sheet__swatch" style="background:#FF3D9A;">pink<br>#FF3D9A</div>
+          <div class="style-sheet__swatch" style="background:#00BFA5;">teal<br>#00BFA5</div>
+          <div class="style-sheet__swatch" style="background:#FFD23F;">sun<br>#FFD23F</div>
+          <div class="style-sheet__swatch" style="background:#22182B; color:#FFF9F2;">ink<br>#22182B</div>
+          <div class="style-sheet__swatch" style="background:#FFF9F2; border:1px solid #22182B;">paper<br>#FFF9F2</div>
+        </div>
+      </div>
+
+      <div class="style-sheet__block">
+        <h4>Type Scale</h4>
+        <div class="style-sheet__type-row" style="font-size:1.8rem; font-weight:700;">Aa H1 Fredoka</div>
+        <div class="style-sheet__type-row" style="font-size:1.3rem; font-weight:600;">Aa H2 Fredoka</div>
+        <div class="style-sheet__type-row" style="font-size:1rem;">Aa Body Nunito</div>
+        <div class="style-sheet__type-row mono" style="font-size:0.8rem;">Aa Mono Space Mono</div>
+      </div>
+
+      <div class="style-sheet__block">
+        <h4>Spacing (8pt grid)</h4>
+        <div class="style-sheet__spacing">
+          <div style="width:8px;height:8px;background:#00BFA5;"></div>
+          <div style="width:16px;height:16px;background:#00BFA5;"></div>
+          <div style="width:24px;height:24px;background:#00BFA5;"></div>
+          <div style="width:32px;height:32px;background:#00BFA5;"></div>
+          <div style="width:48px;height:48px;background:#00BFA5;"></div>
+        </div>
+      </div>
+
+      <div class="style-sheet__block">
+        <h4>Z-Index</h4>
+        <p class="mono" style="margin:0; font-size:0.8rem;">1 → 10 → 100 → 1000</p>
+        <p style="margin:0.2rem 0 0; font-size:0.85rem;">content → dropdown → sticky nav → modal</p>
+      </div>
+
+      <div class="style-sheet__credit mono">webpage-anatomy · generated from this page</div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">Save it, reuse it, remix it.</span>
+    <button type="button" class="btn btn--primary" id="downloadStyleGuide">Download as PNG</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="boxModelModal" aria-labelledby="boxModelTitle">
+  <div class="modal__header">
+    <h2 id="boxModelTitle" style="font-size: 1.25rem;">Box Model Playground</h2>
+    <button type="button" class="icon-btn" id="closeBoxModelModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <p>Every element on a page is margin, border, padding, and content, nested like a set of frames. Drag to see it for real.</p>
+    <div class="box-playground">
+      <div class="box-playground__stage">
+        <div class="bp-margin" id="bpMargin">
+          <span class="bp-label">margin</span>
+          <div class="bp-border" id="bpBorder">
+            <span class="bp-label">border</span>
+            <div class="bp-padding" id="bpPadding">
+              <span class="bp-label">padding</span>
+              <div class="bp-content">content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-playground__controls">
+        <label class="bp-control">
+          <span>Margin <output id="bpMarginVal">16px</output></span>
+          <input type="range" id="bpMarginSlider" min="0" max="40" value="16" />
+        </label>
+        <label class="bp-control">
+          <span>Border <output id="bpBorderVal">4px</output></span>
+          <input type="range" id="bpBorderSlider" min="0" max="16" value="4" />
+        </label>
+        <label class="bp-control">
+          <span>Padding <output id="bpPaddingVal">16px</output></span>
+          <input type="range" id="bpPaddingSlider" min="0" max="40" value="16" />
+        </label>
+        <p class="mono" id="bpCode" style="font-size:0.78rem; margin-top:0.5rem;">margin: 16px; border: 4px; padding: 16px;</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissBoxModelModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="breakpointModal" aria-labelledby="breakpointTitle">
+  <div class="modal__header">
+    <h2 id="breakpointTitle" style="font-size: 1.25rem;">Breakpoint Simulator</h2>
+    <button type="button" class="icon-btn" id="closeBreakpointModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <p>Drag the slider to resize the frame. Watch the layout inside decide, on its own, when it's too narrow to stay horizontal.</p>
+    <div class="bk-control">
+      <input type="range" id="bkSlider" min="280" max="900" value="900" />
+      <span class="mono" id="bkWidthLabel">900px · Desktop</span>
+    </div>
+    <div class="bk-stage">
+      <div class="bk-frame" id="bkFrame">
+        <div class="bk-mock" id="bkMock">
+          <div class="bk-mock__nav">
+            <div class="bk-mock__logo"></div>
+            <div class="bk-mock__links">
+              <div class="bk-mock__link"></div>
+              <div class="bk-mock__link"></div>
+              <div class="bk-mock__link"></div>
+            </div>
+          </div>
+          <div class="bk-mock__body">
+            <div class="bk-mock__card"></div>
+            <div class="bk-mock__card"></div>
+            <div class="bk-mock__card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span class="mono" style="font-size:0.75rem; opacity:.6;">No JavaScript is deciding this. CSS container queries are.</span>
+    <button type="button" class="btn btn--primary" id="dismissBreakpointModal">Got it</button>
+  </div>
+</dialog>
+
+<dialog class="modal modal-large" id="quizModal" aria-labelledby="quizModalTitle">
+  <div class="modal__header">
+    <h2 id="quizModalTitle" style="font-size: 1.25rem;">Take the Quiz</h2>
+    <button type="button" class="icon-btn" id="closeQuizModal" aria-label="Close dialog">✕</button>
+  </div>
+  <div class="modal__body">
+    <p>12 questions pulled straight from this page. Pick an answer to see it graded instantly.</p>
+    <span class="quiz-score" id="quizScore" aria-live="polite">Score: 0 / 12</span>
+    <form id="quizForm">
+      <div class="quiz-list">
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="4.5:1 for normal text. 3:1 only covers large text (18px+) and UI component borders.">
+          <legend>1. What&#39;s the minimum WCAG AA contrast ratio for normal body text?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q1-opt1" name="q1" />
+              <label for="q1-opt1">2:1</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q1-opt2" name="q1" />
+              <label for="q1-opt2">3:1</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q1-opt3" name="q1" />
+              <label for="q1-opt3">4.5:1</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q1-opt4" name="q1" />
+              <label for="q1-opt4">7:1</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="3" data-explanation="1000. Modals sit above sticky nav (100) and dropdowns (10), on top of base content (1).">
+          <legend>2. In this page&#39;s z-index system, what layer does a modal sit at?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q2-opt1" name="q2" />
+              <label for="q2-opt1">1</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q2-opt2" name="q2" />
+              <label for="q2-opt2">10</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q2-opt3" name="q2" />
+              <label for="q2-opt3">100</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q2-opt4" name="q2" />
+              <label for="q2-opt4">1000</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="7. Beyond that, navigation stops being scannable at a glance.">
+          <legend>3. What&#39;s the max recommended number of items in primary navigation?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q3-opt1" name="q3" />
+              <label for="q3-opt1">3</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q3-opt2" name="q3" />
+              <label for="q3-opt2">5</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q3-opt3" name="q3" />
+              <label for="q3-opt3">7</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q3-opt4" name="q3" />
+              <label for="q3-opt4">12</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="1" data-explanation="Call to Action, the button you actually want someone to click.">
+          <legend>4. What does CTA stand for?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q4-opt1" name="q4" />
+              <label for="q4-opt1">Click To Access</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q4-opt2" name="q4" />
+              <label for="q4-opt2">Call To Action</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q4-opt3" name="q4" />
+              <label for="q4-opt3">Create The App</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q4-opt4" name="q4" />
+              <label for="q4-opt4">Content Type Attribute</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="1" data-explanation="8. It&#39;s the 8pt grid system, the same convention behind Material Design&#39;s spacing scale.">
+          <legend>5. All the spacing on this page is a multiple of what number?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q5-opt1" name="q5" />
+              <label for="q5-opt1">4</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q5-opt2" name="q5" />
+              <label for="q5-opt2">8</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q5-opt3" name="q5" />
+              <label for="q5-opt3">10</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q5-opt4" name="q5" />
+              <label for="q5-opt4">16</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="&lt;dialog&gt;, opened with .showModal(). Both behaviors ship free with the element.">
+          <legend>6. Which native HTML element traps focus and closes on Escape without any custom JS?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q6-opt1" name="q6" />
+              <label for="q6-opt1">&lt;div&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q6-opt2" name="q6" />
+              <label for="q6-opt2">&lt;modal&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q6-opt3" name="q6" />
+              <label for="q6-opt3">&lt;dialog&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q6-opt4" name="q6" />
+              <label for="q6-opt4">&lt;section&gt;</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="1" data-explanation="&lt;header&gt;. A wall of &lt;div&gt;s gives a screen reader no landmarks to build an outline from at all.">
+          <legend>7. Which HTML element creates the &#39;banner&#39; landmark a screen reader can jump straight to?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q7-opt1" name="q7" />
+              <label for="q7-opt1">&lt;div&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q7-opt2" name="q7" />
+              <label for="q7-opt2">&lt;header&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q7-opt3" name="q7" />
+              <label for="q7-opt3">&lt;top&gt;</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q7-opt4" name="q7" />
+              <label for="q7-opt4">&lt;banner&gt;</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="A third-party cookie. First-party cookies come from the site itself, for things like logins and carts.">
+          <legend>8. A cookie set by a domain other than the one you&#39;re visiting, usually for ad tracking, is called what?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q8-opt1" name="q8" />
+              <label for="q8-opt1">A session cookie</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q8-opt2" name="q8" />
+              <label for="q8-opt2">A first-party cookie</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q8-opt3" name="q8" />
+              <label for="q8-opt3">A third-party cookie</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q8-opt4" name="q8" />
+              <label for="q8-opt4">A service cookie</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="1" data-explanation="INP, Interaction to Next Paint. Good is under 200 milliseconds.">
+          <legend>9. Which Core Web Vital measures how fast a page responds to a click or tap?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q9-opt1" name="q9" />
+              <label for="q9-opt1">LCP</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q9-opt2" name="q9" />
+              <label for="q9-opt2">INP</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q9-opt3" name="q9" />
+              <label for="q9-opt3">CLS</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q9-opt4" name="q9" />
+              <label for="q9-opt4">TTFB</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="Lighthouse. The others are real and free too, but each only covers one of those categories.">
+          <legend>10. Which free tool, built right into Chrome DevTools, audits performance, accessibility, best practices, and SEO all at once?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q10-opt1" name="q10" />
+              <label for="q10-opt1">WAVE</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q10-opt2" name="q10" />
+              <label for="q10-opt2">Search Console</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q10-opt3" name="q10" />
+              <label for="q10-opt3">Lighthouse</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q10-opt4" name="q10" />
+              <label for="q10-opt4">WebPageTest</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="Neo-brutalism. Neumorphism is the opposite: soft, low-contrast shadows on a monochrome surface.">
+          <legend>11. Which button style trend uses thick borders and hard offset shadows instead of soft ones?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q11-opt1" name="q11" />
+              <label for="q11-opt1">Neumorphism</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q11-opt2" name="q11" />
+              <label for="q11-opt2">Material Design</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q11-opt3" name="q11" />
+              <label for="q11-opt3">Neo-brutalism</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q11-opt4" name="q11" />
+              <label for="q11-opt4">Skeuomorphism</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+        
+        <fieldset class="quiz-q" data-correct="2" data-explanation="Its own container. That&#39;s what let the Breakpoint Simulator&#39;s mock layout reflow without any JavaScript deciding it.">
+          <legend>12. A CSS container query responds to the size of what?</legend>
+          <div class="quiz-options">
+            
+            <div class="quiz-option">
+              <input type="radio" id="q12-opt1" name="q12" />
+              <label for="q12-opt1">The browser window</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q12-opt2" name="q12" />
+              <label for="q12-opt2">The user&#39;s screen</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q12-opt3" name="q12" />
+              <label for="q12-opt3">The element&#39;s own container</label>
+            </div>
+            
+            <div class="quiz-option">
+              <input type="radio" id="q12-opt4" name="q12" />
+              <label for="q12-opt4">The device type</label>
+            </div>
+            
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        
+      </div>
+    </form>
+    <div class="quiz-result callout" id="quizResult" tabindex="-1" hidden>
+      <p id="quizResultText" style="margin:0 0 .75rem;"></p>
+      <button type="button" class="btn btn--secondary" id="quizRetry">Try Again</button>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <span></span>
+    <button type="button" class="btn btn--primary" id="dismissQuizModal">Done</button>
+  </div>
+</dialog>
+
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/scroll.js"></script>
+  <script src="/assets/js/modal.js"></script>
+  <script src="/assets/js/vendor/html2canvas.min.js"></script>
+  <script src="/assets/js/download.js"></script>
+  <script src="/assets/js/quiz.js"></script>
+  <script src="/assets/js/button-demo.js"></script>
+  <script src="/assets/js/semantic-demo.js"></script>
+  <script src="/assets/js/contrast-utils.js"></script>
+  <script src="/assets/js/contrast-checker.js"></script>
+  <script src="/assets/js/contrast-game.js"></script>
+  <script src="/assets/js/style-guide.js"></script>
+  <script src="/assets/js/box-model.js"></script>
+  <script src="/assets/js/breakpoint-sim.js"></script>
+
+  
+</body>
+</html>

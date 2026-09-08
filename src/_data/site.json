@@ -1,0 +1,17 @@
+{
+  "title": "Anatomy of a Webpage",
+  "shortTitle": "Webpage Anatomy",
+  "description": "An editorial, annotated guide to the anatomy of a webpage: structure, type, spacing, states, layers, and accessibility, with live demonstrations you can inspect.",
+  "url": "",
+  "author": "creativepea",
+  "year": 2026,
+  "nav": [
+    { "label": "Anatomy", "href": "/#anatomy" },
+    { "label": "Sections", "href": "/#sections" },
+    { "label": "Buttons", "href": "/#buttons" },
+    { "label": "Semantic", "href": "/#semantic" },
+    { "label": "A11y", "href": "/#a11y" },
+    { "label": "Explore", "href": "/#lab" },
+    { "label": "Dictionary", "href": "/#dictionary" }
+  ]
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZSNQFEW7Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7ZSNQFEW7Q');
+  </script>
+  <title>{{ title or site.title }} | {{ site.shortTitle }}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Temporary CDN fonts per your request — swap to self-hosted once fonts are final -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/typography.css" />
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("wa-theme");
+        if (saved) document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grid-overlay" id="gridOverlay" aria-hidden="true">
+    {% for i in range(0, 12) %}<span></span>{% endfor %}
+  </div>
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  {% include "partials/nav.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+  {% include "partials/modal.njk" %}
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/scroll.js"></script>
+  <script src="/assets/js/modal.js"></script>
+  <script src="/assets/js/vendor/html2canvas.min.js"></script>
+  <script src="/assets/js/download.js"></script>
+  <script src="/assets/js/quiz.js"></script>
+  <script src="/assets/js/button-demo.js"></script>
+  <script src="/assets/js/semantic-demo.js"></script>
+  <script src="/assets/js/contrast-utils.js"></script>
+  <script src="/assets/js/contrast-checker.js"></script>
+  <script src="/assets/js/contrast-game.js"></script>
+  <script src="/assets/js/style-guide.js"></script>
+  <script src="/assets/js/box-model.js"></script>
+  <script src="/assets/js/breakpoint-sim.js"></script>
+
+  {% if kofi or kofiOnFooter %}
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    (function () {
+      function drawKofi() {
+        if (typeof kofiWidgetOverlay === "undefined") return;
+        kofiWidgetOverlay.draw('creativepea', {
+          'type': 'floating-chat',
+          'floating-chat.donateButton.text': 'Support me',
+          'floating-chat.donateButton.background-color': '#ff38b8',
+          'floating-chat.donateButton.text-color': '#fff'
+        });
+      }
+      {% if kofiOnFooter %}
+      var footer = document.querySelector(".page-footer");
+      if (footer && "IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              drawKofi();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.15 });
+        observer.observe(footer);
+      } else {
+        drawKofi();
+      }
+      {% else %}
+      drawKofi();
+      {% endif %}
+    })();
+  </script>
+  {% endif %}
+</body>
+</html>

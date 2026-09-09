@@ -106,53 +106,5 @@
   <script src="/assets/js/page-load-demo.js"></script>
   <script src="/assets/js/image-shift-demo.js"></script>
   <script src="/assets/js/tooltip-position.js"></script>
-
-  {% if kofi or kofiOnFooter %}
-  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-  <script>
-    (function () {
-      function drawKofi() {
-        if (typeof kofiWidgetOverlay === "undefined") return;
-        kofiWidgetOverlay.draw('creativepea', {
-          'type': 'floating-chat',
-          'floating-chat.donateButton.text': 'Support me',
-          'floating-chat.donateButton.background-color': '#ff38b8',
-          'floating-chat.donateButton.text-color': '#fff'
-        });
-      }
-
-      function startKofi() {
-        {% if kofiOnFooter %}
-        var footer = document.querySelector(".page-footer");
-        if (footer && "IntersectionObserver" in window) {
-          var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                drawKofi();
-                observer.disconnect();
-              }
-            });
-          }, { threshold: 0.15 });
-          observer.observe(footer);
-        } else {
-          drawKofi();
-        }
-        {% else %}
-        drawKofi();
-        {% endif %}
-      }
-
-      // Both this widget and the cookie banner are fixed to the bottom of
-      // the screen, so drawing this before someone has answered the banner
-      // means the two render on top of each other. Wait for that to
-      // resolve first (see cookie-consent.js).
-      if (window.WA && window.WA.cookieConsentResolved) {
-        startKofi();
-      } else {
-        document.addEventListener("wa:cookie-consent-resolved", startKofi, { once: true });
-      }
-    })();
-  </script>
-  {% endif %}
 </body>
 </html>

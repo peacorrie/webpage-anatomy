@@ -1,15 +1,29 @@
 <footer class="page-footer">
   <div class="container page-footer__inner">
     <div class="page-footer__brand">
-      <img src="/assets/img/logo/wa-brandmark.svg" alt="" width="28" height="28" />
-      <span class="page-footer__wordmark">Webpage Anatomy</span>
-      <a class="page-footer__social" href="https://www.instagram.com/webpage.anatomy" target="_blank" rel="noopener" aria-label="Webpage Anatomy on Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-          <circle cx="12" cy="12" r="4"></circle>
-          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
-        </svg>
-      </a>
+      <div class="page-footer__brand-row">
+        <img src="/assets/img/logo/wa-brandmark.svg" alt="" width="28" height="28" />
+        <span class="page-footer__wordmark">Webpage Anatomy</span>
+      </div>
+      <div class="page-footer__brand-links">
+        <a class="page-footer__kofi" href="https://ko-fi.com/creativepea" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h13v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8Z"></path>
+            <path d="M16 9h1.5a2.5 2.5 0 0 1 0 5H16"></path>
+            <line x1="7" y1="3" x2="7" y2="5"></line>
+            <line x1="10" y1="2.5" x2="10" y2="4.5"></line>
+            <line x1="13" y1="3" x2="13" y2="5"></line>
+          </svg>
+          Buy Me a Coffee
+        </a>
+        <a class="page-footer__social" href="https://www.instagram.com/webpage.anatomy" target="_blank" rel="noopener" aria-label="Webpage Anatomy on Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </div>
     </div>
 
     <nav class="page-footer__links" aria-label="Footer">
@@ -18,8 +32,6 @@
       <a href="/dictionary/">Dictionary</a>
       <a href="/resources/">Resources</a>
       <a href="/about/">About</a>
-      <a href="/privacy-policy/">Privacy Policy</a>
-      <a href="#" id="cookiePreferencesLink">Cookie Preferences</a>
     </nav>
 
     <form class="page-footer__signup" id="footerSignupForm" novalidate>
@@ -33,7 +45,7 @@
   </div>
 
   <div class="container page-footer__copyright">
-    <p>&copy; {{ site.year }} Built for fun for web designers, by <a href="https://www.creativepea.com">creativepea</a>.</p>
+    <p>&copy; {{ site.year }} Built for fun for web designers, by <a href="https://www.creativepea.com">creativepea</a> <span class="page-footer__legal-links">| <a href="/privacy-policy/">Privacy Policy</a> | <a href="#" id="cookiePreferencesLink">Cookie Preferences</a></span></p>
     <p class="page-footer__scorecard mono">
       Lighthouse ({{ scorecard.measuredOn }}): {{ scorecard.performance }} Performance &middot; {{ scorecard.accessibility }} Accessibility &middot; {{ scorecard.bestPractices }} Best Practices &middot; {{ scorecard.seo }} SEO
       <br>

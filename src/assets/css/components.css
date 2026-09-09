@@ -2552,10 +2552,13 @@ dialog.modal::backdrop {
 
 .page-load-step {
   flex: 1 1 8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
   border: 2px dashed var(--rule);
   border-radius: var(--radius);
   padding: 0.85rem;
-  text-align: center;
+  text-align: left;
   transition: border-color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
 }
 
@@ -2563,15 +2566,20 @@ dialog.modal::backdrop {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 1.6rem;
   height: 1.6rem;
+  margin-top: 0.1rem;
   border-radius: 50%;
   background: var(--rule);
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 0.8rem;
-  margin-bottom: 0.4rem;
   transition: background var(--duration-fast) var(--ease);
+}
+
+.page-load-step__text strong {
+  display: block;
 }
 
 .page-load-step p {

@@ -309,6 +309,26 @@
   font-size: 1.1rem;
 }
 
+.page-footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-left: 0.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--fixed-paper);
+  color: var(--fixed-paper);
+  transition: background var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+}
+
+.page-footer__social:hover,
+.page-footer__social:focus-visible {
+  background: var(--pink);
+  color: var(--fixed-ink);
+  border-color: var(--pink);
+}
+
 .page-footer__links {
   display: flex;
   flex-wrap: wrap;

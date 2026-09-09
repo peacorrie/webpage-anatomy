@@ -27,6 +27,51 @@
   top: 1rem;
 }
 
+/* Cookie consent banner. Fixed dark band, same reasoning as the footer:
+   this needs to read as a distinct, serious moment, not blend into the
+   page. Sits above everything except an open modal. */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-overlay);
+  background: var(--fixed-ink);
+  color: var(--fixed-paper);
+  border-top: var(--border-w) solid var(--fixed-paper);
+  padding-block: var(--space-3);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.cookie-banner__inner p {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 0.9rem;
+}
+
+.cookie-banner__inner a {
+  color: var(--fixed-paper);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
 /* Nav */
 .site-nav {
   position: sticky;

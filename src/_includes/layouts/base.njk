@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZSNQFEW7Q"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-7ZSNQFEW7Q');
-  </script>
+  <!-- Google Analytics and Microsoft Clarity are NOT loaded here. Both set
+       non-essential cookies, so GDPR/ePrivacy requires opt-in consent
+       before they run, not just a heads-up. cookie-consent.js loads them
+       only after someone actually clicks "Accept" in the banner (or on
+       return visits where that choice was already made). -->
   {% if page.url == "/" %}
   <title>{{ title or site.title }}</title>
   {% else %}
@@ -62,6 +58,17 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie notice" hidden>
+    <div class="container cookie-banner__inner">
+      <p>This site uses cookies for analytics (Google Analytics, Microsoft Clarity) to see what's useful here and what isn't. No account, no ad targeting. <a href="/privacy-policy/">Read the privacy policy</a>.</p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--secondary" id="cookieDecline">Decline</button>
+        <button type="button" class="btn btn--primary" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
   <div class="grid-overlay" id="gridOverlay" aria-hidden="true">
     {% for i in range(0, 12) %}<span></span>{% endfor %}
   </div>
@@ -76,6 +83,7 @@
   {% include "partials/footer.njk" %}
   {% if modals %}{% include "partials/modal.njk" %}{% endif %}
 
+  <script src="/assets/js/cookie-consent.js"></script>
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/scroll.js"></script>
   <script src="/assets/js/modal.js"></script>
@@ -112,24 +120,37 @@
           'floating-chat.donateButton.text-color': '#fff'
         });
       }
-      {% if kofiOnFooter %}
-      var footer = document.querySelector(".page-footer");
-      if (footer && "IntersectionObserver" in window) {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              drawKofi();
-              observer.disconnect();
-            }
-          });
-        }, { threshold: 0.15 });
-        observer.observe(footer);
-      } else {
+
+      function startKofi() {
+        {% if kofiOnFooter %}
+        var footer = document.querySelector(".page-footer");
+        if (footer && "IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                drawKofi();
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.15 });
+          observer.observe(footer);
+        } else {
+          drawKofi();
+        }
+        {% else %}
         drawKofi();
+        {% endif %}
       }
-      {% else %}
-      drawKofi();
-      {% endif %}
+
+      // Both this widget and the cookie banner are fixed to the bottom of
+      // the screen, so drawing this before someone has answered the banner
+      // means the two render on top of each other. Wait for that to
+      // resolve first (see cookie-consent.js).
+      if (window.WA && window.WA.cookieConsentResolved) {
+        startKofi();
+      } else {
+        document.addEventListener("wa:cookie-consent-resolved", startKofi, { once: true });
+      }
     })();
   </script>
   {% endif %}

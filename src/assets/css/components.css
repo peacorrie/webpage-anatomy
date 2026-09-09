@@ -267,15 +267,30 @@
 
 .tips li {
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.2rem;
   font-size: 0.95rem;
 }
 
 .tips li::before {
-  content: "→";
+  content: "";
   position: absolute;
   left: 0;
+  top: 0.35em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 3px;
+  background: var(--fixed-ink);
 }
+
+/* A marker colored to match its own card would disappear into it, so each
+   pairs with the closest thing to a complementary color in the fixed
+   4-color palette: coral (warm red-orange) sits opposite teal (cool cyan),
+   and pink (magenta) sits opposite sun (yellow), so each card gets a
+   marker that actually pops instead of blending in. */
+.sticker.coral .tips li::before { background: var(--teal); }
+.sticker.teal .tips li::before { background: var(--coral); }
+.sticker.pink .tips li::before { background: var(--sun); }
+.sticker.sun .tips li::before { background: var(--pink); }
 
 /* Thin, individually-clickable cards for course/reference links, so each
    one reads as its own distinct destination instead of a bullet in a list. */
@@ -395,6 +410,24 @@
   left: 50%;
   transform: translateX(-50%);
   width: 15rem;
+  /* white-space inherits by default, and .url-part sets it to nowrap
+     (needed to keep code like "https://" on one line). Without resetting
+     it here, a tooltip nested inside .url-part silently inherits nowrap
+     too and never wraps, running its text off the edge of its own box
+     instead — this is what "wraps on mobile, not on desktop" was: a
+     different rule happened to reset white-space for the whole subtree
+     on narrow screens, masking the real bug there. */
+  white-space: normal;
+  /* A marker near either edge (the hero markers are all near the left;
+     the URL anatomy markers can land anywhere depending on how the row
+     wraps) needs more than a fixed anchor: a rule that anchors left fixes
+     left-edge markers but makes a right-of-center one (like "Query
+     string") overflow even further right. tooltip-position.js measures
+     the real overflow on hover/focus and nudges it back in either
+     direction, so this stays correct regardless of where the marker is.
+     This max-width is the fallback for when even a full-width tooltip on
+     a narrow phone can't avoid being nudged some. */
+  max-width: calc(100vw - 1.5rem);
   padding: var(--space-2);
   background: var(--fixed-ink);
   color: var(--fixed-paper);
@@ -411,19 +444,6 @@
 .anatomy-marker__dot:focus-visible + .anatomy-marker__tooltip {
   opacity: 1;
   visibility: visible;
-}
-
-/* Every marker sits near the left edge of its row (left: 0.6rem, above),
-   so a tooltip centered on the dot overflows off the left of the viewport
-   on narrow screens. Anchor it to the dot's left edge instead once there's
-   no room to center it, and cap the width to what's actually available. */
-@media (max-width: 30rem) {
-  .anatomy-marker__tooltip {
-    left: 0;
-    transform: none;
-    width: max-content;
-    max-width: min(15rem, calc(100vw - 4.5rem));
-  }
 }
 
 .anatomy-marker__tooltip strong {
@@ -1082,6 +1102,15 @@ pre {
 .lab-trigger__text p { margin: 0; font-size: 0.98rem; }
 .lab-trigger .mono { margin-top: auto; padding-top: 0.4rem; }
 
+/* A tiny browser-window glyph instead of an arrow — echoes the same
+   window-chrome motif used in the Anatomy Revealed demo above, since
+   "Open" here always means "open a little browser-window demo." */
+.lab-trigger__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* Modal */
 dialog.modal {
   border: var(--border-w) solid var(--fixed-ink);
@@ -1499,6 +1528,123 @@ dialog.modal::backdrop {
 }
 
 .quiz-result[hidden] { display: none; }
+
+/* ===== Quiz: level select ===== */
+.quiz-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.quiz-level-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.1rem 0.75rem;
+  border: var(--border-w) solid var(--fixed-ink);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
+}
+
+.quiz-level-btn:hover,
+.quiz-level-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--fixed-ink);
+}
+
+.quiz-level-btn strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.quiz-level-btn:nth-child(1) { background: var(--teal); }
+.quiz-level-btn:nth-child(2) { background: var(--sun); }
+.quiz-level-btn:nth-child(3) { background: var(--coral); }
+
+/* ===== Quiz: sharing ===== */
+.quiz-share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.quiz-share-buttons .btn {
+  font-size: 0.85rem;
+  padding: 0.6em 1.1em;
+}
+
+.quiz-share-note {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+/* Off-screen by default, only made visible (via inline style, on a
+   cloned copy) at capture time for html2canvas — see quiz.js. */
+.quiz-share-card {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 24rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2.5rem 2rem;
+  background: var(--fixed-paper);
+  color: var(--fixed-ink);
+  text-align: center;
+}
+
+.quiz-share-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.quiz-share-card__brand em {
+  font-style: normal;
+  color: var(--pink);
+}
+
+.quiz-share-card__level {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.quiz-share-card__score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0.2rem 0;
+}
+
+.quiz-share-card__message {
+  font-weight: 800;
+  font-size: 1.1rem;
+  max-width: 20rem;
+}
+
+.quiz-share-card__url {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
 
 /* ===== Reading pattern example diagrams (in modals) ===== */
 .pattern-diagram {

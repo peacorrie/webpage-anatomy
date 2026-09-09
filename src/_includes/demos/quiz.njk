@@ -1,25 +1,55 @@
-    <p>{{ quiz.length }} questions pulled straight from this page. Pick an answer to see it graded instantly.</p>
-    <span class="quiz-score" id="quizScore" aria-live="polite">Score: 0 / {{ quiz.length }}</span>
-    <form id="quizForm">
-      <div class="quiz-list">
-        {% for q in quiz %}
-        {% set qIndex = loop.index %}
-        <fieldset class="quiz-q" data-correct="{{ q.correct }}" data-explanation="{{ q.explanation }}">
-          <legend>{{ qIndex }}. {{ q.question }}</legend>
-          <div class="quiz-options">
-            {% for opt in q.options %}
-            <div class="quiz-option">
-              <input type="radio" id="q{{ qIndex }}-opt{{ loop.index }}" name="q{{ qIndex }}" />
-              <label for="q{{ qIndex }}-opt{{ loop.index }}">{{ opt }}</label>
-            </div>
-            {% endfor %}
-          </div>
-          <p class="quiz-feedback" role="status"></p>
-        </fieldset>
-        {% endfor %}
+    <div id="quizIntro">
+      <p>{{ quiz.length }} questions total, pulled straight from this page. Pick a level to get started.</p>
+      <div class="quiz-level-grid">
+        <button type="button" class="quiz-level-btn" data-level="beginner" data-count="10">
+          <strong>Beginner</strong>
+          <span class="mono">10 questions</span>
+        </button>
+        <button type="button" class="quiz-level-btn" data-level="intermediate" data-count="15">
+          <strong>Intermediate</strong>
+          <span class="mono">15 questions</span>
+        </button>
+        <button type="button" class="quiz-level-btn" data-level="advanced" data-count="20">
+          <strong>Advanced</strong>
+          <span class="mono">20 questions</span>
+        </button>
       </div>
-    </form>
+    </div>
+
+    <div id="quizPlayArea" hidden>
+      <span class="quiz-score" id="quizScore" aria-live="polite">Score: 0 / 0</span>
+      <form id="quizForm">
+        <div class="quiz-list" id="quizList"></div>
+      </form>
+    </div>
+
     <div class="quiz-result callout" id="quizResult" tabindex="-1" hidden>
       <p id="quizResultText" style="margin:0 0 .75rem;"></p>
-      <button type="button" class="btn btn--secondary" id="quizRetry">Try Again</button>
+
+      <div id="quizShareArea" hidden>
+        <p class="mono" style="font-size:0.8rem; opacity:.75; margin-bottom:0.6rem;">Share your score:</p>
+        <div class="quiz-share-buttons">
+          <button type="button" class="btn btn--secondary" id="shareThreads">Threads</button>
+          <button type="button" class="btn btn--secondary" id="shareFacebook">Facebook</button>
+          <button type="button" class="btn btn--secondary" id="shareInstagram">Instagram</button>
+          <button type="button" class="btn btn--secondary" id="shareEmail">Email</button>
+          <button type="button" class="btn btn--secondary" id="shareDownload">Download image</button>
+        </div>
+        <p class="mono quiz-share-note" id="quizShareNote" role="status" hidden></p>
+      </div>
+
+      <button type="button" class="btn btn--secondary" id="quizRetry" style="margin-top:1rem;">Try Again</button>
     </div>
+
+    <div id="quizShareCard" class="quiz-share-card" aria-hidden="true">
+      <div class="quiz-share-card__brand">
+        <img src="/assets/img/logo/wa-brandmark.svg" alt="" width="32" height="32" />
+        <span>Webpage <em>Anatomy</em></span>
+      </div>
+      <p class="quiz-share-card__level" id="quizShareCardLevel">Advanced</p>
+      <p class="quiz-share-card__score" id="quizShareCardScore">18 / 20</p>
+      <p class="quiz-share-card__message" id="quizShareCardMessage">Excellent, you're a wiz!</p>
+      <p class="quiz-share-card__url">webpageanatomy.com/lab/quiz</p>
+    </div>
+
+    <script type="application/json" id="quizData">{{ quiz | jsonSafe | safe }}</script>

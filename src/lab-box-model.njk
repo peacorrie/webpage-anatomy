@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Box Model Playground
+description: Drag margin, border, and padding sliders and watch a real box respond, so the CSS box model stops being an abstraction.
+permalink: /lab/box-model/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Box Model Playground</h1>
+    <p class="panel__lede">Every element on a page is built from nested boxes: margin, border, padding, and content. Drag the sliders below and watch the box change in real time.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Try it</p>
+    <h2>Adjust the Box</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/box-model.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

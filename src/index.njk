@@ -1,8 +1,9 @@
 ---
 layout: layouts/base.njk
-title: Anatomy of a Webpage
+title: "Webpage Anatomy: An Interactive Guide to How Websites Are Built"
 description: A bright, hands-on guide to the anatomy of a webpage, covering structure, type, spacing, states, layers, and accessibility, with live demonstrations you can inspect.
 kofiOnFooter: true
+modals: true
 ---
 
 <header class="panel hero">
@@ -90,6 +91,58 @@ kofiOnFooter: true
   </div>
 </section>
 
+<section class="panel" id="url-anatomy" aria-labelledby="url-anatomy-heading">
+  <div class="container">
+    <p class="eyebrow">Six parts, one string</p>
+    <h2 id="url-anatomy-heading">Anatomy of a URL</h2>
+    <p class="panel__lede">A web address looks like one string, but it is six distinct parts, each with its own job. Hover or tab through them.</p>
+    <div class="panel__body url-anatomy">
+      <div class="url-part" style="--marker-color: var(--teal);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-protocol">1</button>
+          <span class="anatomy-marker__tooltip" id="tip-protocol" role="tooltip"><strong>Protocol</strong>Tells the browser how to connect. HTTPS means the connection is encrypted, HTTP means it isn't.</span>
+        </span>
+        <code>https://</code>
+      </div>
+      <div class="url-part" style="--marker-color: var(--coral);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-subdomain">2</button>
+          <span class="anatomy-marker__tooltip" id="tip-subdomain" role="tooltip"><strong>Subdomain</strong>A named section of the domain, like lab or www. It's optional. www is really just a subdomain by convention.</span>
+        </span>
+        <code>lab.</code>
+      </div>
+      <div class="url-part" style="--marker-color: var(--sun);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-domain">3</button>
+          <span class="anatomy-marker__tooltip" id="tip-domain" role="tooltip"><strong>Domain</strong>The site's actual registered name. This is the one part a visitor needs to remember or trust.</span>
+        </span>
+        <code>webpageanatomy.com</code>
+      </div>
+      <div class="url-part" style="--marker-color: var(--pink);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-path">4</button>
+          <span class="anatomy-marker__tooltip" id="tip-path" role="tooltip"><strong>Path</strong>The specific page being requested, like a folder path on the server. Each slash is a level deeper.</span>
+        </span>
+        <code>/dictionary/modal/</code>
+      </div>
+      <div class="url-part" style="--marker-color: var(--teal);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-query">5</button>
+          <span class="anatomy-marker__tooltip" id="tip-query" role="tooltip"><strong>Query string</strong>Extra key-value data passed to the page, often used for tracking, filtering, or search terms.</span>
+        </span>
+        <code>?ref=homepage</code>
+      </div>
+      <div class="url-part" style="--marker-color: var(--coral);">
+        <span class="anatomy-marker">
+          <button type="button" class="anatomy-marker__dot" aria-describedby="tip-hash">6</button>
+          <span class="anatomy-marker__tooltip" id="tip-hash" role="tooltip"><strong>Hash</strong>Jumps the browser to a specific spot on the same page. It never gets sent to the server at all.</span>
+        </span>
+        <code>#what-it-means</code>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="panel" aria-labelledby="patterns-heading">
   <div class="container">
     <p class="eyebrow">Reading patterns</p>
@@ -121,10 +174,10 @@ kofiOnFooter: true
   <div class="container">
     <p class="eyebrow">Building blocks</p>
     <h2 id="sections-heading">The Essential Sections</h2>
-    <p class="panel__lede">Master these six elements and you'll understand most of web design.</p>
+    <p class="panel__lede">Master these ten essentials and you'll understand most of web design.</p>
     <div class="panel__body card-grid card-grid--3">
-      {% set colors = ["coral", "teal", "pink", "sun", "coral", "teal"] %}
-      {% set realTags = ["<header>", "<nav>", "100vh", "<h1>–<h6>", "margin", "<footer>"] %}
+      {% set colors = ["coral", "teal", "pink", "sun", "coral", "teal", "pink", "sun", "coral", "teal"] %}
+      {% set realTags = ["<header>", "<nav>", "100vh", "<h1>–<h6>", "margin", "<footer>", "<section>", "4.5:1", "<button>", "768px"] %}
       {% for s in sections %}
       <div class="sticker {{ colors[loop.index0] }}">
         <span class="sticker__num">{{ s.number }}</span>
@@ -155,6 +208,25 @@ kofiOnFooter: true
   </div>
 </section>
 
+<section class="panel" id="color-system" aria-labelledby="color-system-heading">
+  <div class="container">
+    <p class="eyebrow">Design system</p>
+    <h2 id="color-system-heading">Color as a System</h2>
+    <p class="panel__lede">This page uses six colors, total. Four bright sticker colors for accents, plus ink and paper for text and background. Everything else is a variation of those six.</p>
+    <div class="panel__body color-system-demo">
+      <div class="color-system-demo__row"><span class="color-system-demo__swatch" id="csPaperSwatch"></span><span>Paper (background)</span><code id="csPaperValue">#FFF9F2</code></div>
+      <div class="color-system-demo__row"><span class="color-system-demo__swatch" id="csInkSwatch"></span><span>Ink (text)</span><code id="csInkValue">#22182B</code></div>
+      <div class="color-system-demo__row"><span class="color-system-demo__swatch" id="csSurfaceSwatch"></span><span>Surface (cards)</span><code id="csSurfaceValue">#FFFFFF</code></div>
+      <div class="color-system-demo__row"><span class="color-system-demo__swatch" id="csAccentSwatch"></span><span>Accent (links)</span><code id="csAccentValue">#B8175E</code></div>
+      <button type="button" class="btn btn--secondary" id="colorSystemToggle" style="margin-top:1rem;">Toggle dark mode and watch these change</button>
+    </div>
+    <p class="panel__lede" style="margin-top:1.5rem;">These are not four separate palettes to maintain. They are CSS custom properties, and dark mode just redefines four of them. Every color on this page reads from these tokens instead of a hardcoded value, so the whole page repaints correctly from one attribute change.</p>
+    <div class="callout" style="margin-top:1rem;">
+      <p><strong>Semantic color:</strong> color should mean something consistently. On this page, teal always marks navigation-related things, sun yellow always marks a note worth pausing on, and a dashed border always means "editable" or "example," not just decoration.</p>
+    </div>
+  </div>
+</section>
+
 <section class="panel" id="spacing" aria-labelledby="spacing-heading">
   <div class="container">
     <p class="eyebrow">8pt grid</p>
@@ -177,7 +249,7 @@ kofiOnFooter: true
         <p class="spacing-example__label bad">✗ Ignores the grid</p>
         <div class="mini-card mini-card--bad">
           <div class="mini-card__icon"></div>
-          <h4>Weekly Digest</h4>
+          <h3>Weekly Digest</h3>
           <p>Your top stories, curated every Monday morning.</p>
           <span class="btn btn--primary">Subscribe</span>
         </div>
@@ -186,7 +258,7 @@ kofiOnFooter: true
         <p class="spacing-example__label good">✓ Follows the 8pt grid</p>
         <div class="mini-card mini-card--good">
           <div class="mini-card__icon"></div>
-          <h4>Weekly Digest</h4>
+          <h3>Weekly Digest</h3>
           <p>Your top stories, curated every Monday morning.</p>
           <span class="btn btn--primary">Subscribe</span>
         </div>
@@ -291,6 +363,42 @@ kofiOnFooter: true
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="forms" aria-labelledby="forms-heading">
+  <div class="container">
+    <p class="eyebrow">Interactive states</p>
+    <h2 id="forms-heading">Forms and Inputs</h2>
+    <p class="panel__lede">A form is where a visitor commits to something. Get the small details wrong here and people abandon it. Try the fields below.</p>
+    <div class="panel__body card-grid card-grid--2">
+      <div class="sticker teal">
+        <h3>Label vs. Placeholder</h3>
+        <p>A placeholder disappears the moment someone starts typing, so if it was the only clue about what a field wants, that clue is gone. A label stays visible the whole time.</p>
+        <div class="form-demo-field">
+          <label for="formDemoBad" class="sr-only">Email, placeholder only</label>
+          <input type="text" id="formDemoBad" class="text-input" placeholder="Email address" />
+          <span class="mono form-demo-hint">✗ Placeholder only. Start typing and the hint is gone.</span>
+        </div>
+        <div class="form-demo-field" style="margin-top:1rem;">
+          <label for="formDemoGood">Email address</label>
+          <input type="text" id="formDemoGood" class="text-input" placeholder="you@example.com" />
+          <span class="mono form-demo-hint">✓ Real label. Still there after you type.</span>
+        </div>
+      </div>
+      <div class="sticker pink">
+        <h3>Inline Validation</h3>
+        <p>Real-time feedback beats a wall of errors after submit. Type an invalid email, then fix it, and watch the field respond as you go.</p>
+        <div class="form-demo-field">
+          <label for="formDemoValidate">Email address <span aria-hidden="true">*</span><span class="sr-only">, required</span></label>
+          <input type="email" id="formDemoValidate" class="text-input" placeholder="you@example.com" required aria-describedby="formDemoValidateMsg" />
+          <p id="formDemoValidateMsg" class="form-demo-message" role="status"></p>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.5rem;">
+      <p><strong>Input types matter:</strong> <span class="mono">type="email"</span> brings up an @ key on mobile. <span class="mono">type="tel"</span> brings up a number pad. Using <span class="mono">type="text"</span> for everything means a worse keyboard for every mobile visitor.</p>
     </div>
   </div>
 </section>
@@ -428,6 +536,89 @@ kofiOnFooter: true
   </div>
 </section>
 
+<section class="panel" id="touch" aria-labelledby="touch-heading">
+  <div class="container">
+    <p class="eyebrow">Real-world usability</p>
+    <h2 id="touch-heading">Touch and Mobile</h2>
+    <p class="panel__lede">More visitors are tapping with a thumb than clicking with a mouse. Design for that reality, not just for yourself at a desk.</p>
+    <div class="panel__body card-grid card-grid--2">
+      <div class="sticker sun">
+        <h3>Tap Target Size</h3>
+        <p>A touch target needs to be at least 44×44px to be reliably hit with a finger. Compare the two buttons below at their real, unscaled size.</p>
+        <div class="tap-target-demo">
+          <div class="tap-target-demo__item">
+            <button type="button" class="tap-target tap-target--small" aria-label="24 pixels, too small">24</button>
+            <span class="mono">✗ 24×24px</span>
+          </div>
+          <div class="tap-target-demo__item">
+            <button type="button" class="tap-target tap-target--good" aria-label="44 pixels, correct size">44</button>
+            <span class="mono">✓ 44×44px</span>
+          </div>
+        </div>
+      </div>
+      <div class="sticker coral">
+        <h3>Thumb Zones</h3>
+        <p>On a typical one-handed phone grip, the bottom of the screen is easy to reach, the middle takes a stretch, and the top corners are the hardest. Put primary actions low.</p>
+        <div class="thumb-zone-demo" aria-hidden="true">
+          <div class="thumb-zone thumb-zone--hard">Hard to reach</div>
+          <div class="thumb-zone thumb-zone--ok">Stretch</div>
+          <div class="thumb-zone thumb-zone--easy">Easy</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.5rem;">
+      <p><strong>Hover doesn't exist on touch.</strong> The button below changes color when you hover it with a mouse. On a touchscreen there is no hovering, a tap either activates the element immediately or does nothing. Never hide required information behind a hover-only state.</p>
+      <button type="button" class="btn btn--secondary hover-only-demo" style="margin-top:0.75rem;">Hover me (with a mouse)</button>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="head-meta" aria-labelledby="head-meta-heading">
+  <div class="container">
+    <p class="eyebrow">What the browser sees first</p>
+    <h2 id="head-meta-heading">The Head</h2>
+    <p class="panel__lede">Before any content renders, the browser reads the head: title, description, favicon, canonical link, and Open Graph tags. None of it is visible on the page itself, but all of it decides how the page shows up everywhere else.</p>
+    <div class="panel__body card-grid card-grid--2">
+      <div>
+        <label for="headDemoTitle">Title tag</label>
+        <input type="text" id="headDemoTitle" class="text-input" value="Webpage Anatomy: An Interactive Guide" maxlength="70" />
+        <label for="headDemoDescription" style="margin-top:0.75rem; display:block;">Meta description</label>
+        <textarea id="headDemoDescription" class="text-input" rows="3" maxlength="160">A bright, hands-on guide to the anatomy of a webpage, with live demonstrations you can inspect.</textarea>
+        <p class="mono" style="font-size:0.75rem; opacity:.65; margin-top:0.5rem;">These start out matching this page's real tags. Edit them and watch the preview update.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:0.5rem;">How this looks when shared</p>
+        <div class="share-preview">
+          <div class="share-preview__image" aria-hidden="true"></div>
+          <div class="share-preview__body">
+            <p class="share-preview__domain">webpageanatomy.com</p>
+            <p class="share-preview__title" id="sharePreviewTitle">Webpage Anatomy: An Interactive Guide</p>
+            <p class="share-preview__desc" id="sharePreviewDesc">A bright, hands-on guide to the anatomy of a webpage, with live demonstrations you can inspect.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-list" style="margin-top:1.5rem;">
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">TITLE</span>
+        <p>Shows in the browser tab and as the clickable headline in search results. Keep it under about 60 characters or Google truncates it.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">CANONICAL</span>
+        <p>Tells search engines which URL is the real one when the same content is reachable at more than one address, so ranking doesn't split between duplicates.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">OG</span>
+        <p>Open Graph tags control the title, description, and image that Facebook, LinkedIn, and iMessage show when a link is pasted or shared.</p>
+      </div>
+      <div class="a11y-list__item">
+        <span class="a11y-list__tag">FAVICON</span>
+        <p>The small icon in the browser tab. It's a tiny detail, but a missing one makes a site look unfinished next to every other open tab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="panel" id="privacy" aria-labelledby="privacy-heading">
   <div class="container">
     <p class="eyebrow">Behind the scenes</p>
@@ -449,8 +640,27 @@ kofiOnFooter: true
         </div>
       </div>
       <div class="callout" style="margin-top:1.5rem;">
-        <p><strong>Where to actually get one:</strong> free generators like Termly, GetTerms, and PrivacyPolicies.com produce a reasonable starting template for a small site. If the site handles payments, health data, or anything sensitive, a template stops being enough, and it's worth paying an actual lawyer. This is general orientation, not legal advice.</p>
+        <p><strong>Where to get one:</strong> free generators like Termly, GetTerms, and PrivacyPolicies.com produce a reasonable starting template for a small site. If the site handles payments, health data, or anything sensitive, a template stops being enough, and it's worth paying an actual lawyer. This is general orientation, not legal advice.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="page-load" aria-labelledby="page-load-heading">
+  <div class="container">
+    <p class="eyebrow">Before you see anything</p>
+    <h2 id="page-load-heading">How a Page Loads</h2>
+    <p class="panel__lede">Typing a URL and seeing a finished page feels instant, but it is six steps happening in order. Press play and watch them happen one at a time.</p>
+    <div class="panel__body">
+      <div class="page-load-steps" id="pageLoadSteps">
+        <div class="page-load-step" data-step="1"><span class="page-load-step__num">1</span><strong>DNS</strong><p>Look up which server the domain actually points to.</p></div>
+        <div class="page-load-step" data-step="2"><span class="page-load-step__num">2</span><strong>Request</strong><p>Ask that server for the page over HTTPS.</p></div>
+        <div class="page-load-step" data-step="3"><span class="page-load-step__num">3</span><strong>HTML</strong><p>Download the HTML and start building the DOM.</p></div>
+        <div class="page-load-step" data-step="4"><span class="page-load-step__num">4</span><strong>CSS</strong><p>Download and apply styles before painting anything.</p></div>
+        <div class="page-load-step" data-step="5"><span class="page-load-step__num">5</span><strong>Render</strong><p>Paint the styled page to the screen.</p></div>
+        <div class="page-load-step" data-step="6"><span class="page-load-step__num">6</span><strong>JS</strong><p>Run JavaScript and wire up anything interactive.</p></div>
+      </div>
+      <button type="button" class="btn btn--primary" id="pageLoadPlay" style="margin-top:1.25rem;">Play the sequence</button>
     </div>
   </div>
 </section>
@@ -498,6 +708,59 @@ kofiOnFooter: true
   </div>
 </section>
 
+<section class="panel" id="images-media" aria-labelledby="images-media-heading">
+  <div class="container">
+    <p class="eyebrow">The heaviest part of most pages</p>
+    <h2 id="images-media-heading">Images and Media</h2>
+    <p class="panel__lede">Images are usually the biggest thing a browser downloads. The format, the file size, and whether the browser knows the dimensions in advance all matter.</p>
+    <div class="panel__body">
+      <div class="a11y-list">
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">SVG</span>
+          <p>Best for logos, icons, and illustrations. Scales to any size with zero quality loss and is usually a tiny file.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">AVIF</span>
+          <p>The newest, smallest photo format. Great compression, with slightly less universal browser support than WebP.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">WEBP</span>
+          <p>The safe modern default for photos. Smaller than JPG at the same quality, and supported everywhere that matters now.</p>
+        </div>
+        <div class="a11y-list__item">
+          <span class="a11y-list__tag">JPG</span>
+          <p>The old universal fallback. Still fine, just larger than it needs to be for the same visual quality.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="panel__lede" style="margin-top:2rem;">The Performance section above mentions CLS, Cumulative Layout Shift. This is the single most common cause of it: an image with no reserved space. Click below to see it happen.</p>
+    <div class="panel__body card-grid card-grid--2">
+      <div>
+        <p class="spacing-example__label bad">✗ No width/height set</p>
+        <div class="image-shift-demo">
+          <p>Some text above the image.</p>
+          <div class="image-shift-demo__slot" id="imageShiftBadSlot"></div>
+          <p>Some text below, about to get pushed.</p>
+        </div>
+      </div>
+      <div>
+        <p class="spacing-example__label good">✓ Width/height reserved</p>
+        <div class="image-shift-demo">
+          <p>Some text above the image.</p>
+          <div class="image-shift-demo__slot image-shift-demo__slot--reserved" id="imageShiftGoodSlot"></div>
+          <p>Some text below, staying put.</p>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn--primary" id="imageShiftPlay" style="margin-top:1rem;">Simulate a slow image load</button>
+
+    <div class="callout" style="margin-top:1.5rem;">
+      <p><strong>Also worth knowing:</strong> <span class="mono">loading="lazy"</span> defers offscreen images until they're about to scroll into view, and <span class="mono">srcset</span> lets the browser pick a smaller image file for a smaller screen instead of downloading one giant image for everyone.</p>
+    </div>
+  </div>
+</section>
+
 <section class="panel" id="parallax" aria-labelledby="parallax-heading">
   <div class="container">
     <p class="eyebrow">Scroll effects</p>
@@ -522,17 +785,18 @@ kofiOnFooter: true
     <div class="panel__body dict-panel">
       <dl>
         {% for entry in glossary %}
-        <div><dt>{{ entry.term }}</dt><dd>{{ entry.definition }}</dd></div>
+        <div><dt><a href="/dictionary/{{ entry.slug }}/">{{ entry.term }}</a></dt><dd>{{ entry.definition }}</dd></div>
         {% endfor %}
       </dl>
     </div>
+    <p style="margin-top:1rem;"><a href="/dictionary/">See the full dictionary, with a longer explanation for each term →</a></p>
   </div>
 </section>
 
 <section class="panel" id="learn-more" aria-labelledby="learn-more-heading" style="text-align:center;">
   <div class="container">
     <p class="eyebrow">Keep going</p>
-    <h2 id="learn-more-heading">Where to Actually Learn This</h2>
+    <h2 id="learn-more-heading">Where to Learn This</h2>
     <p class="panel__lede" style="margin-inline:auto;">This page is a tour, not a course. The full list of free courses, paid courses, professional support, and sources this page draws on lives on its own page, since it's the kind of thing worth adding to over time.</p>
     <div style="margin-top:1.5rem;">
       <a class="btn btn--primary" href="/resources/">See the full resources list</a>
@@ -639,7 +903,7 @@ kofiOnFooter: true
           Toggle the grid overlay
         </button>
       </div>
-      <p class="mono" style="font-size: 0.8rem; opacity: 0.7;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">Learn how CSS Grid actually works →</a></p>
+      <p class="mono" style="font-size: 0.8rem;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">Learn how CSS Grid actually works →</a></p>
     </div>
   </div>
 </section>

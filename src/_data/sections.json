@@ -58,5 +58,45 @@
       "Secondary navigation for SEO",
       "Copyright and legal links belong here"
     ]
+  },
+  {
+    "number": "07",
+    "title": "Content Sections",
+    "description": "The middle of the page. Where features, proof, and objections actually get addressed.",
+    "tips": [
+      "Group related content into clear, scannable sections",
+      "Alternate layout patterns (image-left, image-right) to avoid monotony",
+      "Every section should answer one question the visitor still has"
+    ]
+  },
+  {
+    "number": "08",
+    "title": "Color & Contrast",
+    "description": "Color sets the mood, but contrast is what actually makes text legible and buttons findable.",
+    "tips": [
+      "Body text needs at least a 4.5:1 contrast ratio against its background",
+      "Never use color alone to convey meaning; colorblind users need a second cue",
+      "Limit an interface to 2–3 main colors plus neutrals"
+    ]
+  },
+  {
+    "number": "09",
+    "title": "Calls-to-Action",
+    "description": "The single most important click on the page. Everything else exists to lead someone here.",
+    "tips": [
+      "One primary CTA per section; competing buttons dilute both",
+      "Use action verbs: \"Start Your Trial\" beats \"Submit\"",
+      "Make it visually distinct from every other button on the page"
+    ]
+  },
+  {
+    "number": "10",
+    "title": "Responsive Design",
+    "description": "More than half of web traffic is mobile. Design for the smallest screen first, then expand.",
+    "tips": [
+      "Design mobile-first, then scale up to tablet and desktop",
+      "Touch targets need to be at least 44×44px",
+      "Test at real breakpoints, not just by shrinking your browser window"
+    ]
   }
 ]

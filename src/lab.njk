@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: The Lab
+description: Eight interactive demos from Webpage Anatomy, each on its own page. Check color contrast, play with the box model, resize a breakpoint simulator, and more.
+permalink: /lab/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">The Lab</h1>
+    <p class="panel__lede">These are the interactive demos from Webpage Anatomy. Each one has its own page here, so you can open, bookmark, or share exactly the one you need.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Every demo, on its own page</p>
+    <h2>All Eight Demos</h2>
+    <div class="panel__body card-grid" style="margin-top:1.5rem;">
+      {% for demo in labDemos %}
+      <a class="lab-trigger" href="/lab/{{ demo.slug }}/">
+        <span class="sticker {{ demo.color }}">
+          <span class="lab-trigger__text">
+            <h3>{{ demo.title }}</h3>
+            <p>{{ demo.description }}</p>
+          </span>
+          <span class="mono">Open →</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/">← Back to Webpage Anatomy</a></p>
+  </div>
+</section>

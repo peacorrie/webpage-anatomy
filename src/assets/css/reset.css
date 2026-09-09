@@ -8,12 +8,25 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* documentElement (html), not body, is what actually governs viewport
+     scrolling in standards mode. Using "clip" rather than "hidden": hidden
+     establishes a scroll container, which breaks position:sticky for every
+     descendant (the nav went from sticky to scrolling away entirely).
+     clip prevents the same overflow without that side effect. */
+  overflow-x: clip;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  /* Same reasoning and same "clip" choice as html above — body is also an
+     ancestor of the sticky nav, so overflow-x:hidden here would break it
+     too. Absolutely-positioned tooltips (hidden via opacity/visibility, not
+     display:none, so they can transition) still occupy layout space and
+     can extend past the viewport near a screen edge even while invisible;
+     this keeps that from ever creating real horizontal page scroll. */
+  overflow-x: clip;
 }
 
 img, picture, video, canvas, svg {

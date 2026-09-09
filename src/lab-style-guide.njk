@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: This Page's Style Guide
+description: The color palette, type scale, spacing system, and z-index layers behind Webpage Anatomy, condensed into one sheet you can download.
+permalink: /lab/style-guide/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">This Page's Style Guide</h1>
+    <p class="panel__lede">Every color, type size, spacing value, and stacking layer on this page comes from one small system. This sheet condenses that system into a single reference. Download it as a PNG to keep or remix.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">The full sheet</p>
+    <h2>Color, Type, Spacing, Z-Index</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/style-guide.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+    <p>Real WCAG math, calculated in your browser as you type. No values are sent anywhere.</p>
+    <div class="contrast-inputs">
+      <label class="contrast-field">
+        <span>Text color</span>
+        <span class="contrast-field__row">
+          <input type="color" id="ccFgPicker" value="#22182B" aria-label="Text color picker" />
+          <input type="text" id="ccFgHex" value="#22182B" class="contrast-field__hex mono" maxlength="7" aria-label="Text color hex value" />
+        </span>
+      </label>
+      <label class="contrast-field">
+        <span>Background color</span>
+        <span class="contrast-field__row">
+          <input type="color" id="ccBgPicker" value="#FFF9F2" aria-label="Background color picker" />
+          <input type="text" id="ccBgHex" value="#FFF9F2" class="contrast-field__hex mono" maxlength="7" aria-label="Background color hex value" />
+        </span>
+      </label>
+    </div>
+
+    <div class="contrast-preview" id="ccPreview">
+      <p style="font-size:1.4rem; font-weight:700; margin:0;">The quick fox jumps.</p>
+      <p style="margin:0.3rem 0 0;">Body text at a normal reading size.</p>
+    </div>
+
+    <div class="contrast-result">
+      <div class="contrast-result__ratio" id="ccRatio">21.00 : 1</div>
+      <div class="contrast-badges" id="ccBadges">
+        <span class="contrast-badge" data-key="aaNormal">AA Normal Text</span>
+        <span class="contrast-badge" data-key="aaLarge">AA Large Text</span>
+        <span class="contrast-badge" data-key="aaaNormal">AAA Normal Text</span>
+        <span class="contrast-badge" data-key="aaaLarge">AAA Large Text</span>
+      </div>
+    </div>
+    <p class="mono" style="font-size:0.72rem; opacity:.6; margin-top:0.75rem;">Normal text needs 4.5:1 (AA) or 7:1 (AAA). Large text (18px+, or 14px+ bold) and UI borders need 3:1 (AA) or 4.5:1 (AAA).</p>

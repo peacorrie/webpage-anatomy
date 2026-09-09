@@ -127,7 +127,7 @@
    Links inside a colored sticker inherit the sticker's own --fixed-ink
    instead, already verified 5-12:1 against every sticker color, and get
    underlined so they still read as links despite matching the body text. */
-.sticker:not(.plain) a:not(.btn) {
+.sticker:not(.plain) a:not(.btn):not(.resource-link) {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
@@ -275,6 +275,46 @@
   content: "→";
   position: absolute;
   left: 0;
+}
+
+/* Thin, individually-clickable cards for course/reference links, so each
+   one reads as its own distinct destination instead of a bullet in a list. */
+.resource-links {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.resource-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--fixed-paper);
+  border: 2px solid var(--fixed-ink);
+  border-radius: var(--radius);
+  color: var(--fixed-ink);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
+}
+
+.resource-link:hover,
+.resource-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--fixed-ink);
+}
+
+.resource-link strong {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.resource-link span {
+  font-size: 0.82rem;
+  opacity: 0.75;
 }
 
 /* Anatomy demo — box-model color coding (Inspector Mode borrow) */
@@ -703,7 +743,10 @@
 }
 
 .button-sample--flat {
-  background: #2D8CFF;
+  /* #2D8CFF (the original flat-design-era blue) only clears 3.33:1 with
+     white text, short of the 4.5:1 AA minimum. This shade is still
+     recognizably "flat design blue" at 5.75:1. */
+  background: #1565C0;
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -881,6 +924,10 @@ pre {
   padding: var(--space-3);
   border-radius: var(--radius);
   overflow-x: auto;
+  /* overflow-x: auto only scrolls internally if this box is actually
+     constrained to its container. Without max-width it just grows to fit
+     a long unwrapped code line instead, pushing the whole page wider. */
+  max-width: 100%;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   border: var(--border-w) solid var(--fixed-ink);
@@ -933,38 +980,70 @@ pre {
   opacity: 0.9;
 }
 
-/* Dictionary panel — always-dark "terminal" treatment */
+/* Dictionary panel — always-dark "terminal" treatment.
+   A single tall column of 30+ terms made this the one part of the page
+   that was mostly just scrolling, on both the homepage summary and the
+   full /dictionary/ index. `display: contents` on the <dl> lets its
+   term/definition wrapper divs become direct grid items of .dict-panel
+   itself, so each term becomes its own small card in a responsive grid
+   instead of one more row in a long list, with no HTML change needed on
+   either page (including dictionary.njk's search filter, which already
+   targets those same wrapper divs). */
 .dict-panel {
-  background: var(--fixed-ink);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  border: var(--border-w) solid var(--fixed-ink);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: 0.75rem;
 }
 
 .dict-panel dl {
-  margin: 0;
+  display: contents;
 }
 
 .dict-panel dl > div {
-  display: grid;
-  grid-template-columns: 11rem 1fr;
-  gap: var(--space-3);
-  padding-block: 0.7rem;
-  border-bottom: 1px dashed color-mix(in srgb, var(--fixed-paper) 25%, transparent);
+  background: var(--fixed-ink);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
 }
 
-.dict-panel dl > div:last-child { border-bottom: none; }
-
 .dict-panel dt {
+  display: block;
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: 1.05rem;
   color: var(--sun);
+  margin-bottom: 0.4rem;
 }
 
 .dict-panel dd {
   margin: 0;
   color: var(--fixed-paper);
-  opacity: 0.92;
+  opacity: 0.85;
+  font-size: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dict-panel dt a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dict-panel dt a:hover,
+.dict-panel dt a:focus-visible {
+  text-decoration: underline;
+}
+
+#dictionaryEmpty {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 30rem) {
+  .dict-panel dd {
+    font-size: 0.76rem;
+    -webkit-line-clamp: 2;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -982,6 +1061,12 @@ pre {
   align-items: center;
   gap: var(--space-3);
   width: 100%;
+  /* Used on both <button> (modal trigger) and <a> (link to the standalone
+     page), so text-decoration/color are reset here rather than relying on
+     the button-only reset in reset.css. */
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
 }
 
 .lab-trigger .sticker {
@@ -1704,6 +1789,37 @@ dialog.modal::backdrop {
   border-color: var(--ink);
 }
 
+.text-input {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.text-input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.email-gate__feedback {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.email-gate__feedback.is-error {
+  color: var(--accent-coral);
+}
+
+.email-gate__feedback.is-success {
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
 .contrast-preview {
   margin-top: 1rem;
   padding: var(--space-3);
@@ -1797,7 +1913,7 @@ dialog.modal::backdrop {
   margin-bottom: var(--space-3);
 }
 
-.style-sheet__block h4 {
+.style-sheet__block h3 {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -2030,4 +2146,341 @@ dialog.modal::backdrop {
   .bk-mock__body {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ===== Anatomy of a URL ===== */
+.url-anatomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.url-part {
+  position: relative;
+  border: 2px dashed var(--marker-color, var(--pink));
+  border-radius: var(--radius);
+  padding: 1.5rem 0.85rem 0.65rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.url-part .anatomy-marker {
+  position: absolute;
+  top: -0.7rem;
+  left: 0.6rem;
+}
+
+@media (max-width: 32rem) {
+  .url-part {
+    /* white-space: normal alone doesn't help: strings like "?ref=homepage"
+       have no spaces to wrap at, and a flex item won't shrink below its
+       content's natural width without these two on top of it. That's
+       what was pushing the page into horizontal overflow on mobile. */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* ===== Color as a System ===== */
+.color-system-demo {
+  border: 2px solid var(--fixed-ink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  background: var(--surface);
+}
+
+.color-system-demo__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.color-system-demo__row:last-of-type {
+  border-bottom: none;
+}
+
+.color-system-demo__swatch {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 2px solid var(--fixed-ink);
+  flex-shrink: 0;
+}
+
+.color-system-demo__row code {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ===== Forms and Inputs ===== */
+.form-demo-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-demo-field label {
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-demo-hint {
+  font-size: 0.72rem;
+  /* 0.7 measured at 4.21:1 on the teal card background, short of 4.5:1.
+     0.78 clears it with margin. */
+  opacity: 0.78;
+  margin-top: 0.4rem;
+}
+
+/* A colored TEXT message here would need to stay readable against whatever
+   sticker color the card happens to use, which accent-coral/accent-teal
+   can't do (they measure ~1.6:1 on the pink card, nowhere near 4.5:1). A
+   filled pill with fixed-ink text is the same "bright fill + dark ink"
+   pairing already verified safe everywhere else on this page, so it reads
+   correctly regardless of the surrounding card color. */
+.form-demo-message {
+  display: inline-block;
+  min-height: 1.2em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin: 0.5rem 0 0;
+}
+
+.form-demo-message:empty {
+  margin: 0;
+}
+
+.form-demo-message.is-error,
+.form-demo-message.is-success {
+  padding: 0.2em 0.65em;
+  border-radius: var(--radius-pill);
+  color: var(--fixed-ink);
+}
+
+.form-demo-message.is-error {
+  background: var(--coral);
+}
+
+.form-demo-message.is-success {
+  background: var(--teal);
+}
+
+.text-input.is-invalid {
+  border-color: var(--accent-coral);
+}
+
+.text-input.is-valid {
+  border-color: var(--accent-teal);
+}
+
+/* ===== Touch and Mobile ===== */
+.tap-target-demo {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+.tap-target-demo__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tap-target {
+  border: 2px solid var(--fixed-ink);
+  border-radius: 50%;
+  background: var(--fixed-paper);
+  color: var(--fixed-ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+
+.tap-target--small {
+  width: 24px;
+  height: 24px;
+}
+
+.tap-target--good {
+  width: 44px;
+  height: 44px;
+}
+
+.thumb-zone-demo {
+  margin-top: 1rem;
+  border: 3px solid var(--fixed-ink);
+  border-radius: 24px;
+  overflow: hidden;
+  width: 150px;
+  margin-inline: auto;
+}
+
+.thumb-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--fixed-ink);
+  padding: 0.5rem;
+}
+
+.thumb-zone--hard {
+  background: color-mix(in srgb, var(--coral) 55%, white);
+  height: 65px;
+}
+
+.thumb-zone--ok {
+  background: color-mix(in srgb, var(--sun) 55%, white);
+  height: 65px;
+}
+
+.thumb-zone--easy {
+  background: color-mix(in srgb, var(--teal) 55%, white);
+  height: 90px;
+}
+
+.hover-only-demo {
+  transition: background var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+}
+
+.hover-only-demo:hover {
+  background: var(--fixed-ink);
+  color: var(--fixed-paper);
+}
+
+/* ===== The Head ===== */
+.share-preview {
+  border: 2px solid var(--fixed-ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 22rem;
+}
+
+.share-preview__image {
+  height: 8rem;
+  background: linear-gradient(135deg, var(--teal), var(--pink));
+}
+
+.share-preview__body {
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+}
+
+.share-preview__domain {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0 0 0.3rem;
+}
+
+.share-preview__title {
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+.share-preview__desc {
+  font-size: 0.82rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* ===== How a Page Loads ===== */
+.page-load-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.page-load-step {
+  flex: 1 1 8rem;
+  border: 2px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 0.85rem;
+  text-align: center;
+  transition: border-color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+}
+
+.page-load-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--rule);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.page-load-step p {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 0.3rem;
+}
+
+.page-load-step.is-active {
+  border-color: var(--fixed-ink);
+  border-style: solid;
+  background: color-mix(in srgb, var(--pink) 15%, transparent);
+}
+
+.page-load-step.is-active .page-load-step__num {
+  background: var(--pink);
+  color: var(--fixed-ink);
+}
+
+.page-load-step.is-done {
+  border-color: var(--fixed-ink);
+  border-style: solid;
+  background: color-mix(in srgb, var(--teal) 12%, transparent);
+}
+
+.page-load-step.is-done .page-load-step__num {
+  background: var(--teal);
+  color: var(--fixed-ink);
+}
+
+/* ===== Images and Media ===== */
+.image-shift-demo {
+  border: 2px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.image-shift-demo p {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.image-shift-demo__slot {
+  height: 0;
+  background: var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: height var(--duration-base) var(--ease);
+}
+
+.image-shift-demo__slot.is-loaded {
+  height: 100px;
+  background: linear-gradient(135deg, var(--teal), var(--pink));
+}
+
+.image-shift-demo__slot--reserved {
+  height: 100px;
 }

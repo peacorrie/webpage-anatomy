@@ -4,7 +4,7 @@
 
   downloadBtn.addEventListener("click", function () {
     var sheet = document.getElementById("styleGuideSheet");
-    if (!sheet || typeof html2canvas === "undefined") {
+    if (!sheet) {
       alert("Could not generate the image. Please try again.");
       return;
     }
@@ -12,6 +12,16 @@
     downloadBtn.textContent = "Generating PNG...";
     downloadBtn.disabled = true;
 
+    window.WA.loadHtml2Canvas().then(function () {
+      renderStyleGuide(sheet);
+    }).catch(function () {
+      alert("Could not generate the image. Please try again.");
+      downloadBtn.textContent = "Download as PNG";
+      downloadBtn.disabled = false;
+    });
+  });
+
+  function renderStyleGuide(sheet) {
     var clone = sheet.cloneNode(true);
     clone.id = "style-guide-clone";
     clone.style.cssText = "position: fixed; left: -9999px; top: 0; width: 640px; z-index: -1;";
@@ -45,5 +55,5 @@
         downloadBtn.disabled = false;
       });
     }, 200);
-  });
+  }
 })();

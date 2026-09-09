@@ -1,0 +1,16 @@
+    <div class="glass-demo-bg">
+      <div class="glass-demo">This card uses glassmorphism</div>
+    </div>
+    <p><strong>Glassmorphism</strong> is that frosted-glass effect you see everywhere now (thanks, Apple). It uses <code>backdrop-filter: blur()</code> to blur whatever is behind an element.</p>
+    <h3 style="font-size: 1rem;">The CSS magic</h3>
+    <pre><code>.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}</code></pre>
+    <button type="button" class="copy-btn" id="copyGlassCode">Copy</button>
+    <p><strong>Why it works:</strong> transparency + blur creates visual hierarchy without blocking content.</p>
+    <p><strong>When to use:</strong> modals, navigation overlays, tooltips.</p>
+    <p><strong>Browser support:</strong> works in all modern browsers. Safari needs <code>-webkit-backdrop-filter</code>.</p>

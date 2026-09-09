@@ -33,7 +33,7 @@
   }
 
   wireDialog("glassModal", ["openGlassModal"], ["closeGlassModal", "dismissGlassModal"]);
-  wireDialog("homepageModal", ["openHomepageModal", "openHomepageModalFromAnatomy"], ["closeHomepageModal"]);
+  wireDialog("homepageModal", ["openHomepageModal", "openHomepageModalFromAnatomy"], ["closeHomepageModal", "dismissHomepageModal"]);
   wireDialog("fPatternModal", ["openFPatternModal"], ["closeFPatternModal", "dismissFPatternModal"]);
   wireDialog("zPatternModal", ["openZPatternModal"], ["closeZPatternModal", "dismissZPatternModal"]);
   wireDialog("gridPatternModal", ["openGridPatternModal"], ["closeGridPatternModal", "dismissGridPatternModal"]);
@@ -44,7 +44,7 @@
   wireDialog("footerTypesModal", ["openFooterTypesModal"], ["closeFooterTypesModal", "dismissFooterTypesModal"]);
   wireDialog("contrastCheckerModal", ["openContrastCheckerModal"], ["closeContrastCheckerModal", "dismissContrastCheckerModal"]);
   wireDialog("contrastGameModal", ["openContrastGameModal"], ["closeContrastGameModal", "dismissContrastGameModal"]);
-  wireDialog("styleGuideModal", ["openStyleGuideModal"], ["closeStyleGuideModal"]);
+  wireDialog("styleGuideModal", ["openStyleGuideModal"], ["closeStyleGuideModal", "dismissStyleGuideModal"]);
   wireDialog("boxModelModal", ["openBoxModelModal"], ["closeBoxModelModal", "dismissBoxModelModal"]);
   wireDialog("breakpointModal", ["openBreakpointModal"], ["closeBreakpointModal", "dismissBreakpointModal"]);
   wireDialog("quizModal", ["openQuizModal"], ["closeQuizModal", "dismissQuizModal"]);

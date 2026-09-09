@@ -85,22 +85,7 @@
     <button type="button" class="icon-btn" id="closeGlassModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <div class="glass-demo-bg">
-      <div class="glass-demo">This card uses glassmorphism</div>
-    </div>
-    <p><strong>Glassmorphism</strong> is that frosted-glass effect you see everywhere now (thanks, Apple). It uses <code>backdrop-filter: blur()</code> to blur whatever is behind an element.</p>
-    <h3 style="font-size: 1rem;">The CSS magic</h3>
-    <pre><code>.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-}</code></pre>
-    <button type="button" class="copy-btn" id="copyGlassCode">Copy</button>
-    <p><strong>Why it works:</strong> transparency + blur creates visual hierarchy without blocking content.</p>
-    <p><strong>When to use:</strong> modals, navigation overlays, tooltips.</p>
-    <p><strong>Browser support:</strong> works in all modern browsers. Safari needs <code>-webkit-backdrop-filter</code>.</p>
+    {% include "demos/glassmorphism.njk" %}
   </div>
   <div class="modal__footer">
     <span></span>
@@ -114,111 +99,11 @@
     <button type="button" class="icon-btn" id="closeHomepageModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <div class="wireframe" id="homepageWireframe">
-
-      <div class="wf-block wf-hero">
-        <div class="wf-label">01 · The Hero</div>
-        <strong>Transform Your Business in 30 Days</strong>
-        <p style="font-size: 0.85rem; margin:0; opacity:.75;">We help ambitious founders scale without burning out.</p>
-        <span class="btn btn--primary" style="font-size: 0.75rem; padding: .5em 1em;">Primary CTA</span>
-      </div>
-      <p class="wf-note">Hook visitors in 3 seconds. Answer "what's in it for me?" Your H1 should make them say "yes, that's exactly what I need."</p>
-
-      <div class="wf-block">
-        <div class="wf-label">02 · The Problem</div>
-        <strong style="font-size:0.9rem;">Tired of Working 60-Hour Weeks?</strong>
-        <div class="wf-row3">
-          <div>No time for family</div>
-          <div>Burning out fast</div>
-          <div>Stuck at $10K/mo</div>
-        </div>
-      </div>
-      <p class="wf-note">Show empathy first. List 3–4 problems your audience faces before pitching solutions.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">03 · Your Solution</div>
-        <strong style="font-size:0.9rem;">Our Simple 3-Step Process</strong>
-        <p style="font-size: 0.85rem; margin:.4rem 0 0;">① Discovery &nbsp;→&nbsp; ② Execution &nbsp;→&nbsp; ③ Results</p>
-      </div>
-      <p class="wf-note">Make it simple. Break your process into 3 steps.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">04 · Social Proof</div>
-        <strong style="font-size:0.9rem;">Trusted By 500+ Companies</strong>
-        <div class="wf-testimonials">
-          <div class="wf-testimonial">
-            <div class="wf-avatar"></div>
-            <div style="flex:1;"><div style="font-size:.7rem;">★★★★★</div><div class="wf-bar"></div><div class="wf-bar" style="width:70%;"></div></div>
-          </div>
-          <div class="wf-testimonial">
-            <div class="wf-avatar" style="background:var(--teal);"></div>
-            <div style="flex:1;"><div style="font-size:.7rem;">★★★★★</div><div class="wf-bar"></div><div class="wf-bar" style="width:60%;"></div></div>
-          </div>
-        </div>
-      </div>
-      <p class="wf-note">Trust drives conversion. 2–3 testimonials with real names and photos.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">05 · Features</div>
-        <strong style="font-size:0.9rem;">Why 10,000+ Businesses Choose Us</strong>
-        <div class="wf-row3">
-          <div>⚡ Fast setup</div>
-          <div>🔒 Secure</div>
-          <div>📈 Scalable</div>
-        </div>
-      </div>
-      <p class="wf-note">Outcomes over features. Focus on results, not specs.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">06 · Pricing</div>
-        <strong style="font-size:0.9rem;">Flexible Plans for Every Stage</strong>
-        <div class="wf-pricing">
-          <div>STARTER<br><strong>$XX</strong></div>
-          <div class="featured"><span class="featured-badge">POPULAR</span>PRO<br><strong>$XX</strong></div>
-          <div>ENTERPRISE<br><strong>Custom</strong></div>
-        </div>
-      </div>
-      <p class="wf-note">Good / better / best. Highlight the middle tier.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">07 · Results</div>
-        <strong style="font-size:0.9rem;">Real Results, Real Numbers</strong>
-        <div class="wf-stats">
-          <div class="wf-stat"><b>+250%</b><span>Revenue Increase</span></div>
-          <div class="wf-stat"><b>10x</b><span>ROI</span></div>
-        </div>
-      </div>
-      <p class="wf-note">Show, don't tell. Concrete numbers beat vague claims.</p>
-
-      <div class="wf-block" style="background: var(--sun); border-color: var(--fixed-ink); text-align:center;">
-        <div class="wf-label" style="color: var(--fixed-ink); opacity:.7;">08 · Lead Magnet</div>
-        <strong style="font-size:0.9rem;">Download Our Free Growth Guide</strong>
-        <div><span class="btn btn--secondary" style="font-size: 0.75rem; padding: .5em 1em; margin-top:.5rem;">Get It Free</span></div>
-      </div>
-      <p class="wf-note">Capture emails. Offer value in exchange.</p>
-
-      <div class="wf-block">
-        <div class="wf-label">09 · FAQ</div>
-        <strong style="font-size:0.9rem;">Frequently Asked Questions</strong>
-        <div class="wf-faq-row"><span>Do you offer refunds?</span><span>+</span></div>
-        <div class="wf-faq-row"><span>How long is onboarding?</span><span>+</span></div>
-        <div class="wf-faq-row"><span>Can I cancel anytime?</span><span>+</span></div>
-      </div>
-      <p class="wf-note">Kill objections early. Answer the top 5–7 questions.</p>
-
-      <div class="wf-block" style="background: var(--coral); border-color: var(--fixed-ink); text-align:center; color: var(--fixed-ink);">
-        <div class="wf-label" style="color: var(--fixed-ink); opacity:.7;">10 · Final CTA</div>
-        <strong style="font-size:0.95rem;">Ready to Scale Your Business?</strong>
-        <div><span class="btn btn--primary" style="font-size: 0.75rem; padding: .5em 1em; margin-top:.5rem;">Start Now</span></div>
-      </div>
-      <p class="wf-note">Last chance to convert. Make it about them.</p>
-
-      <div class="wf-credit">Homepage Anatomy, by creativepea</div>
-    </div>
+    {% include "demos/homepage-blueprint.njk" %}
   </div>
   <div class="modal__footer">
     <span class="mono" style="font-size: 0.75rem; opacity: 0.6;">Save this blueprint for reference</span>
-    <button type="button" class="btn btn--primary" id="downloadWireframe">Download as PNG</button>
+    <button type="button" class="btn btn--secondary" id="dismissHomepageModal">Close</button>
   </div>
 </dialog>
 
@@ -513,39 +398,7 @@
     <button type="button" class="icon-btn" id="closeContrastCheckerModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <p>Real WCAG math, calculated in your browser as you type. No values are sent anywhere.</p>
-    <div class="contrast-inputs">
-      <label class="contrast-field">
-        <span>Text color</span>
-        <span class="contrast-field__row">
-          <input type="color" id="ccFgPicker" value="#22182B" aria-label="Text color picker" />
-          <input type="text" id="ccFgHex" value="#22182B" class="contrast-field__hex mono" maxlength="7" aria-label="Text color hex value" />
-        </span>
-      </label>
-      <label class="contrast-field">
-        <span>Background color</span>
-        <span class="contrast-field__row">
-          <input type="color" id="ccBgPicker" value="#FFF9F2" aria-label="Background color picker" />
-          <input type="text" id="ccBgHex" value="#FFF9F2" class="contrast-field__hex mono" maxlength="7" aria-label="Background color hex value" />
-        </span>
-      </label>
-    </div>
-
-    <div class="contrast-preview" id="ccPreview">
-      <p style="font-size:1.4rem; font-weight:700; margin:0;">The quick fox jumps.</p>
-      <p style="margin:0.3rem 0 0;">Body text at a normal reading size.</p>
-    </div>
-
-    <div class="contrast-result">
-      <div class="contrast-result__ratio" id="ccRatio">21.00 : 1</div>
-      <div class="contrast-badges" id="ccBadges">
-        <span class="contrast-badge" data-key="aaNormal">AA Normal Text</span>
-        <span class="contrast-badge" data-key="aaLarge">AA Large Text</span>
-        <span class="contrast-badge" data-key="aaaNormal">AAA Normal Text</span>
-        <span class="contrast-badge" data-key="aaaLarge">AAA Large Text</span>
-      </div>
-    </div>
-    <p class="mono" style="font-size:0.72rem; opacity:.6; margin-top:0.75rem;">Normal text needs 4.5:1 (AA) or 7:1 (AAA). Large text (18px+, or 14px+ bold) and UI borders need 3:1 (AA) or 4.5:1 (AAA).</p>
+    {% include "demos/contrast-checker.njk" %}
   </div>
   <div class="modal__footer">
     <span></span>
@@ -559,20 +412,7 @@
     <button type="button" class="icon-btn" id="closeContrastGameModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <p>Would this pass WCAG AA for normal text (4.5:1)? Guess before you check the math.</p>
-    <span class="quiz-score" id="cgScore" aria-live="polite">Score: 0 / 0</span>
-    <div class="contrast-preview" id="cgPreview" style="margin-top:1rem;">
-      <p style="font-size:1.2rem; font-weight:700; margin:0;">Sample Text</p>
-      <p style="margin:0.3rem 0 0;">This is what body copy looks like in this pairing.</p>
-    </div>
-    <div class="cg-guess-row" id="cgGuessRow">
-      <button type="button" class="btn btn--primary" id="cgGuessPass">Passes AA</button>
-      <button type="button" class="btn btn--secondary" id="cgGuessFail">Fails AA</button>
-    </div>
-    <div class="cg-result" id="cgResult" hidden>
-      <p id="cgResultText" style="margin:0;"></p>
-      <button type="button" class="btn btn--secondary" id="cgNext" style="margin-top:0.75rem;">Next pair</button>
-    </div>
+    {% include "demos/guess-the-contrast.njk" %}
   </div>
   <div class="modal__footer">
     <span></span>
@@ -586,55 +426,11 @@
     <button type="button" class="icon-btn" id="closeStyleGuideModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <div id="styleGuideSheet" class="style-sheet">
-      <div class="style-sheet__title">
-        <strong>Webpage Anatomy</strong>
-        <span class="mono">Style Guide</span>
-      </div>
-
-      <div class="style-sheet__block">
-        <h4>Color</h4>
-        <div class="style-sheet__swatches">
-          <div class="style-sheet__swatch" style="background:#FF6B5B;">coral<br>#FF6B5B</div>
-          <div class="style-sheet__swatch" style="background:#FF3D9A;">pink<br>#FF3D9A</div>
-          <div class="style-sheet__swatch" style="background:#00BFA5;">teal<br>#00BFA5</div>
-          <div class="style-sheet__swatch" style="background:#FFD23F;">sun<br>#FFD23F</div>
-          <div class="style-sheet__swatch" style="background:#22182B; color:#FFF9F2;">ink<br>#22182B</div>
-          <div class="style-sheet__swatch" style="background:#FFF9F2; border:1px solid #22182B;">paper<br>#FFF9F2</div>
-        </div>
-      </div>
-
-      <div class="style-sheet__block">
-        <h4>Type Scale</h4>
-        <div class="style-sheet__type-row" style="font-size:1.8rem; font-weight:700;">Aa H1 Fredoka</div>
-        <div class="style-sheet__type-row" style="font-size:1.3rem; font-weight:600;">Aa H2 Fredoka</div>
-        <div class="style-sheet__type-row" style="font-size:1rem;">Aa Body Nunito</div>
-        <div class="style-sheet__type-row mono" style="font-size:0.8rem;">Aa Mono Space Mono</div>
-      </div>
-
-      <div class="style-sheet__block">
-        <h4>Spacing (8pt grid)</h4>
-        <div class="style-sheet__spacing">
-          <div style="width:8px;height:8px;background:#00BFA5;"></div>
-          <div style="width:16px;height:16px;background:#00BFA5;"></div>
-          <div style="width:24px;height:24px;background:#00BFA5;"></div>
-          <div style="width:32px;height:32px;background:#00BFA5;"></div>
-          <div style="width:48px;height:48px;background:#00BFA5;"></div>
-        </div>
-      </div>
-
-      <div class="style-sheet__block">
-        <h4>Z-Index</h4>
-        <p class="mono" style="margin:0; font-size:0.8rem;">1 → 10 → 100 → 1000</p>
-        <p style="margin:0.2rem 0 0; font-size:0.85rem;">content → dropdown → sticky nav → modal</p>
-      </div>
-
-      <div class="style-sheet__credit mono">webpage-anatomy · generated from this page</div>
-    </div>
+    {% include "demos/style-guide.njk" %}
   </div>
   <div class="modal__footer">
     <span class="mono" style="font-size:0.75rem; opacity:.6;">Save it, reuse it, remix it.</span>
-    <button type="button" class="btn btn--primary" id="downloadStyleGuide">Download as PNG</button>
+    <button type="button" class="btn btn--secondary" id="dismissStyleGuideModal">Close</button>
   </div>
 </dialog>
 
@@ -644,36 +440,7 @@
     <button type="button" class="icon-btn" id="closeBoxModelModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <p>Every element on a page is margin, border, padding, and content, nested like a set of frames. Drag to see it for real.</p>
-    <div class="box-playground">
-      <div class="box-playground__stage">
-        <div class="bp-margin" id="bpMargin">
-          <span class="bp-label">margin</span>
-          <div class="bp-border" id="bpBorder">
-            <span class="bp-label">border</span>
-            <div class="bp-padding" id="bpPadding">
-              <span class="bp-label">padding</span>
-              <div class="bp-content">content</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="box-playground__controls">
-        <label class="bp-control">
-          <span>Margin <output id="bpMarginVal">16px</output></span>
-          <input type="range" id="bpMarginSlider" min="0" max="40" value="16" />
-        </label>
-        <label class="bp-control">
-          <span>Border <output id="bpBorderVal">4px</output></span>
-          <input type="range" id="bpBorderSlider" min="0" max="16" value="4" />
-        </label>
-        <label class="bp-control">
-          <span>Padding <output id="bpPaddingVal">16px</output></span>
-          <input type="range" id="bpPaddingSlider" min="0" max="40" value="16" />
-        </label>
-        <p class="mono" id="bpCode" style="font-size:0.78rem; margin-top:0.5rem;">margin: 16px; border: 4px; padding: 16px;</p>
-      </div>
-    </div>
+    {% include "demos/box-model.njk" %}
   </div>
   <div class="modal__footer">
     <span></span>
@@ -687,33 +454,10 @@
     <button type="button" class="icon-btn" id="closeBreakpointModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <p>Drag the slider to resize the frame. Watch the layout inside decide, on its own, when it's too narrow to stay horizontal.</p>
-    <div class="bk-control">
-      <input type="range" id="bkSlider" min="280" max="900" value="900" />
-      <span class="mono" id="bkWidthLabel">900px · Desktop</span>
-    </div>
-    <div class="bk-stage">
-      <div class="bk-frame" id="bkFrame">
-        <div class="bk-mock" id="bkMock">
-          <div class="bk-mock__nav">
-            <div class="bk-mock__logo"></div>
-            <div class="bk-mock__links">
-              <div class="bk-mock__link"></div>
-              <div class="bk-mock__link"></div>
-              <div class="bk-mock__link"></div>
-            </div>
-          </div>
-          <div class="bk-mock__body">
-            <div class="bk-mock__card"></div>
-            <div class="bk-mock__card"></div>
-            <div class="bk-mock__card"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include "demos/breakpoint-simulator.njk" %}
   </div>
   <div class="modal__footer">
-    <span class="mono" style="font-size:0.75rem; opacity:.6;">No JavaScript is deciding this. CSS container queries are.</span>
+    <span></span>
     <button type="button" class="btn btn--primary" id="dismissBreakpointModal">Got it</button>
   </div>
 </dialog>
@@ -724,31 +468,7 @@
     <button type="button" class="icon-btn" id="closeQuizModal" aria-label="Close dialog">✕</button>
   </div>
   <div class="modal__body">
-    <p>{{ quiz.length }} questions pulled straight from this page. Pick an answer to see it graded instantly.</p>
-    <span class="quiz-score" id="quizScore" aria-live="polite">Score: 0 / {{ quiz.length }}</span>
-    <form id="quizForm">
-      <div class="quiz-list">
-        {% for q in quiz %}
-        {% set qIndex = loop.index %}
-        <fieldset class="quiz-q" data-correct="{{ q.correct }}" data-explanation="{{ q.explanation }}">
-          <legend>{{ qIndex }}. {{ q.question }}</legend>
-          <div class="quiz-options">
-            {% for opt in q.options %}
-            <div class="quiz-option">
-              <input type="radio" id="q{{ qIndex }}-opt{{ loop.index }}" name="q{{ qIndex }}" />
-              <label for="q{{ qIndex }}-opt{{ loop.index }}">{{ opt }}</label>
-            </div>
-            {% endfor %}
-          </div>
-          <p class="quiz-feedback" role="status"></p>
-        </fieldset>
-        {% endfor %}
-      </div>
-    </form>
-    <div class="quiz-result callout" id="quizResult" tabindex="-1" hidden>
-      <p id="quizResultText" style="margin:0 0 .75rem;"></p>
-      <button type="button" class="btn btn--secondary" id="quizRetry">Try Again</button>
-    </div>
+    {% include "demos/quiz.njk" %}
   </div>
   <div class="modal__footer">
     <span></span>

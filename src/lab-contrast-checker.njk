@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Contrast Checker
+description: Check the WCAG contrast ratio between any two colors, calculated live in your browser with no data sent anywhere.
+permalink: /lab/contrast-checker/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Contrast Checker</h1>
+    <p class="panel__lede">Type in a text color and a background color. This tool calculates the real WCAG contrast ratio between them as you type. Nothing is sent to a server, the math runs in your browser.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Try it</p>
+    <h2>Check a Color Pair</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/contrast-checker.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

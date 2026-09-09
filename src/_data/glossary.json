@@ -1,23 +1,250 @@
 [
-  { "term": "Above the fold", "definition": "Content visible without scrolling." },
-  { "term": "CTA", "definition": "Call to Action: the button you want people to click." },
-  { "term": "Hero", "definition": "The large banner section at the top of a page." },
-  { "term": "Viewport", "definition": "The visible area of a web page in the browser." },
-  { "term": "Responsive", "definition": "Design that adapts to different screen sizes." },
-  { "term": "Breakpoint", "definition": "Screen width where a layout changes (e.g., 768px)." },
-  { "term": "Grid system", "definition": "12-column layout framework for alignment." },
-  { "term": "Z-index", "definition": "Stacking order of overlapping elements." },
-  { "term": "Semantic HTML", "definition": "Using meaningful tags like nav, main, article, instead of generic divs for everything." },
-  { "term": "Accessibility", "definition": "Making content usable for people with disabilities." },
-  { "term": "Mobile-first", "definition": "Designing for small screens first, then scaling up." },
-  { "term": "White space", "definition": "Empty space that gives content room to breathe." },
-  { "term": "Landmark", "definition": "A region of a page, like nav, main, or footer, that a screen reader can jump straight to." },
-  { "term": "Cookie", "definition": "A small piece of data a site stores in your browser to remember you between visits." },
-  { "term": "Third-party cookie", "definition": "A cookie set by a domain other than the one you're visiting, usually for ad tracking." },
-  { "term": "GDPR", "definition": "The EU's data privacy law. Requires sites to disclose what personal data they collect and get consent." },
-  { "term": "Core Web Vitals", "definition": "Google's three real-world performance metrics: LCP, INP, and CLS." },
-  { "term": "Lighthouse", "definition": "A free tool built into Chrome DevTools that audits performance, accessibility, best practices, and SEO at once." },
-  { "term": "Container query", "definition": "A CSS rule that responds to the size of its own container, not the size of the browser window." },
-  { "term": "Neo-brutalism", "definition": "A design trend using thick borders, hard offset shadows, and bold color instead of subtlety." },
-  { "term": "Modal", "definition": "A dialog window that sits on top of the page and blocks interaction with everything behind it until closed." }
+  {
+    "term": "Above the fold",
+    "slug": "above-the-fold",
+    "definition": "Content visible without scrolling.",
+    "longExplanation": "The fold is whatever a visitor sees on first load, before they scroll down. It earns disproportionate attention compared to content further down the page, so the core value proposition and a clear next step belong here.",
+    "sectionId": "anatomy",
+    "sectionLabel": "The Anatomy Revealed"
+  },
+  {
+    "term": "CTA",
+    "slug": "cta",
+    "definition": "Call to Action: the button you want people to click.",
+    "longExplanation": "A call to action is the single most important click on a page. Every other element exists to lead a visitor toward it, so a page should have one primary CTA per section rather than several competing for attention.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "Hero",
+    "slug": "hero",
+    "definition": "The large banner section at the top of a page.",
+    "longExplanation": "The hero is the first thing a visitor sees, and it sets the tone for the rest of the page. A strong hero states the value proposition in a short headline and pairs it with one clear call to action.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "Viewport",
+    "slug": "viewport",
+    "definition": "The visible area of a web page in the browser.",
+    "longExplanation": "The viewport is the window through which a page is seen, and its size changes constantly across phones, tablets, and desktops. Responsive design exists specifically to make one layout work across that whole range.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "Responsive",
+    "slug": "responsive",
+    "definition": "Design that adapts to different screen sizes.",
+    "longExplanation": "A responsive design rearranges its layout, type, and spacing to stay usable from a small phone screen up to a wide desktop monitor. It usually relies on breakpoints, specific widths where the layout changes shape.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "Breakpoint",
+    "slug": "breakpoint",
+    "definition": "Screen width where a layout changes (e.g., 768px).",
+    "longExplanation": "A breakpoint is the exact width at which a responsive layout switches from one arrangement to another, such as a navigation menu collapsing into an icon. Modern CSS can also set breakpoints on a container's own width instead of the browser window.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "Grid system",
+    "slug": "grid-system",
+    "definition": "12-column layout framework for alignment.",
+    "longExplanation": "A grid system divides a page into a fixed number of columns, usually 12, so that every section lines up to the same invisible structure. It is the same idea behind frameworks like Bootstrap and Tailwind, and it keeps a page feeling aligned even when its content varies.",
+    "sectionId": "grid-explainer",
+    "sectionLabel": "What's With the Grid?"
+  },
+  {
+    "term": "Z-index",
+    "slug": "z-index",
+    "definition": "Stacking order of overlapping elements.",
+    "longExplanation": "Z-index decides which element sits on top when two elements overlap on the page. It is not arbitrary, it works like an org chart, with modals sitting above sticky navigation, which sits above dropdowns, which sits above ordinary content.",
+    "sectionId": "zindex",
+    "sectionLabel": "Z-Index: The Layer Cake"
+  },
+  {
+    "term": "Semantic HTML",
+    "slug": "semantic-html",
+    "definition": "Using meaningful tags like nav, main, article, instead of generic divs for everything.",
+    "longExplanation": "Semantic HTML means choosing an element for what it means, not just how it looks. A nav element tells a screen reader and a search engine that this is navigation, where a div styled to look the same tells them nothing.",
+    "sectionId": "semantic",
+    "sectionLabel": "Semantic HTML: The Layer Underneath"
+  },
+  {
+    "term": "Accessibility",
+    "slug": "accessibility",
+    "definition": "Making content usable for people with disabilities.",
+    "longExplanation": "Accessibility means a page works for people who navigate by keyboard, rely on a screen reader, or cannot perceive certain colors. It is not an add-on feature, it is a baseline requirement for a page to work for everyone who visits it.",
+    "sectionId": "a11y",
+    "sectionLabel": "Accessibility: Design for Humans"
+  },
+  {
+    "term": "Mobile-first",
+    "slug": "mobile-first",
+    "definition": "Designing for small screens first, then scaling up.",
+    "longExplanation": "Mobile-first design starts with the smallest, most constrained screen and adds complexity as space allows, rather than starting wide and cramming a desktop layout down to fit a phone. It matters because more than half of web traffic now arrives on a phone.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "White space",
+    "slug": "white-space",
+    "definition": "Empty space that gives content room to breathe.",
+    "longExplanation": "White space is the deliberate emptiness around and between elements on a page, and it is not wasted space, it is what makes content easy to scan. More white space often reads as more premium, while cramped layouts tend to feel cheap or overwhelming.",
+    "sectionId": "spacing",
+    "sectionLabel": "Spacing System"
+  },
+  {
+    "term": "Landmark",
+    "slug": "landmark",
+    "definition": "A region of a page, like nav, main, or footer, that a screen reader can jump straight to.",
+    "longExplanation": "A landmark is a named region of a page, created by elements like header, nav, main, and footer, that a screen reader can use to build a quick outline. Without landmarks, a screen reader user has to listen through the entire page from the top just to find the main content.",
+    "sectionId": "semantic",
+    "sectionLabel": "Semantic HTML: The Layer Underneath"
+  },
+  {
+    "term": "Cookie",
+    "slug": "cookie",
+    "definition": "A small piece of data a site stores in your browser to remember you between visits.",
+    "longExplanation": "A cookie lets a site recognize the same visitor across multiple page loads, which is how logins, shopping carts, and saved preferences persist. Not every cookie is used for tracking, but every cookie is worth knowing about.",
+    "sectionId": "privacy",
+    "sectionLabel": "What the Eye Can't See"
+  },
+  {
+    "term": "Third-party cookie",
+    "slug": "third-party-cookie",
+    "definition": "A cookie set by a domain other than the one you're visiting, usually for ad tracking.",
+    "longExplanation": "A third-party cookie is set by a domain other than the one shown in the address bar, most often an advertising or analytics network embedded on the page. This is the mechanism that lets an ad network follow a visitor's browsing across many unrelated sites.",
+    "sectionId": "privacy",
+    "sectionLabel": "What the Eye Can't See"
+  },
+  {
+    "term": "GDPR",
+    "slug": "gdpr",
+    "definition": "The EU's data privacy law. Requires sites to disclose what personal data they collect and get consent.",
+    "longExplanation": "GDPR is the European Union's data privacy law, and it requires a site to disclose what personal data it collects, why, and to get clear consent before collecting it. It applies to any site visited by people in the EU, not just sites based there.",
+    "sectionId": "privacy",
+    "sectionLabel": "What the Eye Can't See"
+  },
+  {
+    "term": "Core Web Vitals",
+    "slug": "core-web-vitals",
+    "definition": "Google's three real-world performance metrics: LCP, INP, and CLS.",
+    "longExplanation": "Core Web Vitals are Google's three metrics for real-world page performance: how fast the main content appears, how fast the page responds to a click, and how much content shifts around while loading. They come directly from Lighthouse and Google Search Console.",
+    "sectionId": "performance",
+    "sectionLabel": "Performance (And How to Prove It)"
+  },
+  {
+    "term": "Lighthouse",
+    "slug": "lighthouse",
+    "definition": "A free tool built into Chrome DevTools that audits performance, accessibility, best practices, and SEO at once.",
+    "longExplanation": "Lighthouse is a free auditing tool built directly into Chrome DevTools that scores a page on performance, accessibility, best practices, and SEO in one report. It is usually the fastest way to find out what is wrong with a page before reaching for anything else.",
+    "sectionId": "performance",
+    "sectionLabel": "Performance (And How to Prove It)"
+  },
+  {
+    "term": "Container query",
+    "slug": "container-query",
+    "definition": "A CSS rule that responds to the size of its own container, not the size of the browser window.",
+    "longExplanation": "A container query lets an element change its own layout based on the size of its parent container, instead of the size of the entire browser window. That makes a component genuinely reusable, since it can reflow correctly no matter where on the page it ends up.",
+    "sectionId": "lab",
+    "sectionLabel": "Learn by Exploring"
+  },
+  {
+    "term": "Neo-brutalism",
+    "slug": "neo-brutalism",
+    "definition": "A design trend using thick borders, hard offset shadows, and bold color instead of subtlety.",
+    "longExplanation": "Neo-brutalism is a design trend that favors thick borders, hard offset shadows, and bold flat color over the soft gradients and subtle shadows common in earlier styles. It reads as confident and playful, which is why this page uses a version of it for its own buttons and cards.",
+    "sectionId": "buttons",
+    "sectionLabel": "Button States"
+  },
+  {
+    "term": "Modal",
+    "slug": "modal",
+    "definition": "A dialog window that sits on top of the page and blocks interaction with everything behind it until closed.",
+    "longExplanation": "A modal is a dialog window that appears on top of a page and blocks interaction with everything behind it until it is closed. The native HTML dialog element, opened with showModal, provides focus trapping and an Escape-to-close behavior without any custom JavaScript.",
+    "sectionId": "lab",
+    "sectionLabel": "Learn by Exploring"
+  },
+  {
+    "term": "Contrast ratio",
+    "slug": "contrast-ratio",
+    "definition": "A measure of the difference between text and background luminance. WCAG AA requires at least 4.5:1 for normal body text.",
+    "longExplanation": "Contrast ratio measures how different a text color is from its background, calculated from each color's relative luminance. WCAG AA requires at least 4.5:1 for normal body text and 3:1 for large text, so text stays readable for people with low vision or in bright light.",
+    "sectionId": "a11y",
+    "sectionLabel": "Accessibility: Design for Humans"
+  },
+  {
+    "term": "Touch target",
+    "slug": "touch-target",
+    "definition": "The tappable area of an interactive element on a touchscreen. Should be at least 44×44px so it's easy to hit accurately.",
+    "longExplanation": "A touch target is the tappable area of a button, link, or form control on a touchscreen, and it needs to be at least 44 by 44 pixels to be reliably hit with a finger. Anything smaller becomes hard to tap accurately, especially for anyone with limited dexterity.",
+    "sectionId": "sections",
+    "sectionLabel": "The Essential Sections"
+  },
+  {
+    "term": "DNS",
+    "slug": "dns",
+    "definition": "The system that translates a domain name into the server address a browser can actually connect to.",
+    "longExplanation": "DNS, the Domain Name System, is the internet's phone book. It turns a domain like webpageanatomy.com into a numeric IP address, which is the actual address a browser needs to open a connection. This lookup is the first thing that happens before any page can load.",
+    "sectionId": "page-load",
+    "sectionLabel": "How a Page Loads"
+  },
+  {
+    "term": "Srcset",
+    "slug": "srcset",
+    "definition": "An img attribute listing multiple image sizes so the browser can pick the right one for the visitor's screen.",
+    "longExplanation": "Srcset gives an image element several versions of the same image at different resolutions. The browser then picks whichever one actually fits the visitor's screen, instead of every visitor downloading one giant image sized for the largest possible display.",
+    "sectionId": "images-media",
+    "sectionLabel": "Images and Media"
+  },
+  {
+    "term": "Lazy loading",
+    "slug": "lazy-loading",
+    "definition": "Deferring offscreen images or content until they're about to scroll into view.",
+    "longExplanation": "Lazy loading delays downloading an image or piece of content until it's about to enter the viewport, instead of downloading everything on the page up front. Set with a single attribute, loading=\"lazy\", it can meaningfully shorten the initial page load on image-heavy pages.",
+    "sectionId": "images-media",
+    "sectionLabel": "Images and Media"
+  },
+  {
+    "term": "Canonical URL",
+    "slug": "canonical-url",
+    "definition": "A link tag telling search engines which address is the authoritative one when the same content is reachable at more than one URL.",
+    "longExplanation": "A canonical link tells search engines which URL is the real, authoritative one when the same content can be reached at more than one address, such as with and without a trailing slash. Without it, ranking signals can split between duplicate URLs instead of consolidating on one.",
+    "sectionId": "head-meta",
+    "sectionLabel": "The Head"
+  },
+  {
+    "term": "Open Graph",
+    "slug": "open-graph",
+    "definition": "A set of meta tags that control how a link looks when shared on social media or messaging apps.",
+    "longExplanation": "Open Graph is a set of meta tags, originally created by Facebook, that control the title, description, and image a link shows when it's pasted into a social media post, a Slack message, or a text conversation. Without them, a shared link falls back to whatever the page's own title tag happens to say.",
+    "sectionId": "head-meta",
+    "sectionLabel": "The Head"
+  },
+  {
+    "term": "Query string",
+    "slug": "query-string",
+    "definition": "The part of a URL after a question mark, carrying key-value data like a search term or a tracking reference.",
+    "longExplanation": "A query string is everything in a URL after the question mark, structured as key-value pairs. It's commonly used for search terms, pagination, and tracking references, and unlike the path, it doesn't necessarily point to a different page, just a different state of the same one.",
+    "sectionId": "url-anatomy",
+    "sectionLabel": "Anatomy of a URL"
+  },
+  {
+    "term": "Thumb zone",
+    "slug": "thumb-zone",
+    "definition": "The area of a touchscreen a thumb can comfortably reach during one-handed use.",
+    "longExplanation": "The thumb zone is the region of a phone screen a thumb can comfortably reach while holding the phone one-handed, generally the lower half of the screen. Primary actions placed outside it, especially in the top corners, ask for a two-handed grip or a stretch.",
+    "sectionId": "touch",
+    "sectionLabel": "Touch and Mobile"
+  },
+  {
+    "term": "Semantic color",
+    "slug": "semantic-color",
+    "definition": "Using a color consistently to mean the same thing everywhere it appears, like red for errors or green for success.",
+    "longExplanation": "Semantic color means a color carries a consistent meaning across an entire interface, like red always meaning an error and green always meaning success. Once that consistency breaks, color stops being useful information and becomes just decoration.",
+    "sectionId": "color-system",
+    "sectionLabel": "Color as a System"
+  }
 ]

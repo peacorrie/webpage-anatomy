@@ -70,5 +70,11 @@
     "options": ["The browser window", "The user's screen", "The element's own container", "The device type"],
     "correct": 2,
     "explanation": "Its own container. That's what let the Breakpoint Simulator's mock layout reflow without any JavaScript deciding it."
+  },
+  {
+    "question": "What's the minimum recommended size for a touch target on mobile?",
+    "options": ["24×24px", "32×32px", "44×44px", "60×60px"],
+    "correct": 2,
+    "explanation": "44×44px. Below that, tappable elements get hard to hit accurately, especially for anyone with limited dexterity."
   }
 ]

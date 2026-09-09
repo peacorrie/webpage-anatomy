@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Breakpoint Simulator
+description: Resize a frame from phone width to desktop width and watch a layout reflow using CSS container queries, not JavaScript.
+permalink: /lab/breakpoint-simulator/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Breakpoint Simulator</h1>
+    <p class="panel__lede">Drag the slider below to resize the frame. The layout inside decides on its own when it is too narrow to stay horizontal. No JavaScript is making that decision, CSS container queries are.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Try it</p>
+    <h2>Resize the Frame</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/breakpoint-simulator.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

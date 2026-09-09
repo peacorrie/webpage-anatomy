@@ -1,0 +1,30 @@
+    <p>Every element on a page is margin, border, padding, and content, nested like a set of frames. Drag to see it for real.</p>
+    <div class="box-playground">
+      <div class="box-playground__stage">
+        <div class="bp-margin" id="bpMargin">
+          <span class="bp-label">margin</span>
+          <div class="bp-border" id="bpBorder">
+            <span class="bp-label">border</span>
+            <div class="bp-padding" id="bpPadding">
+              <span class="bp-label">padding</span>
+              <div class="bp-content">content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-playground__controls">
+        <label class="bp-control">
+          <span>Margin <output id="bpMarginVal">16px</output></span>
+          <input type="range" id="bpMarginSlider" min="0" max="40" value="16" />
+        </label>
+        <label class="bp-control">
+          <span>Border <output id="bpBorderVal">4px</output></span>
+          <input type="range" id="bpBorderSlider" min="0" max="16" value="4" />
+        </label>
+        <label class="bp-control">
+          <span>Padding <output id="bpPaddingVal">16px</output></span>
+          <input type="range" id="bpPaddingSlider" min="0" max="40" value="16" />
+        </label>
+        <p class="mono" id="bpCode" style="font-size:0.78rem; margin-top:0.5rem;">margin: 16px; border: 4px; padding: 16px;</p>
+      </div>
+    </div>

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Guess the Contrast
+description: A short game that tests your eye against real WCAG AA contrast math. Guess pass or fail, then check the real ratio.
+permalink: /lab/guess-the-contrast/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Guess the Contrast</h1>
+    <p class="panel__lede">Look at a color pair and guess whether it passes WCAG AA for normal text. Then check your guess against the real contrast ratio. Most people guess wrong more often than they expect.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Try it</p>
+    <h2>Play a Round</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/guess-the-contrast.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

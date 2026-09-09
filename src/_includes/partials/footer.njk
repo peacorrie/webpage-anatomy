@@ -7,14 +7,30 @@
 
     <nav class="page-footer__links" aria-label="Footer">
       <a href="/#anatomy">Anatomy</a>
-      <a href="/#lab">Explore</a>
-      <a href="/#dictionary">Dictionary</a>
+      <a href="/lab/">Explore</a>
+      <a href="/dictionary/">Dictionary</a>
       <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
       <a href="/privacy-policy/">Privacy Policy</a>
     </nav>
 
-    <div class="page-footer__meta">
-      <p>&copy; {{ site.year }} Built for fun for web designers, by <a href="https://www.creativepea.com">creativepea</a>.</p>
-    </div>
+    <form class="page-footer__signup" id="footerSignupForm" novalidate>
+      <label for="footerSignupEmail">Get occasional notes on new tools and freebies.</label>
+      <div class="page-footer__signup-row">
+        <input type="email" id="footerSignupEmail" name="email_address" class="text-input" placeholder="you@example.com" required autocomplete="email" aria-label="Email address" />
+        <button type="submit" class="btn btn--secondary">Sign up</button>
+      </div>
+      <p class="page-footer__signup-feedback" id="footerSignupFeedback" role="status"></p>
+    </form>
+  </div>
+
+  <div class="container page-footer__copyright">
+    <p>&copy; {{ site.year }} Built for fun for web designers, by <a href="https://www.creativepea.com">creativepea</a>.</p>
+    <p class="page-footer__scorecard mono">
+      Lighthouse ({{ scorecard.measuredOn }}): {{ scorecard.performance }} Performance &middot; {{ scorecard.accessibility }} Accessibility &middot; {{ scorecard.bestPractices }} Best Practices &middot; {{ scorecard.seo }} SEO
+      <br>
+      Core Web Vitals: LCP {{ scorecard.lcp }} &middot; CLS {{ scorecard.cls }} &middot; TBT {{ scorecard.tbt }}
+    </p>
+    <p class="page-footer__hint">Scores measured {{ scorecard.measuredDate }}. Page last built {{ build.formatted }}.</p>
   </div>
 </footer>

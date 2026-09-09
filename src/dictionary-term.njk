@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: glossary
+  size: 1
+  alias: entry
+permalink: "/dictionary/{{ entry.slug }}/"
+eleventyComputed:
+  title: "{{ entry.term }}"
+  description: "{{ entry.definition }}"
+---
+
+{% set ldJsonData = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": entry.term,
+  "description": entry.definition,
+  "url": site.url + "/dictionary/" + entry.slug + "/",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "Webpage Anatomy Dictionary",
+    "url": site.url + "/dictionary/"
+  }
+} %}
+<script type="application/ld+json">{{ ldJsonData | jsonSafe | safe }}</script>
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Dictionary</p>
+    <h1 style="font-size: var(--step-h2);">{{ entry.term }}</h1>
+    <p class="panel__lede">{{ entry.definition }}</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">In more detail</p>
+    <h2>What It Means</h2>
+    <div class="panel__body">
+      <p>{{ entry.longExplanation }}</p>
+    </div>
+    <p style="margin-top: 1.5rem;">See it in context on the homepage: <a href="/#{{ entry.sectionId }}">{{ entry.sectionLabel }}</a>.</p>
+    <p style="margin-top: 2rem;"><a href="/dictionary/">← Back to the dictionary</a></p>
+  </div>
+</section>

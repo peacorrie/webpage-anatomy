@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Dictionary
+description: Every term from Webpage Anatomy, in one searchable list, each with its own page and a longer explanation.
+permalink: /dictionary/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Reference</p>
+    <h1 style="font-size: var(--step-h2);">Dictionary</h1>
+    <p class="panel__lede">Every term from Webpage Anatomy, in one list. Search to filter, or open a term for a longer explanation and a link back to where it's covered.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <label for="dictionaryFilter" class="eyebrow" style="display:block;">Filter terms</label>
+    <input type="search" id="dictionaryFilter" class="text-input" style="max-width: 24rem; margin-top:0.5rem;" placeholder="Start typing a term..." autocomplete="off" />
+    <p class="mono" id="dictionaryFilterCount" style="font-size:0.8rem; opacity:.6; margin-top:0.5rem;" role="status">{{ glossary.length }} terms</p>
+
+    <div class="panel__body dict-panel" style="margin-top:1rem;">
+      <dl id="dictionaryList">
+        {% for entry in glossary %}
+        <div class="dictionary-entry" data-term="{{ entry.term | lower }}" data-definition="{{ entry.definition | lower }}">
+          <dt><a href="/dictionary/{{ entry.slug }}/">{{ entry.term }}</a></dt>
+          <dd>{{ entry.definition }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      <p id="dictionaryEmpty" class="mono" style="font-size:0.85rem; opacity:.7;" hidden>No terms match that search.</p>
+    </div>
+
+    <p style="margin-top: 2rem;"><a href="/">← Back to Webpage Anatomy</a></p>
+  </div>
+</section>

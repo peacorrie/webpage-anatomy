@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Glassmorphism Explained
+description: How the frosted glass UI effect works, with the real CSS behind it and a copy button so you can use it yourself.
+permalink: /lab/glassmorphism/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Glassmorphism Explained</h1>
+    <p class="panel__lede">Glassmorphism is the frosted glass effect you see across modern interfaces. It comes from one CSS property, backdrop-filter, applied with a blur. Here is the effect in action, with the exact CSS behind it.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">See it, copy it</p>
+    <h2>The Effect</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/glassmorphism.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

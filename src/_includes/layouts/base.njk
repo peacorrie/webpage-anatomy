@@ -12,21 +12,45 @@
 
     gtag('config', 'G-7ZSNQFEW7Q');
   </script>
+  {% if page.url == "/" %}
+  <title>{{ title or site.title }}</title>
+  {% else %}
   <title>{{ title or site.title }} | {{ site.shortTitle }}</title>
+  {% endif %}
   <meta name="description" content="{{ description or site.description }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.shortTitle }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:title" content="{{ title or site.title }}" />
+  <meta property="og:description" content="{{ description or site.description }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-share.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Webpage Anatomy: an interactive guide to how websites are built." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title or site.title }}" />
+  <meta name="twitter:description" content="{{ description or site.description }}" />
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/og-share.png" />
+
   <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Temporary CDN fonts per your request — swap to self-hosted once fonts are final -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="/assets/css/reset.css" />
-  <link rel="stylesheet" href="/assets/css/tokens.css" />
-  <link rel="stylesheet" href="/assets/css/typography.css" />
-  <link rel="stylesheet" href="/assets/css/layout.css" />
-  <link rel="stylesheet" href="/assets/css/components.css" />
+  <!-- Temporary CDN fonts per your request — swap to self-hosted once fonts are final.
+       Loaded non-blocking (print-media swap trick): a real Lighthouse run measured
+       this stylesheet costing ~860ms of render-blocking time otherwise. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" /></noscript>
+  <!-- One combined file instead of 5 separate <link> tags: each was its own
+       render-blocking round trip. Source stays split into 5 commented files
+       in src/assets/css/; eleventy.config.js concatenates them at build time. -->
+  <link rel="stylesheet" href="/assets/css/site.css" />
   <script>
     (function () {
       try {
@@ -50,13 +74,14 @@
   </main>
 
   {% include "partials/footer.njk" %}
-  {% include "partials/modal.njk" %}
+  {% if modals %}{% include "partials/modal.njk" %}{% endif %}
 
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/scroll.js"></script>
   <script src="/assets/js/modal.js"></script>
-  <script src="/assets/js/vendor/html2canvas.min.js"></script>
+  <script src="/assets/js/html2canvas-loader.js"></script>
   <script src="/assets/js/download.js"></script>
+  <script src="/assets/js/email-capture.js"></script>
   <script src="/assets/js/quiz.js"></script>
   <script src="/assets/js/button-demo.js"></script>
   <script src="/assets/js/semantic-demo.js"></script>
@@ -66,6 +91,12 @@
   <script src="/assets/js/style-guide.js"></script>
   <script src="/assets/js/box-model.js"></script>
   <script src="/assets/js/breakpoint-sim.js"></script>
+  <script src="/assets/js/dictionary-filter.js"></script>
+  <script src="/assets/js/color-system-demo.js"></script>
+  <script src="/assets/js/form-demo.js"></script>
+  <script src="/assets/js/head-demo.js"></script>
+  <script src="/assets/js/page-load-demo.js"></script>
+  <script src="/assets/js/image-shift-demo.js"></script>
 
   {% if kofi or kofiOnFooter %}
   <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Take the Quiz
+description: Questions pulled directly from Webpage Anatomy, graded instantly as you answer, with an explanation either way.
+permalink: /lab/quiz/
+---
+
+<header class="panel hero" style="text-align:left; padding-block: var(--space-8) var(--space-6);">
+  <div class="container">
+    <p class="eyebrow">Interactive lab</p>
+    <h1 style="font-size: var(--step-h2);">Take the Quiz</h1>
+    <p class="panel__lede">These questions are pulled straight from the lessons on the homepage. Pick an answer to see it graded right away, with an explanation either way.</p>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="container">
+    <p class="eyebrow">Test yourself</p>
+    <h2>{{ quiz.length }} Questions</h2>
+    <div class="panel__body" style="margin-top:1rem;">
+      {% include "demos/quiz.njk" %}
+    </div>
+    <p style="margin-top: 2rem;"><a href="/lab/">← Back to the lab</a></p>
+  </div>
+</section>

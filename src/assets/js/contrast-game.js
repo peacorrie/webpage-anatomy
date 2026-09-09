@@ -1,6 +1,10 @@
 (function () {
+  var preview = document.getElementById("cgPreview");
+  if (!preview || !window.WA || !window.WA.contrast) return;
+
+  // The dialog only exists on the homepage. On the standalone lab page this
+  // demo also lives on, there is no dialog to gate on or reset from.
   var modal = document.getElementById("contrastGameModal");
-  if (!modal || !window.WA || !window.WA.contrast) return;
 
   // Curated for variety (clear passes, clear fails, and a couple of
   // genuinely close calls) — graded live via the shared utility below,
@@ -16,7 +20,6 @@
     { fg: "#000000", bg: "#00BFA5" },
   ];
 
-  var preview = document.getElementById("cgPreview");
   var scoreEl = document.getElementById("cgScore");
   var guessRow = document.getElementById("cgGuessRow");
   var result = document.getElementById("cgResult");
@@ -70,12 +73,19 @@
   if (failBtn) failBtn.addEventListener("click", function () { guess(false); });
   if (nextBtn) nextBtn.addEventListener("click", newRound);
 
-  modal.addEventListener("close", function () {
-    score = 0;
-    total = 0;
-    scoreEl.textContent = "Score: 0 / 0";
-  });
-
   var opener = document.getElementById("openContrastGameModal");
-  if (opener) opener.addEventListener("click", newRound);
+  if (modal && opener) {
+    // Inside the homepage modal, each open starts a fresh round and each
+    // close resets the score, so returning later always starts clean.
+    modal.addEventListener("close", function () {
+      score = 0;
+      total = 0;
+      scoreEl.textContent = "Score: 0 / 0";
+    });
+    opener.addEventListener("click", newRound);
+  } else {
+    // On its standalone page there is no dialog lifecycle to hook, so the
+    // first round just starts as soon as the page loads.
+    newRound();
+  }
 })();

@@ -1,0 +1,25 @@
+    <p>{{ quiz.length }} questions pulled straight from this page. Pick an answer to see it graded instantly.</p>
+    <span class="quiz-score" id="quizScore" aria-live="polite">Score: 0 / {{ quiz.length }}</span>
+    <form id="quizForm">
+      <div class="quiz-list">
+        {% for q in quiz %}
+        {% set qIndex = loop.index %}
+        <fieldset class="quiz-q" data-correct="{{ q.correct }}" data-explanation="{{ q.explanation }}">
+          <legend>{{ qIndex }}. {{ q.question }}</legend>
+          <div class="quiz-options">
+            {% for opt in q.options %}
+            <div class="quiz-option">
+              <input type="radio" id="q{{ qIndex }}-opt{{ loop.index }}" name="q{{ qIndex }}" />
+              <label for="q{{ qIndex }}-opt{{ loop.index }}">{{ opt }}</label>
+            </div>
+            {% endfor %}
+          </div>
+          <p class="quiz-feedback" role="status"></p>
+        </fieldset>
+        {% endfor %}
+      </div>
+    </form>
+    <div class="quiz-result callout" id="quizResult" tabindex="-1" hidden>
+      <p id="quizResultText" style="margin:0 0 .75rem;"></p>
+      <button type="button" class="btn btn--secondary" id="quizRetry">Try Again</button>
+    </div>

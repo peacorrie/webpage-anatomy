@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "glassmorphism",
+    "title": "Glassmorphism Explained",
+    "color": "teal",
+    "description": "The frosted glass effect explained with live CSS you can copy."
+  },
+  {
+    "slug": "homepage-blueprint",
+    "title": "Homepage Blueprint",
+    "color": "pink",
+    "description": "A complete ten section homepage wireframe with notes. Downloadable as a PNG."
+  },
+  {
+    "slug": "contrast-checker",
+    "title": "Contrast Checker",
+    "color": "sun",
+    "description": "Type in any two colors and get a real, live WCAG contrast ratio."
+  },
+  {
+    "slug": "style-guide",
+    "title": "This Page's Style Guide",
+    "color": "coral",
+    "description": "Colors, type, spacing, and z-index, condensed into one downloadable sheet."
+  },
+  {
+    "slug": "box-model",
+    "title": "Box Model Playground",
+    "color": "teal",
+    "description": "Drag margin, border, and padding and watch a real box respond."
+  },
+  {
+    "slug": "breakpoint-simulator",
+    "title": "Breakpoint Simulator",
+    "color": "pink",
+    "description": "Drag a frame from phone to desktop width and watch a layout reflow."
+  },
+  {
+    "slug": "guess-the-contrast",
+    "title": "Guess the Contrast",
+    "color": "sun",
+    "description": "See a color pair, guess pass or fail, then check your eye against the math."
+  },
+  {
+    "slug": "quiz",
+    "title": "Take the Quiz",
+    "color": "coral",
+    "description": "Questions pulled straight from this page, graded instantly as you answer."
+  }
+]

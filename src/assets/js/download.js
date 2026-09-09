@@ -2,9 +2,9 @@
   var downloadBtn = document.getElementById("downloadWireframe");
   if (!downloadBtn) return;
 
-  downloadBtn.addEventListener("click", function () {
+  function generateWireframePNG() {
     var wireframe = document.getElementById("homepageWireframe");
-    if (!wireframe || typeof html2canvas === "undefined") {
+    if (!wireframe) {
       alert("Could not generate the image. Please try again.");
       return;
     }
@@ -12,6 +12,15 @@
     downloadBtn.textContent = "Generating PNG...";
     downloadBtn.disabled = true;
 
+    window.WA.loadHtml2Canvas().then(renderWireframe).catch(function () {
+      alert("Could not generate the image. Please try again.");
+      downloadBtn.textContent = "Download as PNG";
+      downloadBtn.disabled = false;
+    });
+  }
+
+  function renderWireframe() {
+    var wireframe = document.getElementById("homepageWireframe");
     var clone = wireframe.cloneNode(true);
     clone.id = "wireframe-clone";
     clone.style.cssText = "position: fixed; left: -9999px; top: 0; width: 800px; background: #FAF7F2; padding: 48px; z-index: -1;";
@@ -45,5 +54,21 @@
         downloadBtn.disabled = false;
       });
     }, 200);
+  }
+
+  // Exposed so the email capture gate (email-capture.js) can trigger the
+  // real download after a successful signup, without the two files needing
+  // to know about each other's internals beyond this one function.
+  window.WA = window.WA || {};
+  window.WA.generateWireframePNG = generateWireframePNG;
+
+  var gate = document.getElementById("blueprintEmailGate");
+
+  downloadBtn.addEventListener("click", function () {
+    if (gate && typeof gate.showModal === "function") {
+      gate.showModal();
+    } else {
+      generateWireframePNG();
+    }
   });
 })();

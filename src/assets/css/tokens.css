@@ -1,4 +1,44 @@
 /*
+  Self-hosted fonts (SIL Open Font License, latin subsets from Fontsource).
+  Variable files cover every weight the site uses in one request each.
+*/
+@font-face {
+  font-family: "Fredoka";
+  src: url("/assets/fonts/fredoka-variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("/assets/fonts/nunito-variable.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("/assets/fonts/nunito-italic-variable.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/space-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("/assets/fonts/space-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
   Sticker-sheet palette. Two families of color tokens, deliberately kept
   separate because they behave differently under contrast rules:
 

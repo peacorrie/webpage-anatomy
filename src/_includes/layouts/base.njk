@@ -35,14 +35,11 @@
   <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Temporary CDN fonts per your request — swap to self-hosted once fonts are final.
-       Loaded non-blocking (print-media swap trick): a real Lighthouse run measured
-       this stylesheet costing ~860ms of render-blocking time otherwise. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Space+Mono:wght@400;700&display=swap" /></noscript>
+  <!-- Fonts are self-hosted (see @font-face in tokens.css), so no visitor
+       data goes to a third-party font CDN. The two families used above the
+       fold are preloaded so text doesn't wait on CSS to discover them. -->
+  <link rel="preload" href="/assets/fonts/fredoka-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/nunito-variable.woff2" as="font" type="font/woff2" crossorigin />
   <!-- One combined file instead of 5 separate <link> tags: each was its own
        render-blocking round trip. Source stays split into 5 commented files
        in src/assets/css/; eleventy.config.js concatenates them at build time. -->
